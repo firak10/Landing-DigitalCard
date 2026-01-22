@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Amostras e Galeria de Produtos - Digital Card do Brasil">
+	<meta name="keywords" content="amostras, galeria, produtos, cartões, crachás, Digital Card">
+	<meta name="author" content="Digital Card do Brasil">
+	<!-- Page Title -->
+	<title>Amostras de Produtos - Digital Card do Brasil</title>
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="images/Logo 1.png">
+	<!-- Google Fonts css-->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<!-- Bootstrap css -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<!-- Font Awesome icon css-->
+	<link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+	<link href="css/pe-icon-7-stroke.css" rel="stylesheet" media="screen">
+	<link href="css/flaticon.css" rel="stylesheet" media="screen">
+	<!-- Main custom css -->
+	<link href="css/custom.css" rel="stylesheet" media="screen" >
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<style>
+		.portfolio-item {
+			position: relative;
+			overflow: hidden;
+			margin-bottom: 30px;
+			background: #fff;
+			border-radius: 8px;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+			transition: all 0.3s ease;
+			display: flex;
+			flex-direction: column;
+			height: 420px;
+		}
+		
+		.portfolio-item:hover {
+			box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+			transform: translateY(-5px);
+		}
+		
+		.portfolio-image {
+			width: 100%;
+			height: 250px;
+			background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 60px;
+			color: #ccc;
+			position: relative;
+			overflow: hidden;
+		}
+		
+		.portfolio-image img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		
+		.portfolio-image i {
+			position: absolute;
+		}
+		
+		.portfolio-item:hover .portfolio-image {
+			background: linear-gradient(135deg, #ff8100 0%, #ff6600 100%);
+		}
+		
+		.portfolio-item:hover .portfolio-image i {
+			color: #fff;
+			transform: scale(1.1);
+		}
+		
+		.portfolio-image i {
+			transition: all 0.3s ease;
+			display: none;
+		}
+		
+		.portfolio-image.no-image i {
+			display: block;
+		}
+		
+		.portfolio-content {
+			padding: 20px;
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+		}
+		
+		.portfolio-content h3 {
+			color: #333;
+			font-size: 18px;
+			font-weight: 600;
+			margin-bottom: 10px;
+			margin-top: 0;
+		}
+		
+		.portfolio-content p {
+			color: #666;
+			font-size: 14px;
+			line-height: 1.6;
+			margin-bottom: 15px;
+			min-height: 48px;
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+		}
+		
+		.portfolio-footer {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border-top: 1px solid #eee;
+			padding-top: 15px;
+			margin-top: auto;
+		}
+		
+		.portfolio-category {
+			display: inline-block;
+			background: #f0f0f0;
+			color: #666;
+			padding: 5px 12px;
+			border-radius: 20px;
+			font-size: 12px;
+			font-weight: 500;
+		}
+		
+		.portfolio-link {
+			color: #ff8100;
+			font-weight: 600;
+			text-decoration: none;
+			transition: all 0.3s ease;
+		}
+		
+		.portfolio-link:hover {
+			color: #ff6600;
+		}
+		
+		.gallery-title {
+			text-align: center;
+			margin-bottom: 50px;
+			padding-top: 40px;
+		}
+		
+		.gallery-title h1 {
+			font-size: 36px;
+			color: #333;
+			margin-bottom: 15px;
+			font-weight: 700;
+		}
+		
+		.gallery-title p {
+			font-size: 16px;
+			color: #666;
+			margin-bottom: 30px;
+		}
+		
+		.filter-buttons {
+			text-align: center;
+			margin-bottom: 40px;
+		}
+		
+		.filter-btn {
+			background: #f0f0f0;
+			color: #333;
+			border: none;
+			padding: 10px 20px;
+			margin: 0 5px;
+			border-radius: 25px;
+			cursor: pointer;
+			font-weight: 600;
+			transition: all 0.3s ease;
+			font-size: 14px;
+		}
+		
+		.filter-btn:hover,
+		.filter-btn.active {
+			background: #ff8100;
+			color: #fff;
+		}
+		
+		.breadcrumb-section {
+			background: #f9f9f9;
+			padding: 20px 0;
+			border-bottom: 1px solid #eee;
+		}
+		
+		.breadcrumb {
+			margin: 0;
+			background: transparent;
+			padding: 0;
+		}
+		
+		.breadcrumb a {
+			color: #ff8100;
+		}
+		
+		.breadcrumb > li + li:before {
+			content: "/ ";
+			padding: 0 5px;
+			color: #999;
+		}
+        .hidden {
+        display: none;
+         }
+
+        .portfolio-img:not(:src) + .hidden {
+            display: block;
+        }
+	</style>
+</head>
+<body>
+	<!-- Preloader starts -->
+	<div class="preloader">
+		<div class="browser-screen-loading-content">
+			<div class="loading-dots dark-gray">
+				<i></i>
+				<i></i>
+				<i></i>
+				<i></i>
+			</div>
+			<p class="loading-text">Carregando</p>
+		</div>
+	</div>
+	<!-- Preloader Ends -->
+	
+	<!-- Header Section Starts-->
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<div class="navbar-header">
+						<!-- Logo starts -->
+						<a class="navbar-brand" href="index.html">
+							<img src="images/Logo 1.png" alt="Logo" />
+						</a>
+						<!-- Logo Ends -->
+						
+						<!-- Responsive Menu button starts -->
+						<div class="navbar-toggle">
+						</div>
+						<!-- Responsive Menu button Ends -->
+					</div>
+				</div>
+				
+				<div class="col-md-7">
+					<div class="header-support">
+						<div class="head-support-box">
+							<a href="http://wa.me/5542999001750" target="_blank" rel="noopener noreferrer">
+								<div class="support-icon"><i class="fa fa-whatsapp"></i></div>
+								<p><span>Contate Agora :</span>(42) 9 9900-1750</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<nav id="main-nav" class="navbar navbar-default">
+			<div class="container">
+				<div id="responsive-menu"></div>
+				
+				<div class="navbar-collapse collapse" id="navigation">
+					<ul class="nav navbar-nav main-navigation" id="main-menu">
+						<li><a href="index.html#home">Home</a></li>
+						<li><a href="index.html#services">Nossos Produtos</a></li>
+						<li class="active"><a href="amostras.html">Amostras</a></li>
+						<li><a href="index.html#testimonial">Depoimentos</a></li>
+						<li><a href="index.html#support">Contato</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- Header Section Ends-->
+	
+	<!-- Breadcrumb Section -->
+	<div class="breadcrumb-section">
+		<div class="container">
+			<ol class="breadcrumb">
+				<li><a href="index.html">Home</a></li>
+				<li class="active">Amostras de Produtos</li>
+			</ol>
+		</div>
+	</div>
+	<!-- Breadcrumb Section Ends -->
+	
+	<!-- Gallery Section Starts -->
+	<section class="services" style="padding: 60px 0;">
+		<div class="container">
+			<div class="gallery-title">
+				<h1>Amostras de Nossos Produtos</h1>
+				<p>Confira exemplos de qualidade e criatividade dos nossos trabalhos</p>
+			</div>
+			
+			<div class="filter-buttons">
+				<button class="filter-btn active" data-filter="all">Todos</button>
+				<button class="filter-btn" data-filter="crachas">Crachás</button>
+				<button class="filter-btn" data-filter="cordoes">Cordões</button>
+				<button class="filter-btn" data-filter="cartoes">Cartões</button>
+				<button class="filter-btn" data-filter="carimbos">Carimbos</button>
+				<button class="filter-btn" data-filter="rfid">RFID</button>
+			</div>
+			
+			<div class="row">
+				<!-- Crachás -->
+				<div class="col-md-4 col-sm-6 col-xs-12 portfolio-item" data-category="crachas">
+					<div class="portfolio-image">
+						<img src="images/Crachá Corporativo Premium.jpg" alt="Crachá Corporativo Premium" class="portfolio-img" onerror="this.style.display='none'">
+						<i class="fa fa-id-card"></i>
+					</div>
+					<div class="portfolio-content">
+						<h3>Crachá Corporativo Premium</h3>
+				<p>Crachá com impressão frente e verso, acabamento laminado podendo conter moldura e/ou cordão personalizado.</p>
+				<div class="portfolio-footer">
+					<span class="portfolio-category">Crachá</span>
+					<a href="http://wa.me/5542999001750?text=Gostaria%20de%20saber%20mais%20sobre%20Crachas%20Corporativos%20Premium" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+								Solicitar <i class="fa fa-arrow-right"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+
+				
+				<div class="col-md-4 col-sm-6 col-xs-12 portfolio-item" data-category="crachas">
+					<div class="portfolio-image">
+						<img src="images/Crachá de Evento.jpg" alt="Crachá de Evento" class="portfolio-img" onerror="this.style.display='none'">
+						<i class="fa fa-id-card"></i>
+					</div>
+					<div class="portfolio-content">
+						<h3>Crachá de Evento</h3>
+						<p>Crachás personalizados para eventos corporativos e conferências com design exclusivo.</p>
+						<div class="portfolio-footer">
+							<span class="portfolio-category">Crachá</span>
+						<a href="http://wa.me/5542999001750?text=Gostaria%20de%20saber%20mais%20sobre%20Crachas%20de%20Evento" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+								Solicitar <i class="fa fa-arrow-right"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-4 col-sm-6 col-xs-12 portfolio-item" data-category="cordoes">
+					<div class="portfolio-image">
+						<img src="images/Cordão Liso.jpg" alt="Cordão Liso" class="portfolio-img" onerror="this.style.display='none'">
+						<i class="fa fa-link"></i>
+					</div>
+					<div class="portfolio-content">
+						<h3>Cordão Liso</h3>
+						<p>Cordão de nylon liso em diversas cores, resistente e durável para uso diário.</p>
+						<div class="portfolio-footer">
+							<span class="portfolio-category">Cordão</span>
+						<a href="http://wa.me/5542999001750?text=Gostaria%20de%20saber%20mais%20sobre%20Cordoes%20para%20Crachas%20Lisos" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+								Solicitar <i class="fa fa-arrow-right"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-4 col-sm-6 col-xs-12 portfolio-item" data-category="cordoes">
+					<div class="portfolio-image">
+						<img src="images/Cordão Personalizado.jpg" alt="Cordão Personalizado" class="portfolio-img" onerror="this.style.display='none'">
+						<i class="fa fa-chain"></i>
+					</div>
+					<div class="portfolio-content">
+						<h3>Cordão Personalizado</h3>
+						<p>Cordão com impressão personalizada, ideal para branding e identidade visual corporativa.</p>
+						<div class="portfolio-footer">
+							<span class="portfolio-category">Cordão</span>
+						<a href="http://wa.me/5542999001750?text=Gostaria%20de%20saber%20mais%20sobre%20Cordoes%20para%20Crachas%20Personalizados" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+								Solicitar <i class="fa fa-arrow-right"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-4 col-sm-6 col-xs-12 portfolio-item" data-category="cordoes">
+					<div class="portfolio-image">
+						<img src="images/Cordão Especial.jpg" alt="Cordão Especial" class="portfolio-img" onerror="this.style.display='none'">
+						<i class="fa fa-star hidden"></i>
+					</div>
+					<div class="portfolio-content">
+						<h3>Cordão Especial</h3>
+						<p>Cordão com acabamentos especiais, fitas e aplicações decorativas para diferenciação.</p>
+						<div class="portfolio-footer">
+							<span class="portfolio-category">Cordão</span>
+						<a href="http://wa.me/5542999001750?text=Gostaria%20de%20saber%20mais%20sobre%20Cordoes%20para%20Crachas%20Especiais" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+								Solicitar <i class="fa fa-arrow-right"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Cartões -->
+				<div class="col-md-4 col-sm-6 col-xs-12 portfolio-item" data-category="cartoes">
+					<div class="portfolio-image">
+						<img src="images/Cartão de Visita Executivo.jpg" alt="Cartão de Visita Executivo" class="portfolio-img" onerror="this.style.display='none'">
+						<i class="fa fa-credit-card"></i>
+					</div>
+					<div class="portfolio-content">
+						<h3>Cartão de Visita Executivo</h3>
+						<p>Cartão de visita em papel couchê com acabamento laminado.</p>
+						<div class="portfolio-footer">
+							<span class="portfolio-category">Cartão</span>
+						<a href="http://wa.me/5542999001750?text=Gostaria%20de%20saber%20mais%20sobre%20Cartoes%20de%20Visita%20Executivos" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+								Solicitar <i class="fa fa-arrow-right"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-4 col-sm-6 col-xs-12 portfolio-item" data-category="cartoes">
+					<div class="portfolio-image">
+						<img src="images/Cartão de Visita em PVC.jpg" alt="Cartão de Visita em PVC" class="portfolio-img" onerror="this.style.display='none'">
+						<i class="fa fa-address-card"></i>
+					</div>
+					<div class="portfolio-content">
+						<h3>Cartão de Visita em PVC</h3>
+						<p>Cartão plástico durável com impressão personalizada frente e verso.</p>
+						<div class="portfolio-footer">
+							<span class="portfolio-category">Cartão</span>
+						<a href="http://wa.me/5542999001750?text=Gostaria%20de%20saber%20mais%20sobre%20Cartoes%20de%20Visita%20em%20PVC" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+								Solicitar <i class="fa fa-arrow-right"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-4 col-sm-6 col-xs-12 portfolio-item" data-category="cartoes">
+					<div class="portfolio-image">
+						<img src="images/Cartão de Fidelização.jpg" alt="Cartão de Fidelização" class="portfolio-img" onerror="this.style.display='none'">
+						<i class="fa fa-credit-card"></i>
+					</div>
+					<div class="portfolio-content">
+						<h3>Cartão de Fidelização</h3>
+						<p>Cartão de fidelidade com design atrativo e impressão de alta qualidade.</p>
+						<div class="portfolio-footer">
+							<span class="portfolio-category">Cartão</span>
+						<a href="http://wa.me/5542999001750?text=Gostaria%20de%20saber%20mais%20sobre%20Cartoes%20de%20Fidelizacao" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+								Solicitar <i class="fa fa-arrow-right"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Carimbos -->
+				<div class="col-md-4 col-sm-6 col-xs-12 portfolio-item" data-category="carimbos">
+					<div class="portfolio-image">
+						<img src="images/Carimbo Personalizado.jpg" alt="Carimbo Personalizado" class="portfolio-img" onerror="this.style.display='none'">
+						<i class="fa fa-edit"></i>
+					</div>
+					<div class="portfolio-content">
+						<h3>Carimbo Personalizado</h3>
+						<p>Carimbo de borracha com design personalizado para identificação e autenticação.</p>
+						<div class="portfolio-footer">
+							<span class="portfolio-category">Carimbo</span>
+						<a href="http://wa.me/5542999001750?text=Gostaria%20de%20saber%20mais%20sobre%20Carimbos%20Personalizados" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+								Solicitar <i class="fa fa-arrow-right"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-4 col-sm-6 col-xs-12 portfolio-item" data-category="carimbos">
+					<div class="portfolio-image">
+						<img src="images/Carimbo Autoentintado.jpg" alt="Carimbo Autoentintado" class="portfolio-img" onerror="this.style.display='none'">
+						<i class="fa fa-print"></i>
+					</div>
+					<div class="portfolio-content">
+						<h3>Carimbo Autoentintado</h3>
+						<p>Carimbo prático e durável que dispensa almofada de tinta, com excelente definição.</p>
+						<div class="portfolio-footer">
+							<span class="portfolio-category">Carimbo</span>
+						<a href="http://wa.me/5542999001750?text=Gostaria%20de%20saber%20mais%20sobre%20Carimbos%20Autoentintados" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+								Solicitar <i class="fa fa-arrow-right"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-4 col-sm-6 col-xs-12 portfolio-item" data-category="carimbos">
+					<div class="portfolio-image">
+						<img src="images/Carimbo Pocket.jpg" alt="Carimbo Pocket" class="portfolio-img" onerror="this.style.display='none'">
+						<i class="fa fa-compress"></i>
+					</div>
+					<div class="portfolio-content">
+						<h3>Carimbo Pocket</h3>
+						<p>Carimbo compacto e portátil, ideal para profissionais que precisam de praticidade.</p>
+						<div class="portfolio-footer">
+							<span class="portfolio-category">Carimbo</span>
+						<a href="http://wa.me/5542999001750?text=Gostaria%20de%20saber%20mais%20sobre%20Carimbos%20Pocket" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+								Solicitar <i class="fa fa-arrow-right"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+				<!-- RFID -->
+				<div class="col-md-4 col-sm-6 col-xs-12 portfolio-item" data-category="rfid">
+					<div class="portfolio-image">
+						<img src="images/Cartão RFID Personalizado.jpg" alt="Cartão RFID Personalizado" class="portfolio-img" onerror="this.style.display='none'">
+						<i class="fa fa-wifi"></i>
+					</div>
+					<div class="portfolio-content">
+						<h3>Cartão RFID Personalizado</h3>
+						<p>Cartão de proximidade RFID com impressão personalizada para controle de acesso.</p>
+						<div class="portfolio-footer">
+							<span class="portfolio-category">RFID</span>
+						<a href="http://wa.me/5542999001750?text=Gostaria%20de%20saber%20mais%20sobre%20Cartoes%20RFID%20Personalizados" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+								Solicitar <i class="fa fa-arrow-right"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-4 col-sm-6 col-xs-12 portfolio-item" data-category="rfid">
+					<div class="portfolio-image">
+						<img src="images/Cartão MIFARE Personalizado.jpg" alt="Cartão MIFARE Personalizado" class="portfolio-img" onerror="this.style.display='none'">
+						<i class="fa fa-lock"></i>
+					</div>
+					<div class="portfolio-content">
+					<h3>Cartão MIFARE Personalizado</h3>
+					<p>Cartão MIFARE compatível com sistemas de controle de acesso de alta segurança.</p>
+					<div class="portfolio-footer">
+						<span class="portfolio-category">RFID</span>
+						<a href="http://wa.me/5542999001750?text=Gostaria%20de%20saber%20mais%20sobre%20Cartoes%20MIFARE" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+								Solicitar <i class="fa fa-arrow-right"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="row" style="margin-top: 50px;">
+				<div class="col-md-12" style="text-align: center;">
+					<p style="font-size: 16px; color: #666; margin-bottom: 20px;">Não encontrou exatamente o que procura?</p>
+					<a href="http://wa.me/5542999001750" target="_blank" rel="noopener noreferrer" class="btn-custom" style="background: #25d366;">Entre em contato para um orçamento personalizado</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Gallery Section Ends -->
+	
+	<!-- Footer starts -->
+	<footer style="background: #222; color: #fff; padding: 30px 0; margin-top: 50px; text-align: center;">
+		<div class="container">
+			<p>&copy; 2024 Digital Card do Brasil. Todos os direitos reservados.</p>
+			<p style="font-size: 12px; margin-top: 10px;">Desenvolvido por Lucas S. Firak | +55 42 999 359 359</p>
+		</div>
+	</footer>
+	<!-- Footer Ends -->
+	
+	<!-- Floating WhatsApp Button -->
+	<div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+		<a href="http://wa.me/5542999001750" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: #25d366; border-radius: 50%; color: #fff; font-size: 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: all 0.3s ease; text-decoration: none;" title="Abrir WhatsApp">
+			<i class="fa fa-whatsapp"></i>
+		</a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="js/jquery-1.12.4.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- SlickNav JS -->
+	<script src="js/jquery.slicknav.js"></script>
+	
+	<script>
+		$(window).load(function() {
+			$('.preloader').fadeOut(1000);
+		});
+		
+		// SlickNav Menu
+		$('#main-menu').slicknav({
+			prependTo: '#responsive-menu'
+		});
+		
+		// Filter functionality
+		$('.filter-btn').on('click', function() {
+			var filter = $(this).data('filter');
+			
+			// Update active button
+			$('.filter-btn').removeClass('active');
+			$(this).addClass('active');
+			
+			// Filter items
+			if (filter === 'all') {
+				$('.portfolio-item').fadeIn(300);
+			} else {
+				$('.portfolio-item').fadeOut(300);
+				$('.portfolio-item[data-category="' + filter + '"]').fadeIn(300);
+			}
+		});
+	</script>
+</body>
+</html>

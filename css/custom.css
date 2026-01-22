@@ -1337,5 +1337,12 @@ footer{
 	.testimonial-msg p{
 		font-size: 14px;
 	}
+	.hidden {
+  		display: none;
+	}
+
+	.portfolio-img:not(:src) + .hidden {
+  		display: block;
+	}
 
 }
