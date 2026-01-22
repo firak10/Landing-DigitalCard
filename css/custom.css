@@ -1079,6 +1079,23 @@ footer{
 	color: #e2e2e2;
 	letter-spacing: 0.04em;
 	text-transform: uppercase;
+	position: relative;
+}
+
+.footer-siteinfo p span {
+	display: block;
+	position: static;
+	font-size: 10px;
+}
+
+@media (max-width: 768px) {
+	.footer-siteinfo p {
+		line-height: 1.8;
+	}
+	
+	.footer-siteinfo p span {
+		order: 2;
+	}
 }
 
 .footer-siteinfo p a{
