@@ -786,6 +786,29 @@ header{
 	box-shadow: 2px 14px 30px rgba(0,0,0,0.04); 
 }
 
+@media (max-width: 768px) {
+	.service-box {
+		min-height: auto;
+		padding: 20px 15px;
+		padding-left: 75px;
+	}
+	
+	.service-box .icon-box {
+		font-size: 28px;
+		top: 12px;
+		left: 22px;
+	}
+	
+	.service-box h3 {
+		font-size: 16px;
+		margin-bottom: 8px;
+	}
+	
+	.service-box p {
+		font-size: 13px;
+	}
+}
+
 
 .service-box .icon-box{
 	font-size: 36px;
