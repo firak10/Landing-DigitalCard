@@ -64,7 +64,7 @@ a:focus{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	z-index: 999;
+	z-index: 9999;
 	text-decoration: none;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 	transition: all 0.3s ease;
@@ -1344,5 +1344,9 @@ footer{
 	.portfolio-img:not(:src) + .hidden {
   		display: block;
 	}
+	#site-footer {
+		overflow: visible;
+	}
+
 
 }

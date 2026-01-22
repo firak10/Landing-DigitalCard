@@ -17,7 +17,7 @@
 		}, 800);
 		$(".navbar-collapse").collapse("hide");
 
-		return false;
+		
 	});
 	
 	/* slick nav */
@@ -55,3 +55,28 @@ document.addEventListener("DOMContentLoaded", function () {
     yearEl.textContent = new Date().getFullYear();
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const whatsappBtn = document.querySelector(".floating-whatsapp-btn");
+    const footer = document.getElementById("site-footer");
+
+    if (!whatsappBtn || !footer) return;
+
+    const margin = 20;
+
+    function adjustWhatsappButton() {
+        const footerRect = footer.getBoundingClientRect();
+        const overlap = window.innerHeight - footerRect.top;
+
+        if (overlap > 0) {
+            whatsappBtn.style.bottom = overlap + margin + "px";
+        } else {
+            whatsappBtn.style.bottom = margin + "px";
+        }
+    }
+
+    window.addEventListener("scroll", adjustWhatsappButton);
+    window.addEventListener("resize", adjustWhatsappButton);
+});
+
+

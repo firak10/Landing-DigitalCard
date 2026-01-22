@@ -551,14 +551,14 @@
 	<!-- Gallery Section Ends -->
 	
 	<!-- Footer starts -->
-<footer style="background:#222; color:#fff; padding:30px 0; margin-top:50px;">
+<footer id="site-footer" style="background:#222; color:#fff; padding:30px 0; margin-top:50px;">
   <div class="container">
     <div class="row">
       <div class="col-md-12" style="text-align:center; position:relative;">
 
         <!-- Versão -->
         <span style="font-size:10px; position:absolute; left:0; top:0; color:#aaa;">
-          V: 2.0
+          V: 2.2
         </span>
 
         <!-- Direitos -->
@@ -576,13 +576,17 @@
   </div>
 </footer>
 <!-- Footer Ends -->
-	
+
+
 	<!-- Floating WhatsApp Button -->
-	<div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
-		<a href="http://wa.me/5542999001750" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: #25d366; border-radius: 50%; color: #fff; font-size: 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: all 0.3s ease; text-decoration: none;" title="Abrir WhatsApp">
-			<i class="fa fa-whatsapp"></i>
-		</a>
-	</div>
+<a href="http://wa.me/5542999001750"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="floating-whatsapp-btn">
+  <i class="fa fa-whatsapp"></i>
+  <span>Entre em contato</span>
+</a>
+	
 	
 	<!-- jQuery -->
 	<script src="js/jquery-1.12.4.min.js"></script>
@@ -590,7 +594,9 @@
 	<script src="js/bootstrap.min.js"></script>
 	<!-- SlickNav JS -->
 	<script src="js/jquery.slicknav.js"></script>
-	
+
+    <script src="js/functions.js"></script>
+
 	<script>
 		$(window).load(function() {
 			$('.preloader').fadeOut(1000);
@@ -618,5 +624,11 @@
 			}
 		});
 	</script>
+    </footer>
+
+
+
+
+
 </body>
 </html>
