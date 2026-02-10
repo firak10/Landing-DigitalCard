@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="pt-BR" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carteirinha de Estudante PVC | Digital Card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/_sdk/element_sdk.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+
+        * {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0a1628 0%, #1a365d 50%, #0f2847 100%);
+        }
+
+        .card-glow {
+            box-shadow: 0 0 60px rgba(59, 130, 246, 0.3), 0 0 100px rgba(59, 130, 246, 0.1);
+        }
+
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(59, 130, 246, 0.8);
+            }
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotateY(-15deg) rotateX(5deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotateY(-15deg) rotateX(5deg);
+            }
+        }
+
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .urgency-badge {
+            animation: urgencyPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes urgencyPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .benefit-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::after {
+            left: 100%;
+        }
+
+        .whatsapp-float {
+            animation: whatsappBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes whatsappBounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .section-divider {
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+            height: 1px;
+        }
+
+        .trust-badge {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+    </style>
+    <style>
+        @view-transition {
+            navigation: auto;
+        }
+    </style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+</head>
+
+<body class="h-full gradient-bg text-white overflow-x-hidden">
+    <div class="min-h-full w-full"><!-- Urgency Banner -->
+        <div id="urgency-banner"
+            class="bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 py-3 px-4 text-center">
+            <div class="flex items-center justify-center gap-2 flex-wrap"><span class="text-2xl">⏰</span>
+                <p id="urgency-text" class="text-sm md:text-base font-semibold text-white">CAMPANHA VOLTA ÀS AULAS •
+                    Vagas Limitadas • Válida por tempo limitado!</p><span class="text-2xl">🎓</span>
+            </div>
+        </div><!-- Header -->
+        <header class="py-6 px-4 md:px-8">
+            <div class="max-w-6xl mx-auto flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center shadow-lg">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 id="brand-name" class="text-xl md:text-2xl font-bold text-white">Digital Card</h1>
+                        <p class="text-xs md:text-sm text-blue-300">Ponta Grossa • PR</p>
+                    </div>
+                </div><a id="header-cta" href="#"
+                    class="hidden md:flex cta-button text-white font-semibold py-3 px-6 rounded-full items-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg><span>Falar no WhatsApp</span> </a>
+            </div>
+        </header><!-- Hero Section -->
+        <section class="py-12 md:py-20 px-4 md:px-8">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center"><!-- Hero Content -->
+                <div class="text-center md:text-left order-2 md:order-1">
+                    <div
+                        class="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 rounded-full px-4 py-2 mb-6">
+                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span> <span
+                            class="text-sm text-blue-200">Atendimento Local em Ponta Grossa</span>
+                    </div>
+                    <h2 id="headline" class="text-3xl md:text-5xl font-extrabold leading-tight mb-6">Carteirinha de
+                        Estudante em PVC <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400"> – padrão
+                            oficial para alunos de Ponta Grossa</span></h2>
+                    <p id="subheadline" class="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">Carteirinha
+                        física, resistente e profissional. Emissão rápida por tempo limitado.</p><!-- Value Bullets -->
+                    <div class="space-y-4 mb-10">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor"
+                                    viewbox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div><span class="text-gray-200">Carteirinha física em PVC 54x86 mm (padrão utilizado por instituições)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor"
+                                    viewbox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div><span class="text-gray-200">Impressão de alta qualidade e durabilidade</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor"
+                                    viewbox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div><span class="text-gray-200">Ideal para identificação estudantil</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor"
+                                    viewbox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div><span class="text-gray-200">Atendimento local em Ponta Grossa</span>
+                        </div>
+                    </div><!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4"><a id="cta-primary" href="#"
+                            class="cta-button text-white font-bold py-4 px-8 rounded-full text-lg flex items-center justify-center gap-3 pulse-glow">
+                            <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                            </svg><span id="cta-primary-text">Solicitar carteirinha agora</span> </a> <a
+                            id="cta-secondary" href="#benefits"
+                            class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold py-4 px-8 rounded-full text-lg flex items-center justify-center gap-2 transition-all">
+                            <span id="cta-secondary-text">Saiba mais</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg></a>
+                    </div>
+                </div><!-- Card Mockup -->
+                <div class="order-1 md:order-2 flex justify-center">
+                    <div class="relative"><!-- Glow Effect -->
+                        <div class="absolute inset-0 bg-blue-500/30 blur-3xl rounded-full scale-150"></div><!-- Card -->
+                        <div class="relative float-animation" style="perspective: 1000px;">
+                            <div class="w-80 md:w-96 bg-gradient-to-br from-white via-gray-100 to-gray-200 rounded-2xl shadow-2xl card-glow overflow-hidden"
+                                style="aspect-ratio: 86/54;"><!-- Card Content -->
+                                <div class="h-full p-4 flex flex-col relative"><!-- Header -->
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-2">
+                                            <div
+                                                class="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor"
+                                                    viewbox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs font-bold text-gray-800">CARTEIRA DE ESTUDANTE</p>
+                                                <p class="text-[10px] text-gray-500">Documento estudantil</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-[10px] text-gray-500">Validade</p>
+                                            <p class="text-xs font-semibold text-gray-700">2026</p>
+                                        </div>
+                                    </div><!-- Body -->
+                                    <div class="flex gap-3 flex-1"><!-- Photo Area -->
+                                        <div
+                                            class="w-16 h-20 bg-gradient-to-br from-gray-300 to-gray-400 rounded-lg flex items-center justify-center overflow-hidden">
+                                            <svg class="w-10 h-10 text-gray-500" fill="currentColor"
+                                                viewbox="0 0 24 24">
+                                                <path
+                                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                            </svg>
+                                        </div><!-- Info -->
+                                        <div class="flex-1 space-y-1">
+                                            <div>
+                                                <p class="text-[9px] text-gray-500 uppercase">Nome</p>
+                                                <p class="text-xs font-semibold text-gray-800">Nome do Estudante</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-[9px] text-gray-500 uppercase">Instituição</p>
+                                                <p class="text-[10px] text-gray-700">Escola/Universidade</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-[9px] text-gray-500 uppercase">Matrícula</p>
+                                                <p class="text-[10px] text-gray-700">000000000</p>
+                                            </div>
+                                        </div>
+                                    </div><!-- Footer -->
+                                    <div class="flex items-center justify-between mt-2 pt-2 border-t border-gray-300">
+                                        <div class="flex items-center gap-1">
+                                            <div
+                                                class="w-6 h-4 bg-gradient-to-r from-green-500 via-yellow-500 to-blue-500 rounded-sm">
+                                            </div>
+                                            <p class="text-[8px] text-gray-500">PVC 54x86mm</p>
+                                        </div>
+                                        <p class="text-[8px] text-gray-500 font-medium">Digital Card</p>
+                                    </div>
+                                </div><!-- Shimmer Effect -->
+                                <div class="absolute inset-0 shimmer pointer-events-none"></div>
+                            </div>
+                        </div><!-- Floating Badges -->
+                        <div
+                            class="absolute -top-4 -right-4 bg-green-500 text-white text-xs font-bold px-3 py-2 rounded-full shadow-lg urgency-badge">
+                            ✓ PVC PADRÃO
+                        </div>
+                        <div
+                            class="absolute -bottom-4 -left-4 bg-blue-500 text-white text-xs font-bold px-3 py-2 rounded-full shadow-lg">
+                            54x86 mm
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- Divider -->
+        <div class="section-divider max-w-4xl mx-auto"></div><!-- Benefits Section -->
+        <section id="benefits" class="py-16 md:py-24 px-4 md:px-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16"><span
+                        class="inline-block bg-blue-500/20 text-blue-300 text-sm font-semibold px-4 py-2 rounded-full mb-4">
+                        VANTAGENS EXCLUSIVAS </span>
+                    <h3 class="text-3xl md:text-4xl font-bold mb-4">Por que escolher a <span
+                            class="text-blue-400">Digital Card</span>?</h3>
+                    <p class="text-gray-400 text-lg max-w-2xl mx-auto">Benefícios para alunos, pais e instituições de
+                        ensino</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"><!-- Benefit 1 -->
+                    <div class="benefit-card rounded-2xl p-6 text-center">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Credibilidade</h4>
+                        <p class="text-gray-400 text-sm">Mais credibilidade e padronização para sua instituição</p>
+                    </div><!-- Benefit 2 -->
+                    <div class="benefit-card rounded-2xl p-6 text-center">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-500/20 to-green-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Alta Durabilidade</h4>
+                        <p class="text-gray-400 text-sm">Material resistente que não rasga e não desbota</p>
+                    </div><!-- Benefit 3 -->
+                    <div class="benefit-card rounded-2xl p-6 text-center">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Fácil Conferência</h4>
+                        <p class="text-gray-400 text-sm">Verificação rápida em eventos e estabelecimentos</p>
+                    </div><!-- Benefit 4 -->
+                    <div class="benefit-card rounded-2xl p-6 text-center">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-amber-500/20 to-amber-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-amber-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Processo Simples</h4>
+                        <p class="text-gray-400 text-sm">Emissão sem burocracia, rápida e descomplicada</p>
+                    </div>
+                </div>
+            </div>
+        </section><!-- Trust Section -->
+        <section class="py-16 px-4 md:px-8 bg-white/5">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="trust-badge inline-flex items-center gap-3 rounded-full px-6 py-3 mb-8">
+                    <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg><span class="text-green-300 font-semibold">Empresa verificada e confiável</span>
+                </div>
+                <h3 class="text-3xl md:text-4xl font-bold mb-6">Atendendo estudantes e instituições<br><span
+                        class="text-blue-400">da região de Ponta Grossa</span></h3>
+                <p class="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">A Digital Card é referência em emissão de
+                    carteirinhas estudantis em PVC na região. Qualidade, rapidez e atendimento personalizado.</p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <div class="bg-white/10 rounded-xl px-6 py-4">
+                        <p class="text-3xl font-bold text-blue-400">🏫</p>
+                        <p class="text-sm text-gray-300 mt-1">Instituições Atendidas</p>
+                    </div>
+                    <div class="bg-white/10 rounded-xl px-6 py-4">
+                        <p class="text-3xl font-bold text-green-400">🎓</p>
+                        <p class="text-sm text-gray-300 mt-1">Estudantes Satisfeitos</p>
+                    </div>
+                    <div class="bg-white/10 rounded-xl px-6 py-4">
+                        <p class="text-3xl font-bold text-amber-400">⭐</p>
+                        <p class="text-sm text-gray-300 mt-1">Qualidade Garantida</p>
+                    </div>
+                </div>
+            </div>
+        </section><!-- Urgency Section -->
+        <section class="py-16 md:py-24 px-4 md:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div
+                    class="bg-gradient-to-r from-amber-500/20 via-orange-500/20 to-red-500/20 border border-amber-500/30 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
+                    <!-- Background Pattern -->
+                    <div class="absolute inset-0 opacity-10">
+                        <div class="absolute top-0 left-0 w-40 h-40 bg-amber-500 rounded-full blur-3xl"></div>
+                        <div class="absolute bottom-0 right-0 w-40 h-40 bg-red-500 rounded-full blur-3xl"></div>
+                    </div>
+                    <div class="relative">
+                        <div
+                            class="inline-flex items-center gap-2 bg-red-500/30 border border-red-400/50 rounded-full px-4 py-2 mb-6 urgency-badge">
+                            <span class="text-xl">🔥</span> <span
+                                class="text-sm font-bold text-red-300 uppercase tracking-wide">Oferta por tempo
+                                limitado</span>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold mb-4">Campanha <span class="text-amber-400">Volta às
+                                Aulas</span></h3>
+                        <p class="text-gray-300 text-lg mb-8 max-w-xl mx-auto">Aproveite condições especiais durante o
+                            período de matrícula. Vagas limitadas para atendimento local.</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                            <div class="bg-white/10 rounded-xl px-6 py-4">
+                                <p class="text-sm text-gray-400">⏰ Campanha válida</p>
+                                <p class="text-lg font-bold text-white">por tempo limitado</p>
+                            </div>
+                            <div class="bg-white/10 rounded-xl px-6 py-4">
+                                <p class="text-sm text-gray-400">📦 Produção especial</p>
+                                <p class="text-lg font-bold text-white">para este período</p>
+                            </div>
+                            <div class="bg-white/10 rounded-xl px-6 py-4">
+                                <p class="text-sm text-gray-400">📍 Atendimento local</p>
+                                <p class="text-lg font-bold text-white">vagas limitadas</p>
+                            </div>
+                        </div>
+                        <a id="cta-urgency" href="#"
+                            class="cta-button inline-flex items-center gap-3 text-white font-bold py-4 px-10 rounded-full text-lg">
+                            <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                            </svg><span id="cta-urgency-text">Quero minha carteirinha de estudante</span> </a>
+                    </div>
+                </div>
+            </div>
+        </section><!-- FAQ Section -->
+        <section class="py-16 px-4 md:px-8 bg-white/5">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-12"><span
+                        class="inline-block bg-blue-500/20 text-blue-300 text-sm font-semibold px-4 py-2 rounded-full mb-4">
+                        DÚVIDAS FREQUENTES </span>
+                    <h3 class="text-3xl md:text-4xl font-bold">Perguntas <span class="text-blue-400">Frequentes</span>
+                    </h3>
+                </div>
+                <div class="space-y-4" id="faq-container"><!-- FAQ Item 1 -->
+                    <div class="faq-item bg-white/5 border border-white/10 rounded-2xl overflow-hidden"><button
+                            class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left"
+                            onclick="toggleFaq(this)"> <span class="font-semibold text-white">Qual é o tamanho da
+                                carteirinha?</span>
+                            <svg class="faq-icon w-5 h-5 text-blue-400 transition-transform" fill="none"
+                                stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg></button>
+                        <div class="faq-content hidden px-6 pb-5">
+                            <p class="text-gray-400">A carteirinha segue o padrão oficial de 54x86 mm, em PVC de alta
+                                qualidade, ideal para uso em carteiras e porta-documentos.</p>
+                        </div>
+                    </div><!-- FAQ Item 2 -->
+                    <div class="faq-item bg-white/5 border border-white/10 rounded-2xl overflow-hidden"><button
+                            class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left"
+                            onclick="toggleFaq(this)"> <span class="font-semibold text-white">Quanto tempo demora para
+                                ficar pronta?</span>
+                            <svg class="faq-icon w-5 h-5 text-blue-400 transition-transform" fill="none"
+                                stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg></button>
+                        <div class="faq-content hidden px-6 pb-5">
+                            <p class="text-gray-400">O prazo de produção é rápido e varia conforme a demanda. Entre em
+                                contato pelo WhatsApp para informações atualizadas sobre prazos.</p>
+                        </div>
+                    </div><!-- FAQ Item 3 -->
+                    <div class="faq-item bg-white/5 border border-white/10 rounded-2xl overflow-hidden"><button
+                            class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left"
+                            onclick="toggleFaq(this)"> <span class="font-semibold text-white">Atendem escolas e
+                                universidades?</span>
+                            <svg class="faq-icon w-5 h-5 text-blue-400 transition-transform" fill="none"
+                                stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg></button>
+                        <div class="faq-content hidden px-6 pb-5">
+                            <p class="text-gray-400">Sim! Atendemos estudantes individuais, escolas, universidades e
+                                outras instituições de ensino da região de Ponta Grossa. Temos condições especiais para
+                                pedidos em quantidade.</p>
+                        </div>
+                    </div><!-- FAQ Item 4 -->
+                    <div class="faq-item bg-white/5 border border-white/10 rounded-2xl overflow-hidden"><button
+                            class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left"
+                            onclick="toggleFaq(this)"> <span class="font-semibold text-white">Como solicitar minha
+                                carteirinha?</span>
+                            <svg class="faq-icon w-5 h-5 text-blue-400 transition-transform" fill="none"
+                                stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg></button>
+                        <div class="faq-content hidden px-6 pb-5">
+                            <p class="text-gray-400">É simples! Clique em um dos botões de WhatsApp desta página e envie
+                                uma mensagem. Nossa equipe irá orientá-lo sobre os documentos necessários e o processo
+                                de emissão.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- Final CTA -->
+        <section class="py-20 px-4 md:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="text-3xl md:text-5xl font-bold mb-6">Garanta sua <span class="text-blue-400">Carteirinha de
+                        Estudante</span> agora!</h3>
+                <p class="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">Não perca tempo. Faça seu pedido pelo WhatsApp
+                    e receba sua carteirinha em PVC de alta qualidade.</p><a id="cta-final" href="#"
+                    class="cta-button inline-flex items-center gap-3 text-white font-bold py-5 px-12 rounded-full text-xl pulse-glow">
+                    <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg><span id="cta-final-text">Solicitar pelo WhatsApp</span> </a>
+                <p class="text-gray-500 text-sm mt-6">📍 Atendimento exclusivo para Ponta Grossa e região</p>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="bg-black/30 border-t border-white/10 py-12 px-4 md:px-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8 mb-8"><!-- Brand -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div
+                                class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
+                                </svg>
+                            </div>
+                            <div>
+                                <a href="https://digitalcardpg.com/" class="inline-block" target="_blank">
+                                    <img src="images/logo 1.png" alt="Digital Card" class="h-12 w-auto" />
+                                </a>
+
+                                <p class="text-xs text-gray-400 mt-1">Carteirinhas de Estudante</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm">Especialistas em emissão de carteirinhas estudantis em PVC de
+                            alta qualidade para a região de Ponta Grossa.</p>
+                    </div>
+                    <!-- Contact -->
+                    <div>
+                        <h5 class="font-semibold text-white mb-4">Contato</h5>
+                        <div class="space-y-3">
+                            <a id="footer-whatsapp" href="#"
+                                class="flex items-center gap-3 text-gray-400 hover:text-green-400 transition-colors">
+                                <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                </svg><span>WhatsApp</span>
+                            </a>
+
+                            <a href="https://www.google.com/maps/place/Digital+Card+-+Carimbos,+Crach%C3%A1s+e+Gr%C3%A1fica+em+PVC/@-25.1046232,-50.1602374,17.25z/data=!4m6!3m5!1s0x94e81ae84d199cb9:0xf4d2e054dda3c147!8m2!3d-25.1039905!4d-50.1584216!16s%2Fg%2F1tdpbs45?entry=ttu&g_ep=EgoyMDI2MDIwNC4wIKXMDSoASAFQAw%3D%3D"
+                                target="_blank" rel="noopener noreferrer"
+                                class="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>Ponta Grossa – PR</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Quick Action -->
+                    <div>
+                        <h5 class="font-semibold text-white mb-4">Solicite Agora</h5>
+                        <p class="text-gray-400 text-sm mb-4">Clique no botão abaixo para iniciar seu pedido via
+                            WhatsApp.</p><a id="footer-cta" href="#"
+                            class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white font-semibold py-3 px-6 rounded-full transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                            </svg><span>Falar no WhatsApp</span> </a>
+                    </div>
+                </div>
+                <div class="border-t border-white/10 pt-8 text-center">
+                    <p class="text-gray-500 text-sm">© 2026 Digital Card. Todos os direitos reservados. | Ponta Grossa –
+                        PR</p>
+                </div>
+            </div>
+        </footer><!-- Floating WhatsApp Button --> <a id="whatsapp-float" href="#"
+            class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-400 text-white p-4 rounded-full shadow-2xl whatsapp-float z-50 transition-colors"
+            target="_blank" rel="noopener noreferrer">
+            <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg></a>
+    </div>
+    <script>
+        // Default configuration
+        const defaultConfig = {
+            headline: 'Carteirinha de Estudante em PVC – padrão oficial para alunos de Ponta Grossa',
+            subheadline: 'Carteirinha física, resistente e profissional. Emissão rápida por tempo limitado.',
+            cta_primary: 'Solicitar carteirinha agora',
+            cta_secondary: 'Saiba mais',
+            whatsapp_number: '554299001750',
+            background_color: '#0a1628',
+            surface_color: '#1a365d',
+            text_color: '#ffffff',
+            primary_action_color: '#3b82f6',
+            secondary_action_color: '#22c55e'
+        };
+
+        // FAQ Toggle Function
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const content = item.querySelector('.faq-content');
+            const icon = item.querySelector('.faq-icon');
+
+            content.classList.toggle('hidden');
+            icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+
+        // Update WhatsApp links
+        function updateWhatsAppLinks(number) {
+            const message = encodeURIComponent('Olá! Gostaria de solicitar uma carteirinha de estudante em PVC.');
+            const whatsappUrl = `https://wa.me/${number}?text=${message}`;
+
+            const links = [
+                'header-cta', 'cta-primary', 'cta-urgency', 'cta-final',
+                'whatsapp-float', 'footer-whatsapp', 'footer-cta'
+            ];
+
+            links.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.href = whatsappUrl;
+                    element.target = '_blank';
+                    element.rel = 'noopener noreferrer';
+                }
+            });
+        }
+
+        // Initialize Element SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange: async (config) => {
+                    // Update headline
+                    const headlineEl = document.getElementById('headline');
+                    if (headlineEl) {
+                        headlineEl.innerHTML = (config.headline || defaultConfig.headline).replace(
+                            '– padrão oficial para alunos de Ponta Grossa',
+                            '<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400"> – padrão oficial para alunos de Ponta Grossa</span>'
+                        );
+                    }
+
+                    // Update subheadline
+                    const subheadlineEl = document.getElementById('subheadline');
+                    if (subheadlineEl) {
+                        subheadlineEl.textContent = config.subheadline || defaultConfig.subheadline;
+                    }
+
+                    // Update CTA texts
+                    const ctaPrimaryText = document.getElementById('cta-primary-text');
+                    if (ctaPrimaryText) {
+                        ctaPrimaryText.textContent = config.cta_primary || defaultConfig.cta_primary;
+                    }
+
+                    const ctaSecondaryText = document.getElementById('cta-secondary-text');
+                    if (ctaSecondaryText) {
+                        ctaSecondaryText.textContent = config.cta_secondary || defaultConfig.cta_secondary;
+                    }
+
+                    const ctaUrgencyText = document.getElementById('cta-urgency-text');
+                    if (ctaUrgencyText) {
+                        ctaUrgencyText.textContent = config.cta_primary || defaultConfig.cta_primary;
+                    }
+
+                    const ctaFinalText = document.getElementById('cta-final-text');
+                    if (ctaFinalText) {
+                        ctaFinalText.textContent = config.cta_primary || defaultConfig.cta_primary;
+                    }
+
+                    // Update WhatsApp links
+                    updateWhatsAppLinks(config.whatsapp_number || defaultConfig.whatsapp_number);
+
+                    // Update colors
+                    document.documentElement.style.setProperty('--bg-color', config.background_color || defaultConfig.background_color);
+                    document.documentElement.style.setProperty('--surface-color', config.surface_color || defaultConfig.surface_color);
+                    document.documentElement.style.setProperty('--primary-action', config.primary_action_color || defaultConfig.primary_action_color);
+                },
+                mapToCapabilities: (config) => ({
+                    recolorables: [
+                        {
+                            get: () => config.background_color || defaultConfig.background_color,
+                            set: (value) => window.elementSdk.setConfig({ background_color: value })
+                        },
+                        {
+                            get: () => config.surface_color || defaultConfig.surface_color,
+                            set: (value) => window.elementSdk.setConfig({ surface_color: value })
+                        },
+                        {
+                            get: () => config.text_color || defaultConfig.text_color,
+                            set: (value) => window.elementSdk.setConfig({ text_color: value })
+                        },
+                        {
+                            get: () => config.primary_action_color || defaultConfig.primary_action_color,
+                            set: (value) => window.elementSdk.setConfig({ primary_action_color: value })
+                        },
+                        {
+                            get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+                            set: (value) => window.elementSdk.setConfig({ secondary_action_color: value })
+                        }
+                    ],
+                    borderables: [],
+                    fontEditable: undefined,
+                    fontSizeable: undefined
+                }),
+                mapToEditPanelValues: (config) => new Map([
+                    ['headline', config.headline || defaultConfig.headline],
+                    ['subheadline', config.subheadline || defaultConfig.subheadline],
+                    ['cta_primary', config.cta_primary || defaultConfig.cta_primary],
+                    ['cta_secondary', config.cta_secondary || defaultConfig.cta_secondary],
+                    ['whatsapp_number', config.whatsapp_number || defaultConfig.whatsapp_number]
+                ])
+            });
+        }
+
+        // Initialize with default WhatsApp number
+        updateWhatsAppLinks(defaultConfig.whatsapp_number);
+    </script>
+
+</html>
