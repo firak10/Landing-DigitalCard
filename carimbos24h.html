@@ -40,6 +40,24 @@
         gtag('config', 'AW-17815396200');
     </script>
 
+    <!-- Event snippet for Contato conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17815396200/JM66CLr0pPgbEOi-ha9C',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
+
+
 
 </head>
 
@@ -122,6 +140,7 @@
                         </p>
                         <a href="https://wa.me/5542999001750?text=Gostaria%20de%20saber%20mais%20sobre%20Carimbos%20Personalizados"
                             target="_blank"
+                            onclick="gtag_report_conversion('https://wa.me/5542999001750?text=Gostaria%20de%20saber%20mais%20sobre%20Carimbos%20Personalizados');"
                             class="mt-auto inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-500 transition px-5 py-3 rounded-xl font-semibold">
                             Solicitar 🚀
                         </a>
@@ -140,6 +159,7 @@
                         </p>
                         <a href="https://wa.me/5542999001750?text=Gostaria%20de%20saber%20mais%20sobre%20Carimbos%20Autoentintados"
                             target="_blank"
+                            onclick="gtag_report_conversion('https://wa.me/5542999001750?text=Gostaria%20de%20saber%20mais%20sobre%20Carimbos%20Autoentintados');"
                             class="mt-auto inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-500 transition px-5 py-3 rounded-xl font-semibold">
                             Solicitar 🚀
                         </a>
@@ -157,6 +177,7 @@
                         </p>
                         <a href="https://wa.me/5542999001750?text=Gostaria%20de%20saber%20mais%20sobre%20Carimbos%20Pocket"
                             target="_blank"
+                            onclick="gtag_report_conversion('https://wa.me/5542999001750?text=Gostaria%20de%20saber%20mais%20sobre%20Carimbos%20Pocket');"
                             class="mt-auto inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-500 transition px-5 py-3 rounded-xl font-semibold">
                             Solicitar 🚀
                         </a>
@@ -176,9 +197,11 @@
         <div class="max-w-4xl mx-auto px-6 py-24 text-center relative z-10">
             <h2 class="text-3xl font-bold mb-6">Seu carimbo pronto no tempo certo</h2>
             <p class="text-lg text-gray-300 mb-10">Entre em contato agora e tenha seu carimbo em até 24 horas.</p>
-            <a href="https://wa.me/5542999001750?text=Olá! Preciso de um carimbo em 24h."
-                class="inline-flex items-center gap-3 bg-indigo-600 hover:bg-indigo-500 transition px-10 py-4 rounded-2xl font-semibold shadow-xl">Chamar
-                no WhatsApp 🌌</a>
+            <a href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Preciso%20de%20um%20carimbo%20em%2024h."
+                onclick="return gtag_report_conversion('https://wa.me/5542999001750?text=Ol%C3%A1!%20Preciso%20de%20um%20carimbo%20em%2024h.');"
+                class="inline-flex items-center gap-3 bg-indigo-600 hover:bg-indigo-500 transition px-10 py-4 rounded-2xl font-semibold shadow-xl">
+                Chamar no WhatsApp 🌌
+            </a>
         </div>
     </section>
 
@@ -200,7 +223,8 @@
     <!-- STARFIELD CANVAS -->
     <canvas id="starfield" class="fixed inset-0 z-0 pointer-events-none"></canvas>
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/5542999001750?text=Olá! Preciso de um carimbo em 24h." target="_blank"
+    <a href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Preciso%20de%20um%20carimbo%20em%2024h." target="_blank"
+        onclick="gtag_report_conversion('https://wa.me/5542999001750?text=Ol%C3%A1!%20Preciso%20de%20um%20carimbo%20em%2024h.');"
         class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-green-500 hover:bg-green-400 text-white px-5 py-4 rounded-full shadow-2xl transition">
 
         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 16 16">
@@ -211,6 +235,7 @@
         <span class="hidden sm:inline font-semibold">Fale no WhatsApp</span>
     </a>
     <!-- Floating WhatsApp Button Ends -->
+
     <script>
         const canvas = document.getElementById('starfield');
         const ctx = canvas.getContext('2d');
