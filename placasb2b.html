@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Placas inteligentes personalizadas em PVC com NFC e QR Code. Direcione seus clientes para Pix, Google, Instagram, WhatsApp e muito mais.">
+  <meta name="theme-color" content="#0b0f17">
+  <title>Digital Card | Placas Inteligentes NFC + QR Code</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fff7ed', 100: '#ffedd5', 400: '#fb923c',
+              500: '#f97316', 600: '#ea580c', 700: '#c2410c',
+              900: '#7c2d12'
+            }
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root { color-scheme: dark; }
+    body { font-family: Inter, sans-serif; background: #0b0f17; color: #f8fafc; }
+    .glass { background: rgba(20, 29, 43, .78); border: 1px solid rgba(255,255,255,.09); backdrop-filter: blur(14px); }
+    .section-glow { background: radial-gradient(ellipse at 50% 0%, rgba(249,115,22,.12), transparent 60%); }
+    .photo-frame { background: #111827; border: 1px solid rgba(255,255,255,.1); }
+    .soft-shadow { box-shadow: 0 24px 70px rgba(0,0,0,.35); }
+    .wa-float { box-shadow: 0 10px 30px rgba(34,197,94,.28); }
+    .faq-content[hidden] { display: none; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+
+<body class="antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- Faixa superior -->
+  <div class="bg-gradient-to-r from-brand-700 via-brand-600 to-amber-600 px-4 py-2.5 text-center text-xs sm:text-sm font-semibold text-white">
+    Placas inteligentes personalizadas • NFC + QR Code • Varejo e atacado
+  </div>
+
+  <!-- Cabeçalho -->
+  <header class="sticky top-0 z-50 glass border-b border-white/5">
+    <div class="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a href="#inicio" class="flex items-center gap-3" aria-label="Digital Card - início">
+        <img src="images/logo2.jpg" alt="Logo Digital Card" class="h-11 w-11 rounded-full border-2 border-brand-500 object-cover"
+             onerror="this.style.display='none'">
+        <span class="text-lg font-black tracking-wide text-white">DIGITAL<span class="text-brand-500">CARD</span>
+          <small class="mt-0.5 block text-[9px] font-semibold uppercase tracking-[.22em] text-slate-400">Smart NFC & QR Code</small>
+        </span>
+      </a>
+
+      <nav class="hidden items-center gap-7 text-sm font-semibold text-slate-300 md:flex">
+        <a href="#produto" class="transition hover:text-brand-400">O produto</a>
+        <a href="#como-funciona" class="transition hover:text-brand-400">Como funciona</a>
+        <a href="#aplicacoes" class="transition hover:text-brand-400">Aplicações</a>
+        <a href="#avaliacao" class="transition hover:text-brand-400">Avaliação</a>
+        <a href="#faq" class="transition hover:text-brand-400">Dúvidas</a>
+      </nav>
+
+      <a href="https://wa.me/5542999001750?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Digital%20Card%20e%20quero%20um%20or%C3%A7amento."
+         target="_blank" rel="noopener"
+         class="rounded-xl bg-brand-500 px-4 py-2.5 text-xs font-extrabold text-white shadow-lg shadow-brand-500/20 transition hover:bg-brand-600 sm:text-sm">
+        Pedir orçamento
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="inicio" class="section-glow relative overflow-hidden">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-2 lg:px-8">
+        <div class="text-center lg:text-left">
+          <span class="inline-flex items-center gap-2 rounded-full border border-brand-500/25 bg-brand-500/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-brand-400">
+            <i data-lucide="sparkles" class="h-4 w-4"></i>
+            Personalização para a sua marca
+          </span>
+
+          <h1 class="mt-6 text-4xl font-black leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Sua marca mais perto
+            <span class="bg-gradient-to-r from-brand-400 to-amber-300 bg-clip-text text-transparent">dos seus clientes.</span>
+          </h1>
+
+          <p class="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg lg:mx-0">
+            Placas inteligentes em PVC personalizadas com a identidade do seu negócio.
+            Com <strong class="text-white">NFC por aproximação e QR Code</strong>, seus clientes acessam
+            Pix, avaliações, redes sociais, cardápios e muito mais.
+          </p>
+
+          <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
+            <a href="https://wa.me/5542999001750?text=Ol%C3%A1%21%20Quero%20um%20or%C3%A7amento%20de%20placas%20personalizadas%20NFC."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-amber-500 px-7 py-4 font-extrabold text-white shadow-xl shadow-brand-500/20 transition hover:-translate-y-0.5 hover:brightness-110">
+              <i data-lucide="message-circle" class="h-5 w-5"></i>
+              Solicitar orçamento
+            </a>
+            <a href="#produto" class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900/70 px-6 py-4 font-bold text-slate-200 transition hover:border-brand-500">
+              Conhecer as placas
+              <i data-lucide="arrow-down" class="h-4 w-4 text-brand-400"></i>
+            </a>
+          </div>
+
+          <div class="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3 text-xs font-semibold text-slate-400 lg:justify-start">
+            <span class="flex items-center gap-2"><i data-lucide="palette" class="h-4 w-4 text-brand-400"></i> Arte personalizada</span>
+            <span class="flex items-center gap-2"><i data-lucide="radio" class="h-4 w-4 text-brand-400"></i> NFC + QR Code</span>
+            <span class="flex items-center gap-2"><i data-lucide="smartphone" class="h-4 w-4 text-brand-400"></i> Página digital inclusa</span>
+          </div>
+        </div>
+
+        <div class="relative mx-auto w-full max-w-xl">
+          <div class="absolute -inset-8 rounded-full bg-brand-500/10 blur-3xl"></div>
+          <figure class="photo-frame soft-shadow relative overflow-hidden rounded-3xl p-2">
+            <img src="images/placas%203.jpg" alt="Quatro exemplos de placas inteligentes personalizadas da Digital Card"
+                 class="max-h-[560px] w-full rounded-2xl object-contain"
+                 fetchpriority="high">
+            <figcaption class="flex items-center justify-between gap-3 px-3 py-4">
+              <span class="text-sm font-bold text-white">Sua identidade visual em cada detalhe</span>
+              <span class="rounded-full bg-brand-500/15 px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-brand-300">Feitas sob medida</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefícios rápidos -->
+    <section class="border-y border-slate-800 bg-slate-900/60">
+      <div class="mx-auto grid max-w-7xl gap-6 px-4 py-8 sm:grid-cols-3 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-4">
+          <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-500/10 text-brand-400"><i data-lucide="radio" class="h-5 w-5"></i></div>
+          <div><h2 class="text-sm font-extrabold text-white">Aproxime ou escaneie</h2><p class="mt-1 text-xs text-slate-400">NFC e QR Code na mesma placa.</p></div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-500/10 text-brand-400"><i data-lucide="paintbrush" class="h-5 w-5"></i></div>
+          <div><h2 class="text-sm font-extrabold text-white">Design personalizado</h2><p class="mt-1 text-xs text-slate-400">Com sua logo, cores e informações.</p></div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-500/10 text-brand-400"><i data-lucide="globe" class="h-5 w-5"></i></div>
+          <div><h2 class="text-sm font-extrabold text-white">Página digital</h2><p class="mt-1 text-xs text-slate-400">Seus principais links em um só lugar.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Produto e galeria -->
+    <section id="produto" class="py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto mb-12 max-w-3xl text-center">
+          <span class="text-xs font-extrabold uppercase tracking-[.2em] text-brand-400">Conheça o produto</span>
+          <h2 class="mt-3 text-3xl font-black text-white sm:text-4xl">Uma placa. Várias possibilidades.</h2>
+          <p class="mt-4 text-sm leading-relaxed text-slate-400 sm:text-base">
+            Não é uma placa genérica: o visual é desenvolvido para combinar com a comunicação da sua empresa.
+            Veja alguns exemplos e possibilidades de uso.
+          </p>
+        </div>
+
+        <div class="grid items-start gap-6 lg:grid-cols-2">
+          <figure class="photo-frame overflow-hidden rounded-3xl p-3">
+            <img src="images/placas%203.jpg" alt="Quatro modelos de placas NFC e QR Code com artes personalizadas"
+                 class="max-h-[620px] w-full rounded-2xl object-contain">
+            <figcaption class="px-2 pb-2 pt-4">
+              <h3 class="font-extrabold text-white">Personalização de verdade</h3>
+              <p class="mt-1 text-sm text-slate-400">Quatro exemplos de placas com identidades visuais diferentes.</p>
+            </figcaption>
+          </figure>
+
+          <div class="grid gap-6">
+            <figure class="photo-frame overflow-hidden rounded-3xl p-3">
+              <img src="images/placas%202.jpg" alt="Exemplo de placa personalizada para direcionar clientes ao Instagram"
+                   class="max-h-[310px] w-full rounded-2xl object-contain">
+              <figcaption class="px-2 pb-2 pt-3">
+                <h3 class="font-extrabold text-white">Mais seguidores e conexões</h3>
+                <p class="mt-1 text-sm text-slate-400">Facilite o acesso ao perfil do Instagram do seu negócio.</p>
+              </figcaption>
+            </figure>
+            <div class="glass rounded-3xl p-6 sm:p-7">
+              <div class="flex items-start gap-4">
+                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400"><i data-lucide="star" class="h-5 w-5"></i></div>
+                <div>
+                  <h3 class="font-extrabold text-white">Incentive avaliações no Google</h3>
+                  <p class="mt-2 text-sm leading-relaxed text-slate-400">Deixe o caminho para a avaliação mais simples: o cliente aproxima o celular ou aponta a câmera para o QR Code.</p>
+                </div>
+              </div>
+              <a href="#avaliacao" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-400 hover:text-brand-300">
+                Ver exemplo de avaliação <i data-lucide="arrow-right" class="h-4 w-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section id="como-funciona" class="border-y border-slate-800 bg-slate-900/45 py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto mb-14 max-w-3xl text-center">
+          <span class="text-xs font-extrabold uppercase tracking-[.2em] text-brand-400">Simples para você e para o cliente</span>
+          <h2 class="mt-3 text-3xl font-black text-white sm:text-4xl">Como funciona?</h2>
+          <p class="mt-4 text-sm text-slate-400 sm:text-base">A tecnologia trabalha de forma simples, sem exigir que o cliente instale um aplicativo específico.</p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="glass rounded-2xl p-7">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-500/10 text-brand-400"><i data-lucide="smartphone" class="h-6 w-6"></i></div>
+            <span class="text-xs font-black text-brand-400">01</span>
+            <h3 class="mt-2 text-lg font-extrabold text-white">Aproxime o celular</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-400">Em aparelhos compatíveis com NFC, basta aproximar o celular da área indicada na placa.</p>
+          </article>
+          <article class="glass rounded-2xl p-7">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-500/10 text-brand-400"><i data-lucide="qr-code" class="h-6 w-6"></i></div>
+            <span class="text-xs font-black text-brand-400">02</span>
+            <h3 class="mt-2 text-lg font-extrabold text-white">Ou leia o QR Code</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-400">A câmera do celular pode ler o código e abrir o mesmo destino digital.</p>
+          </article>
+          <article class="glass rounded-2xl p-7">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-500/10 text-brand-400"><i data-lucide="mouse-pointer-click" class="h-6 w-6"></i></div>
+            <span class="text-xs font-black text-brand-400">03</span>
+            <h3 class="mt-2 text-lg font-extrabold text-white">Acesse o que precisa</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-400">O cliente chega à página digital com os links e informações configurados para o seu negócio.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aplicações -->
+    <section id="aplicacoes" class="py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-brand-400">Sua empresa conectada</span>
+            <h2 class="mt-3 text-3xl font-black text-white sm:text-4xl">O que seus clientes podem acessar?</h2>
+            <p class="mt-4 leading-relaxed text-slate-400">A página digital pode reunir os principais canais e recursos do seu negócio em um único endereço.</p>
+
+            <div class="mt-8 grid grid-cols-2 gap-3">
+              <div class="glass rounded-xl p-4"><i data-lucide="wallet" class="h-5 w-5 text-emerald-400"></i><h3 class="mt-3 text-sm font-extrabold text-white">Pix</h3><p class="mt-1 text-xs text-slate-400">Acesso à chave Pix.</p></div>
+              <div class="glass rounded-xl p-4"><i data-lucide="star" class="h-5 w-5 text-amber-400"></i><h3 class="mt-3 text-sm font-extrabold text-white">Google</h3><p class="mt-1 text-xs text-slate-400">Link para avaliações.</p></div>
+              <div class="glass rounded-xl p-4"><i data-lucide="instagram" class="h-5 w-5 text-pink-400"></i><h3 class="mt-3 text-sm font-extrabold text-white">Redes sociais</h3><p class="mt-1 text-xs text-slate-400">Instagram e outros perfis.</p></div>
+              <div class="glass rounded-xl p-4"><i data-lucide="message-circle" class="h-5 w-5 text-green-400"></i><h3 class="mt-3 text-sm font-extrabold text-white">WhatsApp</h3><p class="mt-1 text-xs text-slate-400">Contato direto.</p></div>
+              <div class="glass rounded-xl p-4"><i data-lucide="utensils" class="h-5 w-5 text-brand-400"></i><h3 class="mt-3 text-sm font-extrabold text-white">Cardápio</h3><p class="mt-1 text-xs text-slate-400">Menu ou catálogo digital.</p></div>
+              <div class="glass rounded-xl p-4"><i data-lucide="globe" class="h-5 w-5 text-sky-400"></i><h3 class="mt-3 text-sm font-extrabold text-white">Site</h3><p class="mt-1 text-xs text-slate-400">Seu endereço na internet.</p></div>
+            </div>
+          </div>
+
+          <div class="glass rounded-3xl p-7 sm:p-9">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-500/10 text-brand-400"><i data-lucide="layers" class="h-6 w-6"></i></div>
+            <h3 class="mt-5 text-2xl font-black text-white">Do balcão à parede</h3>
+            <p class="mt-3 text-sm leading-relaxed text-slate-400">As placas podem ser pensadas para diferentes pontos de contato com o público: balcões, caixas, mesas, recepções, vitrines e paredes.</p>
+            <ul class="mt-6 space-y-3 text-sm text-slate-300">
+              <li class="flex gap-3"><i data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-brand-400"></i><span>Arte alinhada à identidade visual da empresa.</span></li>
+              <li class="flex gap-3"><i data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-brand-400"></i><span>Opção de suporte em acrílico para balcões e mesas.</span></li>
+              <li class="flex gap-3"><i data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-brand-400"></i><span>Sem bateria para alimentar a função NFC.</span></li>
+            </ul>
+            <a href="https://wa.me/5542999001750?text=Ol%C3%A1%21%20Quero%20conversar%20sobre%20os%20modelos%20de%20placas%20da%20Digital%20Card."
+               target="_blank" rel="noopener"
+               class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-brand-500/40 bg-brand-500/10 px-5 py-3.5 text-sm font-extrabold text-brand-300 transition hover:bg-brand-500/20">
+              Consultar modelos e suportes <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Personalização e atacado -->
+    <section class="border-y border-brand-500/20 bg-gradient-to-r from-brand-900/20 via-slate-900 to-amber-900/10 py-20">
+      <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[.2em] text-brand-400">Do seu jeito</span>
+          <h2 class="mt-3 text-3xl font-black text-white sm:text-4xl">Você envia a ideia. A gente desenvolve a arte.</h2>
+          <p class="mt-4 leading-relaxed text-slate-300">Envie sua logo, suas cores e os links que deseja disponibilizar. A equipe prepara uma proposta visual para você conferir antes da fabricação.</p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="glass rounded-2xl p-5"><span class="text-2xl font-black text-brand-400">1</span><h3 class="mt-2 font-extrabold text-white">Envie sua marca</h3><p class="mt-1 text-sm text-slate-400">Logo, cores e informações.</p></div>
+          <div class="glass rounded-2xl p-5"><span class="text-2xl font-black text-brand-400">2</span><h3 class="mt-2 font-extrabold text-white">Criamos o layout</h3><p class="mt-1 text-sm text-slate-400">Arte pensada para o seu negócio.</p></div>
+          <div class="glass rounded-2xl p-5"><span class="text-2xl font-black text-brand-400">3</span><h3 class="mt-2 font-extrabold text-white">Você aprova</h3><p class="mt-1 text-sm text-slate-400">Confira a prévia antes da produção.</p></div>
+          <div class="glass rounded-2xl p-5"><span class="text-2xl font-black text-brand-400">4</span><h3 class="mt-2 font-extrabold text-white">Produzimos seu pedido</h3><p class="mt-1 text-sm text-slate-400">Placas personalizadas para você.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="atacado" class="py-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="glass flex flex-col gap-7 rounded-3xl p-7 sm:p-10 lg:flex-row lg:items-center lg:justify-between">
+          <div class="max-w-2xl">
+            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-brand-400">Varejo e atacado</span>
+            <h2 class="mt-3 text-2xl font-black text-white sm:text-3xl">Precisa de várias placas para sua empresa ou rede?</h2>
+            <p class="mt-3 text-sm leading-relaxed text-slate-400">Consulte condições para pedidos em quantidade, franquias, filiais e projetos personalizados.</p>
+          </div>
+          <a href="https://wa.me/5542999001750?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20um%20or%C3%A7amento%20de%20placas%20em%20quantidade%20(atacado)."
+             target="_blank" rel="noopener"
+             class="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-brand-500 px-6 py-4 font-extrabold text-white transition hover:bg-brand-600">
+            Solicitar cotação em quantidade <i data-lucide="arrow-up-right" class="h-5 w-5"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prova social real: imagem de avaliação Google -->
+    <section id="avaliacao" class="border-y border-slate-800 bg-slate-900/45 py-20">
+      <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[.2em] text-brand-400">Quem compra, conhece</span>
+          <h2 class="mt-3 text-3xl font-black text-white sm:text-4xl">A experiência de quem já avaliou.</h2>
+          <p class="mt-4 leading-relaxed text-slate-400">Veja o registro de avaliação compartilhado pela Digital Card. A confiança é construída com experiências reais.</p>
+          <a href="https://www.google.com/search?q=Digital+Card+Ponta+Grossa"
+             target="_blank" rel="noopener"
+             class="mt-6 inline-flex items-center gap-2 text-sm font-extrabold text-brand-400 transition hover:text-brand-300">
+            Encontrar a Digital Card no Google <i data-lucide="external-link" class="h-4 w-4"></i>
+          </a>
+        </div>
+        <figure class="photo-frame mx-auto w-full max-w-lg overflow-hidden rounded-3xl p-3 soft-shadow">
+          <img src="images/placas%201.jpg" alt="Imagem de avaliação do Google compartilhada pela Digital Card"
+               class="max-h-[520px] w-full rounded-2xl object-contain">
+          <figcaption class="px-2 pb-1 pt-4 text-center text-xs text-slate-500">Imagem de avaliação do Google.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 text-center">
+          <span class="text-xs font-extrabold uppercase tracking-[.2em] text-brand-400">Perguntas frequentes</span>
+          <h2 class="mt-3 text-3xl font-black text-white sm:text-4xl">Tire suas dúvidas</h2>
+        </div>
+
+        <div class="space-y-3">
+          <article class="faq-item glass overflow-hidden rounded-2xl">
+            <button type="button" class="faq-btn flex w-full items-center justify-between gap-4 p-5 text-left font-bold text-white" aria-expanded="false">
+              <span>Preciso ter a arte pronta?</span><i data-lucide="plus" class="h-5 w-5 shrink-0 text-brand-400"></i>
+            </button>
+            <div class="faq-content px-5 pb-5 text-sm leading-relaxed text-slate-400" hidden>
+              Não. Você pode enviar sua logo, cores e informações do negócio para a equipe desenvolver uma proposta de arte personalizada.
+            </div>
+          </article>
+
+          <article class="faq-item glass overflow-hidden rounded-2xl">
+            <button type="button" class="faq-btn flex w-full items-center justify-between gap-4 p-5 text-left font-bold text-white" aria-expanded="false">
+              <span>O cliente precisa instalar um aplicativo?</span><i data-lucide="plus" class="h-5 w-5 shrink-0 text-brand-400"></i>
+            </button>
+            <div class="faq-content px-5 pb-5 text-sm leading-relaxed text-slate-400" hidden>
+              Não é necessário instalar um aplicativo específico. Em celulares compatíveis, o NFC pode abrir o link por aproximação. O QR Code é uma alternativa pela câmera do aparelho.
+            </div>
+          </article>
+
+          <article class="faq-item glass overflow-hidden rounded-2xl">
+            <button type="button" class="faq-btn flex w-full items-center justify-between gap-4 p-5 text-left font-bold text-white" aria-expanded="false">
+              <span>O NFC precisa de bateria?</span><i data-lucide="plus" class="h-5 w-5 shrink-0 text-brand-400"></i>
+            </button>
+            <div class="faq-content px-5 pb-5 text-sm leading-relaxed text-slate-400" hidden>
+              Não. A função NFC da placa não precisa de bateria nem de recarga.
+            </div>
+          </article>
+
+          <article class="faq-item glass overflow-hidden rounded-2xl">
+            <button type="button" class="faq-btn flex w-full items-center justify-between gap-4 p-5 text-left font-bold text-white" aria-expanded="false">
+              <span>Posso alterar os links depois?</span><i data-lucide="plus" class="h-5 w-5 shrink-0 text-brand-400"></i>
+            </button>
+            <div class="faq-content px-5 pb-5 text-sm leading-relaxed text-slate-400" hidden>
+              A página digital é dinâmica e permite atualizar informações e links sem precisar trocar a placa física. Consulte a equipe sobre os detalhes de edição e suporte.
+            </div>
+          </article>
+
+          <article class="faq-item glass overflow-hidden rounded-2xl">
+            <button type="button" class="faq-btn flex w-full items-center justify-between gap-4 p-5 text-left font-bold text-white" aria-expanded="false">
+              <span>O suporte de acrílico acompanha a placa?</span><i data-lucide="plus" class="h-5 w-5 shrink-0 text-brand-400"></i>
+            </button>
+            <div class="faq-content px-5 pb-5 text-sm leading-relaxed text-slate-400" hidden>
+              O suporte em acrílico é opcional. Informe no orçamento se deseja a placa com suporte para balcão ou mesa.
+            </div>
+          </article>
+
+          <article class="faq-item glass overflow-hidden rounded-2xl">
+            <button type="button" class="faq-btn flex w-full items-center justify-between gap-4 p-5 text-left font-bold text-white" aria-expanded="false">
+              <span>Vocês fazem pedidos em quantidade?</span><i data-lucide="plus" class="h-5 w-5 shrink-0 text-brand-400"></i>
+            </button>
+            <div class="faq-content px-5 pb-5 text-sm leading-relaxed text-slate-400" hidden>
+              Sim. Entre em contato para consultar condições para lotes, empresas, franquias e filiais.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section id="contato" class="section-glow border-t border-slate-800 py-20">
+      <div class="mx-auto max-w-4xl px-4 text-center sm:px-6">
+        <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-500/15 text-brand-400"><i data-lucide="message-circle" class="h-7 w-7"></i></div>
+        <h2 class="mt-6 text-3xl font-black text-white sm:text-5xl">Vamos criar a sua placa?</h2>
+        <p class="mx-auto mt-5 max-w-2xl leading-relaxed text-slate-400">Conte um pouco sobre seu negócio e o que deseja divulgar. Nossa equipe conversa com você para montar uma solução personalizada.</p>
+        <a href="https://wa.me/5542999001750?text=Ol%C3%A1%21%20Quero%20criar%20minhas%20placas%20personalizadas%20com%20NFC%20e%20QR%20Code."
+           target="_blank" rel="noopener"
+           class="mt-8 inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-brand-500 to-amber-500 px-8 py-4 text-base font-black text-white shadow-xl shadow-brand-500/20 transition hover:-translate-y-0.5 hover:brightness-110">
+          <i data-lucide="message-circle" class="h-5 w-5"></i>
+          Chamar no WhatsApp
+        </a>
+        <p class="mt-4 text-sm text-slate-500">(42) 99900-1750</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="border-t border-slate-800 bg-slate-950 py-10">
+    <div class="mx-auto flex max-w-7xl flex-col gap-7 px-4 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+      <div>
+        <div class="text-lg font-black text-white">DIGITAL<span class="text-brand-500">CARD</span></div>
+        <p class="mt-2 text-xs text-slate-500">Placas inteligentes personalizadas com NFC + QR Code.</p>
+      </div>
+      <div class="flex flex-col gap-2 text-xs text-slate-400 md:items-end">
+        <a href="https://wa.me/5542999001750" target="_blank" rel="noopener" class="transition hover:text-brand-400">(42) 99900-1750</a>
+        <a href="mailto:contato@digitalcardpg.com" class="transition hover:text-brand-400">contato@digitalcardpg.com</a>
+        <a href="https://digitalcardpg.com" target="_blank" rel="noopener" class="transition hover:text-brand-400">digitalcardpg.com</a>
+      </div>
+    </div>
+    <div class="mx-auto mt-8 max-w-7xl border-t border-slate-900 px-4 pt-5 text-center text-[11px] text-slate-600 sm:px-6 lg:px-8">
+      © <span id="year"></span> Digital Card. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <!-- Atalho flutuante do WhatsApp -->
+  <a href="https://wa.me/5542999001750?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Digital%20Card."
+     target="_blank" rel="noopener" aria-label="Conversar com a Digital Card pelo WhatsApp"
+     class="wa-float fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white transition hover:scale-105 hover:bg-green-600">
+    <i data-lucide="message-circle" class="h-7 w-7"></i>
+  </a>
+
+  <script>
+    // Ícones
+    if (window.lucide) lucide.createIcons();
+
+    // Ano automático
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // FAQ acessível: abre/fecha cada resposta
+    document.querySelectorAll('.faq-btn').forEach((button) => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!isOpen));
+        content.hidden = isOpen;
+
+        const icon = button.querySelector('i');
+        if (icon) {
+          icon.setAttribute('data-lucide', isOpen ? 'plus' : 'minus');
+          if (window.lucide) lucide.createIcons();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
