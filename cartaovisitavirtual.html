@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -8,19 +7,22 @@
 
     <title>Digital Card | Cartão de Visita NFC Personalizado em PVC</title>
 
-    <meta name="description" content="Compartilhe seus contatos com um toque. Cartões de visita personalizados em PVC com tecnologia NFC, QR Code e perfil digital exclusivo. Conheça a Digital Card.">
+    <meta name="description"
+        content="Compartilhe seus contatos com um toque. Cartões de visita personalizados em PVC com tecnologia NFC, QR Code e perfil digital exclusivo. Conheça a Digital Card.">
 
     <meta name="theme-color" content="#0f1217">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Digital Card | Seu contato a um toque de distância">
-    <meta property="og:description" content="Cartões de visita premium em PVC com NFC e QR Code. Apresente sua marca de uma maneira moderna e profissional.">
+    <meta property="og:description"
+        content="Cartões de visita premium em PVC com NFC e QR Code. Apresente sua marca de uma maneira moderna e profissional.">
     <meta property="og:image" content="images/logo 2.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -187,11 +189,9 @@
             left: 50%;
             transform: translateX(-50%);
 
-            background: radial-gradient(
-                circle,
-                rgba(255, 123, 0, .09),
-                transparent 70%
-            );
+            background: radial-gradient(circle,
+                    rgba(255, 123, 0, .09),
+                    transparent 70%);
 
             pointer-events: none;
         }
@@ -351,11 +351,9 @@
             align-items: center;
             justify-content: center;
 
-            background: linear-gradient(
-                145deg,
-                #1a202a,
-                #141922
-            );
+            background: linear-gradient(145deg,
+                    #1a202a,
+                    #141922);
 
             border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
@@ -367,7 +365,7 @@
             margin-bottom: 5px;
         }
 
-        .demo-panel > p {
+        .demo-panel>p {
             color: var(--text-muted);
             font-size: .88rem;
             text-align: center;
@@ -854,11 +852,9 @@
 
             text-align: center;
 
-            background: linear-gradient(
-                135deg,
-                #252c37,
-                #171c24
-            );
+            background: linear-gradient(135deg,
+                    #252c37,
+                    #171c24);
 
             border: 1px solid var(--border-color);
             border-radius: 22px;
@@ -874,11 +870,9 @@
             right: -100px;
             top: -180px;
 
-            background: radial-gradient(
-                circle,
-                rgba(255, 123, 0, .18),
-                transparent 70%
-            );
+            background: radial-gradient(circle,
+                    rgba(255, 123, 0, .18),
+                    transparent 70%);
 
             pointer-events: none;
         }
@@ -971,13 +965,13 @@
 
         .whatsapp-float {
             position: fixed;
-            z-index: 90;
+            z-index: 999;
 
-            right: 24px;
-            bottom: 24px;
+            right: max(16px, env(safe-area-inset-right));
+            bottom: max(16px, env(safe-area-inset-bottom));
 
-            width: 58px;
-            height: 58px;
+            width: 54px;
+            height: 54px;
 
             display: flex;
             align-items: center;
@@ -989,7 +983,7 @@
             border-radius: 50%;
             text-decoration: none;
 
-            font-size: 1.8rem;
+            font-size: 1.7rem;
 
             box-shadow: 0 5px 25px rgba(0, 0, 0, .35);
             transition: .25s ease;
@@ -998,6 +992,12 @@
         .whatsapp-float:hover {
             transform: scale(1.08);
             background: #20bd5a;
+        }
+
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: clip;
         }
 
         /* RESPONSIVIDADE */
@@ -1113,7 +1113,7 @@
                 font-size: 1.12rem;
             }
 
-            .demo-panel > p {
+            .demo-panel>p {
                 font-size: .8rem;
             }
 
@@ -1152,6 +1152,7 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
+
             *,
             *::before,
             *::after {
@@ -1171,25 +1172,15 @@
         <nav class="nav-container">
 
             <a href="#" class="logo-container" aria-label="Digital Card - Página inicial">
-                <img
-                    src="images/logo 2.jpg"
-                    alt="Logo Digital Card"
-                    class="logo-img"
-                    width="43"
-                    height="43"
-                >
+                <img src="images/logo 2.jpg" alt="Logo Digital Card" class="logo-img" width="43" height="43">
 
                 <div class="logo-text">
                     DIGITAL<span>CARD</span>
                 </div>
             </a>
 
-            <a
-                href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20os%20cart%C3%B5es%20NFC%20da%20Digital%20Card."
-                target="_blank"
-                rel="noopener noreferrer"
-                class="nav-cta"
-            >
+            <a href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20os%20cart%C3%B5es%20NFC%20da%20Digital%20Card."
+                target="_blank" rel="noopener noreferrer" class="nav-cta">
                 <i class="fab fa-whatsapp"></i>
                 Fazer pedido
             </a>
@@ -1227,12 +1218,8 @@
 
                     <div class="hero-actions">
 
-                        <a
-                            href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn-primary"
-                        >
+                        <a href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                            target="_blank" rel="noopener noreferrer" class="btn-primary">
                             <i class="fab fa-whatsapp"></i>
                             Solicitar orçamento
                         </a>
@@ -1253,24 +1240,14 @@
 
                     <div class="demo-selector">
 
-                        <button
-                            class="selector-btn active"
-                            id="btn-model-1"
-                            type="button"
-                            aria-pressed="true"
-                            onclick="switchModel(1)"
-                        >
+                        <button class="selector-btn active" id="btn-model-1" type="button" aria-pressed="true"
+                            onclick="switchModel(1)">
                             <i class="fas fa-address-card"></i>
                             Cartão personalizado
                         </button>
 
-                        <button
-                            class="selector-btn"
-                            id="btn-model-2"
-                            type="button"
-                            aria-pressed="false"
-                            onclick="switchModel(2)"
-                        >
+                        <button class="selector-btn" id="btn-model-2" type="button" aria-pressed="false"
+                            onclick="switchModel(2)">
                             <i class="fas fa-id-card"></i>
                             Cartão demonstrativo
                         </button>
@@ -1290,38 +1267,23 @@
                                 Conheça o acabamento e os dois lados do cartão.
                             </p>
 
-                            <button
-                                class="flip-card"
-                                id="flip-card"
-                                type="button"
-                                aria-label="Girar cartão para visualizar o verso"
-                                aria-pressed="false"
-                                onclick="toggleCard()"
-                            >
+                            <button class="flip-card" id="flip-card" type="button"
+                                aria-label="Girar cartão para visualizar o verso" aria-pressed="false"
+                                onclick="toggleCard()">
 
                                 <div class="flip-card-inner">
 
                                     <div class="flip-card-front">
 
-                                        <img
-                                            id="card-frente-img"
-                                            src="images/card1frente.jpg"
-                                            alt="Frente do cartão Digital Card personalizado"
-                                            width="340"
-                                            height="215"
-                                        >
+                                        <img id="card-frente-img" src="images/card1frente.jpg"
+                                            alt="Frente do cartão Digital Card personalizado" width="340" height="215">
 
                                     </div>
 
                                     <div class="flip-card-back">
 
-                                        <img
-                                            id="card-verso-img"
-                                            src="images/card1verso.jpg"
-                                            alt="Verso do cartão Digital Card com QR Code"
-                                            width="340"
-                                            height="215"
-                                        >
+                                        <img id="card-verso-img" src="images/card1verso.jpg"
+                                            alt="Verso do cartão Digital Card com QR Code" width="340" height="215">
 
                                     </div>
 
@@ -1355,23 +1317,14 @@
 
                                 <div class="phone-notch"></div>
 
-                                <iframe
-                                    id="iframe-preview"
-                                    src="https://digitalcard-cartao.aproximeaqui.com.br/"
+                                <iframe id="iframe-preview" src="https://digitalcard-cartao.aproximeaqui.com.br/"
                                     title="Demonstração do perfil digital Digital Card"
-                                    referrerpolicy="strict-origin-when-cross-origin"
-                                    allowfullscreen
-                                ></iframe>
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
                             </div>
 
-                            <a
-                                id="open-demo"
-                                href="https://digitalcard-cartao.aproximeaqui.com.br/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="demo-open-link"
-                            >
+                            <a id="open-demo" href="https://digitalcard-cartao.aproximeaqui.com.br/" target="_blank"
+                                rel="noopener noreferrer" class="demo-open-link">
                                 <i class="fas fa-external-link-alt"></i>
                                 Experimentar perfil completo
                             </a>
@@ -1955,12 +1908,8 @@
                         e perfil digital exclusivo.
                     </p>
 
-                    <a
-                        href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Digital%20Card%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20do%20cart%C3%A3o%20NFC."
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn-primary"
-                    >
+                    <a href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Digital%20Card%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20do%20cart%C3%A3o%20NFC."
+                        target="_blank" rel="noopener noreferrer" class="btn-primary">
                         <i class="fab fa-whatsapp"></i>
                         Solicitar meu orçamento
                     </a>
@@ -1982,13 +1931,7 @@
 
             <a href="#" class="logo-container">
 
-                <img
-                    src="images/logo 2.jpg"
-                    alt="Digital Card"
-                    class="logo-img"
-                    width="43"
-                    height="43"
-                >
+                <img src="images/logo 2.jpg" alt="Digital Card" class="logo-img" width="43" height="43">
 
                 <div class="logo-text">
                     DIGITAL<span>CARD</span>
@@ -1999,31 +1942,17 @@
 
             <div class="social-links">
 
-                <a
-                    href="https://wa.me/5542999001750"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="WhatsApp"
-                    title="WhatsApp"
-                >
+                <a href="https://wa.me/5542999001750" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+                    title="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
 
-                <a
-                    href="https://instagram.com/digitalcardpg"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram"
-                    title="Instagram"
-                >
+                <a href="https://instagram.com/digitalcardpg" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram" title="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
 
-                <a
-                    href="mailto:contato@digitalcardpg.com"
-                    aria-label="E-mail"
-                    title="E-mail"
-                >
+                <a href="mailto:contato@digitalcardpg.com" aria-label="E-mail" title="E-mail">
                     <i class="fas fa-envelope"></i>
                 </a>
 
@@ -2034,11 +1963,7 @@
 
                 <p>
                     Desenvolvido por
-                    <a
-                        href="https://instagram.com/digitalcardpg"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
+                    <a href="https://instagram.com/digitalcardpg" target="_blank" rel="noopener noreferrer">
                         Digital Card
                     </a>
                 </p>
@@ -2057,14 +1982,9 @@
 
     <!-- WHATSAPP FLUTUANTE -->
 
-    <a
-        href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20os%20cart%C3%B5es%20NFC%20da%20Digital%20Card."
-        target="_blank"
-        rel="noopener noreferrer"
-        class="whatsapp-float"
-        aria-label="Falar com a Digital Card pelo WhatsApp"
-        title="Fale conosco"
-    >
+    <a href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20os%20cart%C3%B5es%20NFC%20da%20Digital%20Card."
+        target="_blank" rel="noopener noreferrer" class="whatsapp-float"
+        aria-label="Falar com a Digital Card pelo WhatsApp" title="Fale conosco">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -2175,4 +2095,5 @@
     </script>
 
 </body>
+
 </html>
