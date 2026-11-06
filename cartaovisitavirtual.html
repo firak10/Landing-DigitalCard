@@ -1,845 +1,605 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digital Card | Cartão de Visita Premium PVC + NFC</title>
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-  <!-- Google Fonts (Inter) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Card - Cartões de Visita Premium PVC com NFC</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --bg-dark: #0f1217;
+      --bg-card: #171c24;
+      --bg-card-hover: #1e2430;
+      --border-color: #2a3240;
+      --accent-orange: #ff7b00;
+      --accent-orange-hover: #e06d00;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --radius-lg: 16px;
+      --radius-md: 10px;
+    }
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              dark: '#12161c',
-              card: '#1b222c',
-              border: '#2a3444',
-              orange: '#ff7b00',
-              orangeHover: '#e06c00',
-              orangeLight: 'rgba(255, 123, 0, 0.15)',
-              text: '#f1f5f9',
-              muted: '#94a3b8'
-            }
-          },
-          animation: {
-            'pulse-glow': 'pulseGlow 3s infinite ease-in-out',
-            'float': 'float 6s infinite ease-in-out',
-            'nfc-wave': 'nfcWave 2s infinite linear'
-          },
-          keyframes: {
-            pulseGlow: {
-              '0%, 100%': { boxShadow: '0 0 25px rgba(255, 123, 0, 0.3)' },
-              '50%': { boxShadow: '0 0 45px rgba(255, 123, 0, 0.65)' }
-            },
-            float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-10px)' }
-            },
-            nfcWave: {
-              '0%': { opacity: '0.2', transform: 'scale(0.95)' },
-              '50%': { opacity: '0.9', transform: 'scale(1.05)' },
-              '100%': { opacity: '0.2', transform: 'scale(0.95)' }
-            }
-          }
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: rgba(15, 18, 23, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 2rem;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .logo-img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .logo-text {
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.5px;
+    }
+
+    .logo-text span {
+      color: var(--accent-orange);
+    }
+
+    .nav-cta {
+      background-color: var(--accent-orange);
+      color: #fff;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-cta:hover {
+      background-color: var(--accent-orange-hover);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-title-area {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 3rem auto;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 123, 0, 0.15);
+      color: var(--accent-orange);
+      border: 1px solid rgba(255, 123, 0, 0.3);
+      padding: 0.35rem 1rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero-title-area h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title-area h1 span {
+      color: var(--accent-orange);
+    }
+
+    .hero-title-area p {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+    }
+
+    .model-selector {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 2.5rem;
+    }
+
+    .selector-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.75rem 1.75rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .selector-btn.active {
+      background: var(--accent-orange);
+      color: #fff;
+      border-color: var(--accent-orange);
+      box-shadow: 0 4px 20px rgba(255, 123, 0, 0.3);
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .demo-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
       }
     }
-  </script>
 
-  <style>
-    /* 3D Card Flip Styles */
-    .perspective-1000 {
+    .demo-card-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .demo-card-container h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .demo-card-container p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 340px;
+      height: 215px;
       perspective: 1000px;
+      margin: 0 auto;
+      cursor: pointer;
     }
-    .transform-style-3d {
+
+    @media (max-width: 400px) {
+      .flip-card {
+        width: 290px;
+        height: 183px;
+      }
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       transform-style: preserve-3d;
-      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+      border-radius: 14px;
     }
-    .backface-hidden {
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-    }
-    .rotate-y-180 {
+
+    .flip-card:hover .flip-card-inner,
+    .flip-card.flipped .flip-card-inner {
       transform: rotateY(180deg);
     }
 
-    /* Metallic Shimmer Effect */
-    .metallic-bg {
-      background: linear-gradient(135deg, #242c37 0%, #171d25 50%, #202732 100%);
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .flip-card-front img, .flip-card-back img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+
+    .flip-hint {
+      margin-top: 1.5rem;
+      color: var(--accent-orange);
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .smartphone-frame {
+      position: relative;
+      width: 320px;
+      height: 620px;
+      background: #000;
+      border-radius: 40px;
+      border: 8px solid #2a2e37;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .phone-notch {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 130px;
+      height: 24px;
+      background: #2a2e37;
+      border-bottom-left-radius: 14px;
+      border-bottom-right-radius: 14px;
+      z-index: 10;
+    }
+
+    .smartphone-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #fff;
+    }
+
+    .features {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      font-weight: 800;
+    }
+
+    .section-title h2 span {
+      color: var(--accent-orange);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 123, 0, 0.15);
+      color: var(--accent-orange);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .feature-card h4 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .cta-banner {
+      background: linear-gradient(135deg, #1e2430 0%, #171c24 100%);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 3.5rem 2rem;
+      text-align: center;
       position: relative;
       overflow: hidden;
     }
-    .metallic-bg::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(
-        45deg,
-        transparent 45%,
-        rgba(255, 255, 255, 0.08) 50%,
-        transparent 55%
-      );
-      transform: rotate(30deg);
-      pointer-events: none;
-      animation: shine 7s infinite linear;
-    }
-    @keyframes shine {
-      0% { transform: translateX(-100%) rotate(30deg); }
-      100% { transform: translateX(100%) rotate(30deg); }
+
+    .cta-banner h2 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
     }
 
-    /* Custom Scrollbar for phone mockup */
-    .mockup-scrollbar::-webkit-scrollbar {
-      width: 4px;
+    .cta-banner p {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      font-size: 1.1rem;
     }
-    .mockup-scrollbar::-webkit-scrollbar-track {
-      background: #12161c;
+
+    .btn-large {
+      background-color: var(--accent-orange);
+      color: #fff;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(255, 123, 0, 0.4);
     }
-    .mockup-scrollbar::-webkit-scrollbar-thumb {
-      background: #ff7b00;
-      border-radius: 4px;
+
+    .btn-large:hover {
+      background-color: var(--accent-orange-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(255, 123, 0, 0.5);
+    }
+
+    footer {
+      background-color: #0b0d11;
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .social-links a {
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--accent-orange);
+    }
+
+    .footer-copy {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-copy a {
+      color: var(--accent-orange);
+      text-decoration: none;
     }
   </style>
 </head>
-<body class="bg-brand-dark text-brand-text font-sans antialiased selection:bg-brand-orange selection:text-white overflow-x-hidden">
+<body>
 
-  <!-- ================= NAVBAR ================= -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-border/50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        
-        <!-- Logo -->
-        <a href="#" class="flex items-center gap-3 group">
-          <div class="relative w-11 h-11 rounded-full p-[2px] bg-gradient-to-tr from-brand-orange via-orange-400 to-amber-200 transition-transform group-hover:scale-105">
-            <!-- Logo Icon Representation matching uploaded image -->
-            <div class="w-full h-full bg-[#1e252d] rounded-full flex flex-col items-center justify-center p-1 border border-gray-600 shadow-inner overflow-hidden">
-              <i class="fa-solid fa-wifi text-brand-orange text-xs transform -rotate-45 mb-[1px]"></i>
-              <span class="text-[7px] font-extrabold tracking-tighter text-white leading-none">DIGITAL</span>
-              <span class="text-[6px] font-bold tracking-tighter text-brand-orange leading-none">CARD</span>
-            </div>
-          </div>
-          <div class="flex flex-col">
-            <span class="font-extrabold text-xl tracking-tight text-white flex items-center gap-1">
-              DIGITAL<span class="text-brand-orange">CARD</span>
-            </span>
-            <span class="text-[10px] tracking-widest text-brand-muted uppercase -mt-1 font-semibold">Tecnologia NFC Premium</span>
-          </div>
-        </a>
-
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-brand-muted">
-          <a href="#demo" class="hover:text-brand-orange transition-colors">Demonstração</a>
-          <a href="#recursos" class="hover:text-brand-orange transition-colors">Vantagens</a>
-          <a href="#como-funciona" class="hover:text-brand-orange transition-colors">Como Funciona</a>
-          <a href="#contato" class="hover:text-brand-orange transition-colors">Contato</a>
-        </nav>
-
-        <!-- CTA Header Button -->
-        <div class="hidden sm:flex items-center gap-4">
-          <a href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20meu%20Cart%C3%A3o%20de%20Visita%20Premium%20em%20PVC%20com%20NFC." 
-             target="_blank"
-             class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm bg-brand-orange text-white hover:bg-brand-orangeHover shadow-lg shadow-brand-orange/20 transition-all hover:scale-[1.02] active:scale-95">
-            <i class="fa-brands fa-whatsapp text-lg"></i>
-            <span>Pedir Agora</span>
-          </a>
-        </div>
-
-        <!-- Mobile Menu Toggle Button -->
-        <button id="mobileMenuBtn" class="md:hidden text-brand-text hover:text-brand-orange p-2">
-          <i class="fa-solid fa-bars text-2xl"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Nav Box -->
-    <div id="mobileMenu" class="hidden md:hidden bg-brand-card border-b border-brand-border px-4 pt-2 pb-6 space-y-3">
-      <a href="#demo" class="block py-2 text-brand-muted hover:text-brand-orange font-medium">Demonstração</a>
-      <a href="#recursos" class="block py-2 text-brand-muted hover:text-brand-orange font-medium">Vantagens</a>
-      <a href="#como-funciona" class="block py-2 text-brand-muted hover:text-brand-orange font-medium">Como Funciona</a>
-      <a href="#contato" class="block py-2 text-brand-muted hover:text-brand-orange font-medium">Contato</a>
-      <a href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20meu%20Cart%C3%A3o%20de%20Visita%20Premium%20em%20PVC%20com%20NFC." 
-         target="_blank"
-         class="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold bg-brand-orange text-white mt-4">
-        <i class="fa-brands fa-whatsapp text-lg"></i>
-        <span>Fazer Pedido no WhatsApp</span>
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo-container">
+        <img src="logo redonda.jpg" alt="Digital Card Logo" class="logo-img">
+        <div class="logo-text">DIGITAL<span>CARD</span></div>
+      </a>
+      <a href="https://wa.me/5542999001750?text=Olá!%20Gostaria%20de%20pedir%20um%20cartão%20de%20visita%20em%20PVC%20com%20NFC." target="_blank" class="nav-cta">
+        <i class="fab fa-whatsapp"></i> Fazer Pedido
       </a>
     </div>
   </header>
 
-  <!-- ================= HERO SECTION ================= -->
-  <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-    <!-- Subtle Background Glows -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-brand-orange/10 rounded-full blur-[140px] pointer-events-none"></div>
-    <div class="absolute top-10 right-0 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
-      <!-- Top Badge -->
-      <div class="flex justify-center md:justify-start mb-6">
-        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-orangeLight border border-brand-orange/30 text-brand-orange text-xs md:text-sm font-semibold tracking-wide uppercase">
-          <i class="fa-solid fa-nfc-symbol text-base animate-pulse"></i>
-          Tecnologia Contacless NFC + Cartão Virtual Integrado
-        </span>
+  <main>
+    <section class="hero">
+      <div class="hero-title-area">
+        <span class="badge"><i class="fas fa-wifi"></i> Tecnologia por Aproximação</span>
+        <h1>O Cartão de Visita Físico que abre o seu <span>Perfil Virtual</span></h1>
+        <p>Cartões em PVC fino premium com NFC integrado e QR Code. Encostou no telemóvel, abriu a sua apresentação interativa.</p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-        
-        <!-- Left Text Content (Col 5) -->
-        <div class="lg:col-span-5 text-center lg:text-left">
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15] mb-6">
-            O Seu Cartão de Visita <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-orange via-amber-400 to-orange-500">Nunca Mais Será O Mesmo.</span>
-          </h1>
+      <!-- Seletor de Modelos -->
+      <div class="model-selector">
+        <button class="selector-btn active" onclick="switchModel(1)" id="btn-model-1">
+          <i class="fas fa-address-card"></i> Modelo 1 (Digital Card)
+        </button>
+        <button class="selector-btn" onclick="switchModel(2)" id="btn-model-2">
+          <i class="fas fa-user-tag"></i> Modelo 2 (Genérico)
+        </button>
+      </div>
 
-          <p class="text-lg text-brand-muted font-normal leading-relaxed mb-8">
-            Fabricado em <strong class="text-white">PVC Fino Premium ultraresistente</strong> com tecnologia de aproximação <strong class="text-white">NFC</strong>. Basta encostar no celular do cliente para transferir instantaneamente seus contatos, redes sociais, PIX e catálogo.
-          </p>
-
-          <!-- Highlights Bullet List -->
-          <ul class="space-y-3 mb-8 text-left inline-block lg:block">
-            <li class="flex items-center gap-3 text-sm sm:text-base text-gray-300">
-              <span class="w-6 h-6 rounded-full bg-brand-orange/20 text-brand-orange flex items-center justify-center shrink-0">
-                <i class="fa-solid fa-check text-xs"></i>
-              </span>
-              <span><strong>Sem mensalidades:</strong> Pague uma única vez pelo cartão.</span>
-            </li>
-            <li class="flex items-center gap-3 text-sm sm:text-base text-gray-300">
-              <span class="w-6 h-6 rounded-full bg-brand-orange/20 text-brand-orange flex items-center justify-center shrink-0">
-                <i class="fa-solid fa-check text-xs"></i>
-              </span>
-              <span><strong>Zero Apps:</strong> Funciona direto na câmera ou aproximação do celular.</span>
-            </li>
-            <li class="flex items-center gap-3 text-sm sm:text-base text-gray-300">
-              <span class="w-6 h-6 rounded-full bg-brand-orange/20 text-brand-orange flex items-center justify-center shrink-0">
-                <i class="fa-solid fa-check text-xs"></i>
-              </span>
-              <span><strong>Ecológico e Moderno:</strong> Impressione na primeira apresentação.</span>
-            </li>
-          </ul>
-
-          <!-- CTA Buttons Group -->
-          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-            <a href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Tenho%20interesse%20no%20cart%C3%A3o%20de%20visita%20premium%20em%20PVC%20com%20NFC." 
-               target="_blank"
-               class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-base bg-brand-orange text-white hover:bg-brand-orangeHover shadow-xl shadow-brand-orange/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-3 group">
-              <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
-              <span>Solicitar Meu Cartão Agora</span>
-            </a>
-
-            <a href="#demo" class="w-full sm:w-auto px-6 py-4 rounded-xl font-semibold text-base bg-brand-card hover:bg-brand-border/60 text-brand-text border border-brand-border transition-colors flex items-center justify-center gap-2">
-              <i class="fa-solid fa-play text-brand-orange text-xs"></i>
-              <span>Ver Demonstração</span>
-            </a>
-          </div>
-
-          <!-- Rating / Quick Info -->
-          <div class="mt-8 pt-6 border-t border-brand-border/60 flex items-center justify-center lg:justify-start gap-6 text-xs text-brand-muted">
-            <div class="flex items-center gap-1 text-amber-400">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <span>Qualidade Premium em Ponta Grossa e Região</span>
-          </div>
-
-        </div>
-
-        <!-- Right Side: Dual Interactive Presentation (Physical PVC Card Flip + Live Smartphone Frame) -->
-        <div id="demo" class="lg:col-span-7">
-          <div class="bg-brand-card/70 border border-brand-border p-4 sm:p-8 rounded-3xl backdrop-blur-xl shadow-2xl relative">
-            
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-brand-border/60">
-              <div>
-                <span class="text-xs font-bold uppercase tracking-widest text-brand-orange">Experiência Interativa Duo</span>
-                <h3 class="text-lg font-bold text-white">Cartão Físico PVC + Tela do Celular</h3>
+      <div class="demo-grid">
+        <!-- Cartão Físico 3D -->
+        <div class="demo-card-container">
+          <h3>Cartão Físico em PVC</h3>
+          <p>Passe o cursor ou toque para girar o cartão</p>
+          
+          <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img id="card-frente-img" src="images/card1frente.jpg" alt="Cartão Físico Frente" decoding="async">
               </div>
-              
-              <!-- MODEL SWITCHER BUTTONS -->
-              <div class="flex items-center gap-1.5 bg-brand-dark/90 p-1 rounded-xl border border-brand-border/80">
-                <button id="btnModel1" onclick="switchModel(1)" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-brand-orange text-white shadow-md">
-                  Modelo 1 (Personalizado)
-                </button>
-                <button id="btnModel2" onclick="switchModel(2)" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-brand-muted hover:text-white">
-                  Modelo 2 (Completo)
-                </button>
+              <div class="flip-card-back">
+                <img id="card-verso-img" src="images/card1verso.jpg" alt="Cartão Físico Verso" decoding="async">
               </div>
             </div>
+          </div>
 
-            <!-- Two Columns for the Interactive Display -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              
-              <!-- ITEM 1: 3D FLIP PHYSICAL PVC CARD -->
-              <div class="flex flex-col items-center">
-                <p class="text-xs text-brand-muted font-medium mb-3 flex items-center gap-2">
-                  <i class="fa-solid fa-rotate text-brand-orange"></i> Clique ou passe o mouse para girar
-                </p>
-
-                <!-- 3D Card Container -->
-                <div class="w-full max-w-[280px] h-[175px] perspective-1000 cursor-pointer group" id="pvcCardContainer">
-                  <div id="pvcCardInner" class="w-full h-full transform-style-3d relative rounded-2xl shadow-2xl transition-transform duration-700">
-                    
-                    <!-- FRONT OF CARD -->
-                    <div class="absolute inset-0 w-full h-full rounded-2xl metallic-bg border border-gray-600/50 flex flex-col justify-between backface-hidden shadow-2xl overflow-hidden">
-                      <!-- Image Layer with Fallback -->
-                      <img id="cardFrontImg" 
-                           src="images/card1frente.jpg" 
-                           alt="Cartão PVC Frente" 
-                           class="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-300"
-                           onerror="this.style.opacity='0'"
-                           onload="this.style.opacity='1'" />
-                      
-                      <!-- Default Styled Fallback Overlay (Shown if image not found) -->
-                      <div class="relative z-10 p-5 flex flex-col justify-between h-full bg-gradient-to-br from-slate-900/95 via-slate-800/90 to-slate-950/95">
-                        <div class="flex justify-between items-start">
-                          <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 rounded-full bg-[#1e252d] border border-gray-500 flex items-center justify-center">
-                              <i class="fa-solid fa-wifi text-brand-orange text-xs transform -rotate-45"></i>
-                            </div>
-                            <div>
-                              <div class="text-[11px] font-extrabold leading-none text-white tracking-wider">DIGITAL<span class="text-brand-orange">CARD</span></div>
-                              <div id="cardFrontModelTag" class="text-[7px] text-brand-orange tracking-widest uppercase font-mono mt-0.5">MODELO 1 - PREMIUM</div>
-                            </div>
-                          </div>
-                          <div class="text-brand-orange text-xl animate-pulse">
-                            <i class="fa-solid fa-nfc-symbol"></i>
-                          </div>
-                        </div>
-
-                        <div class="my-auto">
-                          <div id="cardFrontTitle" class="text-sm font-bold text-white tracking-wide">SEU NOME / MARCA AQUI</div>
-                          <div id="cardFrontSubtitle" class="text-[10px] text-brand-orange font-medium">Cartão de Visita Inteligente PVC</div>
-                        </div>
-
-                        <div class="flex justify-between items-end text-[8px] text-gray-400 font-mono">
-                          <span>Aproxime do celular</span>
-                          <span class="text-gray-300 font-bold">NFC READY</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- BACK OF CARD -->
-                    <div class="absolute inset-0 w-full h-full rounded-2xl metallic-bg border border-gray-600/50 flex flex-col justify-between backface-hidden rotate-y-180 shadow-2xl overflow-hidden">
-                      <!-- Image Layer with Fallback -->
-                      <img id="cardBackImg" 
-                           src="images/card1verso.jpg" 
-                           alt="Cartão PVC Verso" 
-                           class="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-300"
-                           onerror="this.style.opacity='0'"
-                           onload="this.style.opacity='1'" />
-
-                      <!-- Default Styled Fallback Overlay (Shown if image not found) -->
-                      <div class="relative z-10 p-5 flex flex-col justify-between h-full bg-gradient-to-br from-slate-950/95 via-slate-900/90 to-slate-800/95">
-                        <div class="flex justify-between items-center border-b border-gray-700/60 pb-2">
-                          <span class="text-[9px] font-bold text-brand-orange tracking-widest uppercase">Opção QR Code Verso</span>
-                          <i class="fa-solid fa-qrcode text-gray-400 text-xs"></i>
-                        </div>
-
-                        <div class="flex items-center gap-4 my-auto">
-                          <div class="w-14 h-14 bg-white p-1 rounded-lg shrink-0 flex items-center justify-center shadow">
-                            <div class="w-full h-full bg-slate-900 rounded p-1 flex flex-wrap gap-1 items-center justify-center">
-                              <div class="w-3 h-3 bg-brand-orange"></div>
-                              <div class="w-3 h-3 bg-white"></div>
-                              <div class="w-3 h-3 bg-white"></div>
-                              <div class="w-3 h-3 bg-brand-orange"></div>
-                            </div>
-                          </div>
-                          <div class="text-left">
-                            <p class="text-[10px] font-semibold text-white leading-tight">Compatibilidade Total 100%</p>
-                            <p class="text-[8px] text-gray-400 mt-1">NFC + QR Code para garantia de leitura em todos os modelos de celular.</p>
-                          </div>
-                        </div>
-
-                        <div class="text-[8px] text-gray-400 text-center font-mono">
-                          www.digitalcardpg.com
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-
-                <!-- Manual Flip Controller Button -->
-                <button id="flipBtn" class="mt-4 px-4 py-1.5 rounded-full bg-brand-dark hover:bg-brand-border border border-brand-border text-xs font-semibold text-brand-muted hover:text-white transition-all flex items-center gap-2">
-                  <i class="fa-solid fa-rotate-right text-brand-orange"></i>
-                  <span>Girar Cartão (Frente/Verso)</span>
-                </button>
-              </div>
-
-              <!-- ITEM 2: LIVE SMARTPHONE FRAME WITH IFRAME -->
-              <div class="flex flex-col items-center">
-                <p class="text-xs text-brand-muted font-medium mb-3 flex items-center gap-2">
-                  <i class="fa-solid fa-mobile-screen text-brand-orange"></i> Cartão Virtual Carregado Live
-                </p>
-
-                <!-- Phone Outer Mockup Frame -->
-                <div class="w-[240px] h-[450px] bg-slate-900 rounded-[38px] p-2.5 shadow-2xl border-4 border-slate-700 relative ring-1 ring-white/10 animate-pulse-glow">
-                  
-                  <!-- Phone Notch / Camera Island -->
-                  <div class="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-4 bg-slate-950 rounded-full z-30 flex items-center justify-center">
-                    <div class="w-2 h-2 rounded-full bg-slate-800"></div>
-                  </div>
-
-                  <!-- Phone Screen Wrapper -->
-                  <div class="w-full h-full bg-black rounded-[30px] overflow-hidden relative pt-4 shadow-inner">
-                    
-                    <!-- Real Iframe or Fallback -->
-                    <iframe 
-                      id="cardIframe"
-                      src="https://digitalcard-cartao.aproximeaqui.com.br/" 
-                      class="w-full h-full border-0 rounded-[28px] mockup-scrollbar transition-opacity duration-300"
-                      title="Cartão Virtual Digital Card Amostra"
-                      loading="lazy">
-                    </iframe>
-
-                    <!-- Connection indicator top right -->
-                    <div class="absolute top-2 right-4 z-20 text-[9px] text-emerald-400 font-bold bg-slate-900/80 px-2 py-0.5 rounded-full backdrop-blur-sm border border-emerald-500/30 flex items-center gap-1">
-                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Live
-                    </div>
-
-                  </div>
-
-                  <!-- Phone Home Indicator Bar -->
-                  <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-20 h-1 bg-gray-600/60 rounded-full z-30"></div>
-                </div>
-
-                <a id="externalLink" href="https://digitalcard-cartao.aproximeaqui.com.br/" target="_blank" class="mt-4 text-[11px] text-brand-orange hover:underline font-semibold flex items-center gap-1">
-                  <span>Abrir exemplo em nova aba</span>
-                  <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
-                </a>
-              </div>
-
-            </div>
-
+          <div class="flip-hint">
+            <i class="fas fa-sync-alt"></i> Clique para ver o verso (QR Code)
           </div>
         </div>
 
+        <!-- Smartphone Preview -->
+        <div class="demo-card-container">
+          <h3>Página Virtual Carregada</h3>
+          <p>É assim que o seu cliente visualizará ao aproximar o telemóvel</p>
+          
+          <div class="smartphone-frame">
+            <div class="phone-notch"></div>
+            <iframe id="iframe-preview" src="https://digitalcard-cartao.aproximeaqui.com.br/" title="Cartão Virtual Demo"></iframe>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-
-  <!-- ================= COMO FUNCIONA / PASSO A PASSO ================= -->
-  <section id="como-funciona" class="py-20 bg-brand-card/40 border-y border-brand-border/60 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-xs font-bold text-brand-orange tracking-widest uppercase mb-2">Simplicidade & Tecnologia</h2>
-        <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Como Funciona na Prática?</h3>
-        <p class="text-brand-muted mt-3 text-base">
-          Em menos de 3 segundos você compartilha todos os seus dados profissionais sem que o cliente precise digitar absolutamente nada.
-        </p>
+    <!-- Recursos -->
+    <section class="features">
+      <div class="section-title">
+        <h2>Porquê escolher o <span>Digital Card</span>?</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-        
-        <!-- Step 1 -->
-        <div class="bg-brand-card border border-brand-border rounded-2xl p-8 relative hover:border-brand-orange/50 transition-all hover:-translate-y-1 group">
-          <div class="w-14 h-14 rounded-2xl bg-brand-orangeLight border border-brand-orange/30 text-brand-orange flex items-center justify-center text-2xl font-black mb-6 group-hover:scale-110 transition-transform">
-            01
-          </div>
-          <h4 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
-            <i class="fa-solid fa-nfc-symbol text-brand-orange"></i>
-            Aproxime o Cartão
-          </h4>
-          <p class="text-brand-muted text-sm leading-relaxed">
-            Basta encostar o seu cartão de PVC Fino na parte traseira de qualquer smartphone moderno (iPhone ou Android) com NFC ativo.
-          </p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-microchip"></i></div>
+          <h4>Chip NFC Embutido</h4>
+          <p>Tecnologia de aproximação compatível com a grande maioria dos telemóveis Android e iPhones modernos.</p>
         </div>
 
-        <!-- Step 2 -->
-        <div class="bg-brand-card border border-brand-border rounded-2xl p-8 relative hover:border-brand-orange/50 transition-all hover:-translate-y-1 group">
-          <div class="w-14 h-14 rounded-2xl bg-brand-orangeLight border border-brand-orange/30 text-brand-orange flex items-center justify-center text-2xl font-black mb-6 group-hover:scale-110 transition-transform">
-            02
-          </div>
-          <h4 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
-            <i class="fa-solid fa-[#ff7b00] fa-bell"></i>
-            Notificação Instantânea
-          </h4>
-          <p class="text-brand-muted text-sm leading-relaxed">
-            Uma notificação interativa aparece na tela do celular do cliente na hora. Não é necessário instalar nenhum aplicativo!
-          </p>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-qrcode"></i></div>
+          <h4>QR Code de Apoio</h4>
+          <p>No verso do cartão impresso em PVC, um QR Code garante acesso imediato mesmo em telemóveis mais antigos.</p>
         </div>
 
-        <!-- Step 3 -->
-        <div class="bg-brand-card border border-brand-border rounded-2xl p-8 relative hover:border-brand-orange/50 transition-all hover:-translate-y-1 group">
-          <div class="w-14 h-14 rounded-2xl bg-brand-orangeLight border border-brand-orange/30 text-brand-orange flex items-center justify-center text-2xl font-black mb-6 group-hover:scale-110 transition-transform">
-            03
-          </div>
-          <h4 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
-            <i class="fa-solid fa-address-card text-brand-orange"></i>
-            Conexão Direta
-          </h4>
-          <p class="text-brand-muted text-sm leading-relaxed">
-            Seu cartão virtual se abre com botões diretos para salvar seu contato na agenda, iniciar conversa no WhatsApp, ver localização e chaves PIX.
-          </p>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+          <h4>PVC Fino & Durável</h4>
+          <p>Acabamento premium, resistente à água e ao desgaste do dia a dia. Leve sempre na sua carteira sem rasgar ou amassar.</p>
         </div>
 
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-edit"></i></div>
+          <h4>Atualização Ilimitada</h4>
+          <p>Mudou de contacto ou endereço? Atualize as informações do seu perfil virtual sem precisar de reimprimir o cartão físico.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-
-  <!-- ================= VANTAGENS DO CARTÃO EM PVC + VIRTUAL ================= -->
-  <section id="recursos" class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-xs font-bold text-brand-orange tracking-widest uppercase mb-2">Por que escolher o Digital Card?</h2>
-        <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Vantagens Incomparáveis frente ao Cartão de Papel</h3>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Advantage 1 -->
-        <div class="bg-brand-card/60 border border-brand-border/80 p-6 rounded-2xl hover:bg-brand-card transition-all">
-          <div class="w-12 h-12 rounded-xl bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4">
-            <i class="fa-solid fa-gem"></i>
-          </div>
-          <h4 class="text-lg font-bold text-white mb-2">Acabamento PVC Fino Premium</h4>
-          <p class="text-sm text-brand-muted">
-            Material elegante, leve e extremamente durável. Não rasga, não amassa e é 100% resistente à água.
-          </p>
-        </div>
-
-        <!-- Advantage 2 -->
-        <div class="bg-brand-card/60 border border-brand-border/80 p-6 rounded-2xl hover:bg-brand-card transition-all">
-          <div class="w-12 h-12 rounded-xl bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4">
-            <i class="fa-solid fa-[#ff7b00] fa-pen-to-square"></i>
-          </div>
-          <h4 class="text-lg font-bold text-white mb-2">Atualize seus dados quando quiser</h4>
-          <p class="text-sm text-brand-muted">
-            Mudou de telefone ou endereço? Atualize as informações no perfil digital sem precisar re-imprimir novos cartões.
-          </p>
-        </div>
-
-        <!-- Advantage 3 -->
-        <div class="bg-brand-card/60 border border-brand-border/80 p-6 rounded-2xl hover:bg-brand-card transition-all">
-          <div class="w-12 h-12 rounded-xl bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4">
-            <i class="fa-solid fa-[#ff7b00] fa-address-book"></i>
-          </div>
-          <h4 class="text-lg font-bold text-white mb-2">Salvar Contato em 1 Clique</h4>
-          <p class="text-sm text-brand-muted">
-            O cliente salva seu nome, telefone, e-mail e empresa diretamente na agenda do celular via arquivo VCF integrado.
-          </p>
-        </div>
-
-        <!-- Advantage 4 -->
-        <div class="bg-brand-card/60 border border-brand-border/80 p-6 rounded-2xl hover:bg-brand-card transition-all">
-          <div class="w-12 h-12 rounded-xl bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4">
-            <i class="fa-solid fa-qrcode"></i>
-          </div>
-          <h4 class="text-lg font-bold text-white mb-2">QR Code Integrado no Verso</h4>
-          <p class="text-sm text-brand-muted">
-            Garantia de 100% de leitura em qualquer aparelho celular, combinando a aproximação NFC com o QR Code físico.
-          </p>
-        </div>
-
-        <!-- Advantage 5 -->
-        <div class="bg-brand-card/60 border border-brand-border/80 p-6 rounded-2xl hover:bg-brand-card transition-all">
-          <div class="w-12 h-12 rounded-xl bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4">
-            <i class="fa-solid fa-[#ff7b00] fa-piggy-bank"></i>
-          </div>
-          <h4 class="text-lg font-bold text-white mb-2">Economia Recorrente</h4>
-          <p class="text-sm text-brand-muted">
-            Chega de gastar rios de dinheiro imprimindo centenas de cartões de papel que vão parar no lixo.
-          </p>
-        </div>
-
-        <!-- Advantage 6 -->
-        <div class="bg-brand-card/60 border border-brand-border/80 p-6 rounded-2xl hover:bg-brand-card transition-all">
-          <div class="w-12 h-12 rounded-xl bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-4">
-            <i class="fa-solid fa-share-nodes"></i>
-          </div>
-          <h4 class="text-lg font-bold text-white mb-2">Central de Links Completa</h4>
-          <p class="text-sm text-brand-muted">
-            Links para WhatsApp, Instagram, Waze, Google Maps, Chave PIX, PDF de Apresentação e Redes Sociais.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ================= BANNER DE CONVERSÃO / CTA PRINCIPAL ================= -->
-  <section class="py-16 bg-gradient-to-r from-brand-orange via-orange-600 to-amber-600 text-white relative overflow-hidden shadow-2xl">
-    <div class="absolute inset-0 bg-black/10 backdrop-blur-[1px]"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-      <h2 class="text-3xl sm:text-5xl font-black tracking-tight mb-4 text-white">
-        Pronto para causar uma primeira impressão inesquecível?
-      </h2>
-      <p class="text-lg sm:text-xl text-orange-100 max-w-2xl mx-auto mb-8 font-medium">
-        Peça agora o seu Cartão de Visita em PVC com Aproximação NFC e eleve o nível do seu networking profissional.
-      </p>
-
-      <a href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Tenho%20interesse%20no%20cart%C3%A3o%20de%20visita%20premium%20em%20PVC%20com%20NFC." 
-         target="_blank"
-         class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-slate-950 text-white font-extrabold text-lg shadow-2xl hover:bg-slate-900 transition-all hover:scale-105">
-        <i class="fa-brands fa-whatsapp text-2xl text-emerald-400"></i>
-        <span>Falar no WhatsApp (42) 99900-1750</span>
+    <!-- Banner CTA Final -->
+    <section class="cta-banner">
+      <h2>Pronto para impressionar os seus clientes?</h2>
+      <p>Peça o seu cartão premium em PVC personalizado com a sua marca e com perfil virtual dedicado.</p>
+      <a href="https://wa.me/5542999001750?text=Olá!%20Vim%20pelo%20site%20e%20quero%20solicitar%20um%20orçamento%20do%20cartão%20NFC." target="_blank" class="btn-large">
+        <i class="fab fa-whatsapp"></i> Falar pelo WhatsApp
       </a>
-    </div>
-  </section>
+    </section>
+  </main>
 
-
-  <!-- ================= CONTATO & INFORMAÇÕES ================= -->
-  <section id="contato" class="py-20 bg-brand-dark">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        
-        <!-- Info Column -->
-        <div>
-          <span class="text-xs font-bold text-brand-orange tracking-widest uppercase">Atendimento Personalizado</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-6">Entre em contato conosco</h2>
-          <p class="text-brand-muted text-base mb-8">
-            Ficou com alguma dúvida sobre o layout, prazo de entrega ou personalização da sua marca? Estamos prontos para te atender no WhatsApp ou e-mail.
-          </p>
-
-          <div class="space-y-6">
-            
-            <!-- WhatsApp Contact -->
-            <a href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20duvidas." target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-orange/50 transition-all group">
-              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 transition-transform">
-                <i class="fa-brands fa-whatsapp"></i>
-              </div>
-              <div>
-                <span class="text-xs text-brand-muted font-medium">WhatsApp / Telefone</span>
-                <p class="text-lg font-bold text-white">(42) 99900-1750</p>
-              </div>
-            </a>
-
-            <!-- Email Contact -->
-            <a href="mailto:contato@digitalcardpg.com" class="flex items-center gap-4 p-4 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-orange/50 transition-all group">
-              <div class="w-12 h-12 rounded-xl bg-brand-orange/10 text-brand-orange flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 transition-transform">
-                <i class="fa-regular fa-envelope"></i>
-              </div>
-              <div>
-                <span class="text-xs text-brand-muted font-medium">E-mail Comercial</span>
-                <p class="text-lg font-bold text-white">contato@digitalcardpg.com</p>
-              </div>
-            </a>
-
-            <!-- Instagram Contact -->
-            <a href="https://instagram.com/digitalcardpg" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-orange/50 transition-all group">
-              <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 transition-transform">
-                <i class="fa-brands fa-instagram"></i>
-              </div>
-              <div>
-                <span class="text-xs text-brand-muted font-medium">Instagram Oficial</span>
-                <p class="text-lg font-bold text-white">@digitalcardpg</p>
-              </div>
-            </a>
-
-          </div>
-        </div>
-
-        <!-- Quick Form Box (Redirects to WhatsApp for max conversion) -->
-        <div class="bg-brand-card border border-brand-border p-8 rounded-3xl shadow-xl">
-          <h3 class="text-xl font-bold text-white mb-2">Solicitar Orçamento Rápido</h3>
-          <p class="text-xs text-brand-muted mb-6">Preencha abaixo para ser direcionado ao atendimento com as informações preenchidas:</p>
-
-          <form id="quickForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
-            <div>
-              <label class="block text-xs font-semibold text-gray-300 mb-1">Seu Nome</label>
-              <input type="text" id="formName" required placeholder="Ex: Maria Silva" class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white text-sm focus:outline-none focus:border-brand-orange transition-colors" />
-            </div>
-
-            <div>
-              <label class="block text-xs font-semibold text-gray-300 mb-1">Sua Empresa ou Profissão</label>
-              <input type="text" id="formBusiness" placeholder="Ex: Advogada / Clínica Odontológica" class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white text-sm focus:outline-none focus:border-brand-orange transition-colors" />
-            </div>
-
-            <div>
-              <label class="block text-xs font-semibold text-gray-300 mb-1">Quantidade Estimada</label>
-              <select id="formQty" class="w-full px-4 py-3 rounded-xl bg-brand-dark border border-brand-border text-white text-sm focus:outline-none focus:border-brand-orange transition-colors">
-                <option value="1 unidade">1 unidade (Uso Pessoal)</option>
-                <option value="2 a 5 unidades">2 a 5 unidades</option>
-                <option value="Equipe / Acima de 5 unidades">Acima de 5 unidades (Empresarial)</option>
-              </select>
-            </div>
-
-            <button type="submit" class="w-full py-4 rounded-xl font-bold text-base bg-brand-orange text-white hover:bg-brand-orangeHover shadow-lg shadow-brand-orange/20 transition-all flex items-center justify-center gap-2 mt-4">
-              <i class="fa-brands fa-whatsapp text-xl"></i>
-              <span>Enviar Pedido via WhatsApp</span>
-            </button>
-          </form>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ================= FOOTER ================= -->
-  <footer class="bg-brand-dark border-t border-brand-border/60 py-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+  <footer>
+    <div class="footer-content">
+      <a href="#" class="logo-container">
+        <img src="logo redonda.jpg" alt="Digital Card Logo" class="logo-img">
+        <div class="logo-text">DIGITAL<span>CARD</span></div>
+      </a>
       
-      <!-- Brand Footer -->
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-full bg-[#1e252d] border border-gray-600 flex items-center justify-center">
-          <i class="fa-solid fa-wifi text-brand-orange text-xs transform -rotate-45"></i>
-        </div>
-        <span class="font-extrabold text-base tracking-tight text-white">
-          DIGITAL<span class="text-brand-orange">CARD</span>
-        </span>
+      <div class="social-links">
+        <a href="https://wa.me/5542999001750" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/digitalcardpg" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:contato@digitalcardpg.com" title="E-mail"><i class="fas fa-envelope"></i></a>
       </div>
 
-      <!-- Rights -->
-      <div class="text-xs text-brand-muted text-center sm:text-left">
-        &copy; <span id="yearSpan"></span> Digital Card. Todos os direitos reservados.
+      <div class="footer-copy">
+        Desenvolvido por <a href="https://instagram.com/digitalcardpg" target="_blank">Digital Card</a>
       </div>
-
-      <!-- Developer Link -->
-      <div class="text-xs text-brand-muted">
-        Desenvolvido por 
-        <a href="https://instagram.com/digitalcardpg" target="_blank" class="text-brand-orange font-semibold hover:underline">
-          Digital Card (@digitalcardpg)
-        </a>
-      </div>
-
     </div>
   </footer>
 
-  <!-- Floating WhatsApp Action Button -->
-  <a href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20cart%C3%B5es%20NFC." 
-     target="_blank" 
-     aria-label="Atendimento no WhatsApp"
-     class="fixed bottom-6 right-6 w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 active:scale-95 transition-all z-50 animate-bounce">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
-
-  <!-- ================= JAVASCRIPT LOGIC ================= -->
   <script>
-    // Dynamic Year
-    document.getElementById('yearSpan').innerText = new Date().getFullYear();
-
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // 3D Card Flip Logic
-    const pvcCardContainer = document.getElementById('pvcCardContainer');
-    const pvcCardInner = document.getElementById('pvcCardInner');
-    const flipBtn = document.getElementById('flipBtn');
-    let isFlipped = false;
-
-    function toggleCardFlip() {
-      isFlipped = !isFlipped;
-      if (isFlipped) {
-        pvcCardInner.classList.add('rotate-y-180');
-      } else {
-        pvcCardInner.classList.remove('rotate-y-180');
-      }
-    }
-
-    pvcCardContainer.addEventListener('click', toggleCardFlip);
-    flipBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleCardFlip();
-    });
-
-    // Model Switcher Logic (Modelo 1 vs Modelo 2)
-    const models = {
-      1: {
-        frontImg: 'images/card1frente.jpg',
-        backImg: 'images/card1verso.jpg',
-        virtualUrl: 'https://digitalcard-cartao.aproximeaqui.com.br/',
-        title: 'DIGITAL CARD - AMOSTRA 1',
-        subtitle: 'Modelo Personalizado Premium',
-        tag: 'MODELO 1 - PERSONALIZADO'
-      },
-      2: {
-        frontImg: 'images/card2frente.jpg',
-        backImg: 'images/card2verso.jpg',
-        virtualUrl: 'https://cartao-generico.aproximeaqui.com.br/',
-        title: 'DIGITAL CARD - AMOSTRA 2',
-        subtitle: 'Modelo Genérico Completo',
-        tag: 'MODELO 2 - COMPLETO'
-      }
-    };
-
-    let currentModel = 1;
-
     function switchModel(modelNum) {
-      if (currentModel === modelNum) return;
-      currentModel = modelNum;
-
-      const m = models[modelNum];
-
-      // Update Switcher Button Styles
-      const btn1 = document.getElementById('btnModel1');
-      const btn2 = document.getElementById('btnModel2');
+      const btn1 = document.getElementById('btn-model-1');
+      const btn2 = document.getElementById('btn-model-2');
+      const imgFrente = document.getElementById('card-frente-img');
+      const imgVerso = document.getElementById('card-verso-img');
+      const iframe = document.getElementById('iframe-preview');
 
       if (modelNum === 1) {
-        btn1.className = "px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-brand-orange text-white shadow-md";
-        btn2.className = "px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-brand-muted hover:text-white";
+        btn1.classList.add('active');
+        btn2.classList.remove('active');
+        imgFrente.src = 'images/card1frente.jpg';
+        imgVerso.src = 'images/card1verso.jpg';
+        iframe.src = 'https://digitalcard-cartao.aproximeaqui.com.br/';
       } else {
-        btn2.className = "px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-brand-orange text-white shadow-md";
-        btn1.className = "px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-brand-muted hover:text-white";
+        btn2.classList.add('active');
+        btn1.classList.remove('active');
+        imgFrente.src = 'images/card2frente.jpg';
+        imgVerso.src = 'images/card2verso.jpg';
+        iframe.src = 'https://cartao-generico.aproximeaqui.com.br/';
       }
-
-      // Smoothly update Card Images & Fallback Texts
-      const cardFrontImg = document.getElementById('cardFrontImg');
-      const cardBackImg = document.getElementById('cardBackImg');
-      
-      cardFrontImg.style.opacity = '0';
-      cardBackImg.style.opacity = '0';
-
-      setTimeout(() => {
-        cardFrontImg.src = m.frontImg;
-        cardBackImg.src = m.backImg;
-        document.getElementById('cardFrontTitle').innerText = m.title;
-        document.getElementById('cardFrontSubtitle').innerText = m.subtitle;
-        document.getElementById('cardFrontModelTag').innerText = m.tag;
-      }, 150);
-
-      // Update Smartphone Iframe and External Link
-      const iframe = document.getElementById('cardIframe');
-      const extLink = document.getElementById('externalLink');
-      
-      iframe.style.opacity = '0.3';
-      setTimeout(() => {
-        iframe.src = m.virtualUrl;
-        extLink.href = m.virtualUrl;
-        iframe.style.opacity = '1';
-      }, 200);
-    }
-
-    // Form Redirection to WhatsApp
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      const name = document.getElementById('formName').value;
-      const business = document.getElementById('formBusiness').value || 'Não informado';
-      const qty = document.getElementById('formQty').value;
-
-      const text = `Ol%C3%A1!%20Meu%20nome%20%C3%A9%20${encodeURIComponent(name)}.%20Gostaria%20de%20um%20or%C3%A7amento%20para%20o%20Cart%C3%A3o%20Digital%20NFC.%0A%0A*Empresa/Profiss%C3%A3o:*%20${encodeURIComponent(business)}%0A*Quantidade:*%20${encodeURIComponent(qty)}%0A*Modelo%20de%20Interesse:*%20Modelo%20${currentModel}`;
-      
-      window.open(`https://wa.me/5542999001750?text=${text}`, '_blank');
     }
   </script>
 </body>
