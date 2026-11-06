@@ -2,6 +2,16 @@
 <html lang="pt-BR">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17815396200"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-17815396200');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -32,20 +42,15 @@
             --bg-section: #121720;
             --bg-card: #171c24;
             --bg-card-hover: #1e2632;
-
             --border-color: #2a3240;
-
             --accent-orange: #ff7b00;
             --accent-orange-hover: #e06d00;
             --accent-soft: rgba(255, 123, 0, 0.12);
-
             --text-main: #f3f4f6;
             --text-muted: #a1aab8;
             --text-subtle: #778292;
-
             --radius-lg: 18px;
             --radius-md: 12px;
-
             --container: 1160px;
         }
 
@@ -58,6 +63,8 @@
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 90px;
+            max-width: 100%;
+            overflow-x: clip;
         }
 
         body {
@@ -65,7 +72,8 @@
             background: var(--bg-dark);
             color: var(--text-main);
             line-height: 1.65;
-            overflow-x: hidden;
+            max-width: 100%;
+            overflow-x: clip;
         }
 
         a {
@@ -99,10 +107,8 @@
             position: sticky;
             top: 0;
             z-index: 100;
-
             background: rgba(15, 18, 23, 0.92);
             backdrop-filter: blur(14px);
-
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -111,7 +117,6 @@
             width: calc(100% - 40px);
             min-height: 76px;
             margin: auto;
-
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -122,7 +127,6 @@
             display: flex;
             align-items: center;
             gap: 11px;
-
             text-decoration: none;
         }
 
@@ -150,13 +154,10 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-
             background: var(--accent-orange);
             color: #fff;
-
             text-decoration: none;
             font-weight: 800;
-
             border-radius: 50px;
             transition: .25s ease;
         }
@@ -184,15 +185,10 @@
             position: absolute;
             width: 550px;
             height: 550px;
-
             top: -180px;
             left: 50%;
             transform: translateX(-50%);
-
-            background: radial-gradient(circle,
-                    rgba(255, 123, 0, .09),
-                    transparent 70%);
-
+            background: radial-gradient(circle, rgba(255, 123, 0, .09), transparent 70%);
             pointer-events: none;
         }
 
@@ -208,20 +204,15 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-
             background: var(--accent-soft);
             color: var(--accent-orange);
-
             border: 1px solid rgba(255, 123, 0, .3);
             border-radius: 50px;
-
             padding: 7px 15px;
-
             font-size: .78rem;
             font-weight: 800;
             letter-spacing: 1px;
             text-transform: uppercase;
-
             margin-bottom: 23px;
         }
 
@@ -230,7 +221,6 @@
             line-height: 1.13;
             letter-spacing: -2px;
             font-weight: 800;
-
             margin-bottom: 22px;
         }
 
@@ -241,14 +231,12 @@
         .hero-description {
             max-width: 680px;
             margin: 0 auto;
-
             color: var(--text-muted);
             font-size: 1.08rem;
         }
 
         .hero-actions {
             margin-top: 30px;
-
             display: flex;
             justify-content: center;
             align-items: center;
@@ -267,16 +255,12 @@
             align-items: center;
             justify-content: center;
             gap: 9px;
-
             padding: 14px 25px;
-
             border: 1px solid var(--border-color);
             border-radius: 50px;
-
             text-decoration: none;
             color: var(--text-main);
             font-weight: 700;
-
             transition: .25s ease;
         }
 
@@ -304,18 +288,13 @@
             display: inline-flex;
             align-items: center;
             gap: 9px;
-
             padding: 12px 23px;
-
             border-radius: 50px;
             border: 1px solid var(--border-color);
-
             background: var(--bg-card);
             color: var(--text-muted);
-
             font-size: .9rem;
             font-weight: 700;
-
             cursor: pointer;
             transition: .25s ease;
         }
@@ -329,7 +308,6 @@
             background: var(--accent-orange);
             border-color: var(--accent-orange);
             color: #fff;
-
             box-shadow: 0 5px 20px rgba(255, 123, 0, .2);
         }
 
@@ -343,18 +321,12 @@
         .demo-panel {
             min-width: 0;
             min-height: 580px;
-
             padding: 35px 25px;
-
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-
-            background: linear-gradient(145deg,
-                    #1a202a,
-                    #141922);
-
+            background: linear-gradient(145deg, #1a202a, #141922);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
         }
@@ -365,7 +337,7 @@
             margin-bottom: 5px;
         }
 
-        .demo-panel>p {
+        .demo-panel > p {
             color: var(--text-muted);
             font-size: .88rem;
             text-align: center;
@@ -378,11 +350,9 @@
             display: block;
             width: min(340px, 100%);
             aspect-ratio: 340 / 215;
-
             background: transparent;
             border: none;
             padding: 0;
-
             perspective: 1200px;
             cursor: pointer;
         }
@@ -391,10 +361,8 @@
             position: relative;
             width: 100%;
             height: 100%;
-
             transform-style: preserve-3d;
             transition: transform .8s cubic-bezier(.2, .8, .2, 1);
-
             border-radius: 14px;
             box-shadow: 0 20px 45px rgba(0, 0, 0, .5);
         }
@@ -413,13 +381,10 @@
         .flip-card-back {
             position: absolute;
             inset: 0;
-
             width: 100%;
             height: 100%;
-
             border-radius: 14px;
             overflow: hidden;
-
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
         }
@@ -440,9 +405,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-
             margin-top: 28px;
-
             color: var(--accent-orange);
             font-size: .87rem;
             font-weight: 700;
@@ -458,33 +421,25 @@
 
         .smartphone-frame {
             position: relative;
-
             width: min(320px, 100%);
             aspect-ratio: 320 / 620;
             height: auto;
-
             background: #000;
             border: 8px solid #303641;
             border-radius: 39px;
-
             overflow: hidden;
-
             box-shadow: 0 25px 55px rgba(0, 0, 0, .65);
         }
 
         .phone-notch {
             position: absolute;
             z-index: 5;
-
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-
             width: 125px;
             height: 23px;
-
             background: #303641;
-
             border-radius: 0 0 15px 15px;
             pointer-events: none;
         }
@@ -493,18 +448,15 @@
             width: 100%;
             height: 100%;
             display: block;
-
             border: none;
             background: #fff;
         }
 
         .demo-open-link {
             margin-top: 22px;
-
             display: inline-flex;
             align-items: center;
             gap: 8px;
-
             color: var(--accent-orange);
             text-decoration: none;
             font-weight: 700;
@@ -535,7 +487,6 @@
             align-items: center;
             justify-content: center;
             gap: 12px;
-
             color: var(--text-muted);
             font-size: .88rem;
             font-weight: 700;
@@ -556,13 +507,11 @@
 
         .section-label {
             display: inline-block;
-
             color: var(--accent-orange);
             font-size: .78rem;
             font-weight: 800;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-
             margin-bottom: 12px;
         }
 
@@ -597,13 +546,10 @@
 
         .step-card {
             position: relative;
-
             padding: 30px 25px;
-
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
-
             text-align: center;
             transition: .3s ease;
         }
@@ -616,16 +562,12 @@
         .step-icon {
             width: 65px;
             height: 65px;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             margin: 0 auto 20px;
-
             background: var(--accent-soft);
             color: var(--accent-orange);
-
             border-radius: 17px;
             font-size: 1.7rem;
         }
@@ -659,7 +601,6 @@
 
         .receive-card {
             padding: 28px;
-
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
@@ -695,11 +636,9 @@
 
         .feature-card {
             padding: 25px;
-
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
-
             transition: .3s ease;
         }
 
@@ -712,17 +651,13 @@
         .feature-icon {
             width: 49px;
             height: 49px;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             background: var(--accent-soft);
             color: var(--accent-orange);
-
             border-radius: 13px;
             font-size: 1.35rem;
-
             margin-bottom: 18px;
         }
 
@@ -746,20 +681,15 @@
 
         .application-card {
             min-height: 180px;
-
             padding: 25px 18px;
-
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-
             text-align: center;
-
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
-
             transition: .3s ease;
         }
 
@@ -793,7 +723,6 @@
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 13px;
-
             margin-bottom: 12px;
             overflow: hidden;
         }
@@ -803,12 +732,9 @@
             align-items: center;
             justify-content: space-between;
             gap: 20px;
-
             padding: 20px 23px;
-
             cursor: pointer;
             list-style: none;
-
             font-weight: 700;
             font-size: .95rem;
         }
@@ -844,36 +770,23 @@
         .cta-banner {
             max-width: var(--container);
             margin: auto;
-
             position: relative;
             overflow: hidden;
-
             padding: 65px 30px;
-
             text-align: center;
-
-            background: linear-gradient(135deg,
-                    #252c37,
-                    #171c24);
-
+            background: linear-gradient(135deg, #252c37, #171c24);
             border: 1px solid var(--border-color);
             border-radius: 22px;
         }
 
         .cta-banner::before {
             content: "";
-
             position: absolute;
             width: 350px;
             height: 350px;
-
             right: -100px;
             top: -180px;
-
-            background: radial-gradient(circle,
-                    rgba(255, 123, 0, .18),
-                    transparent 70%);
-
+            background: radial-gradient(circle, rgba(255, 123, 0, .18), transparent 70%);
             pointer-events: none;
         }
 
@@ -892,7 +805,6 @@
         .cta-banner p {
             max-width: 650px;
             margin: 0 auto 30px;
-
             color: var(--text-muted);
             font-size: 1rem;
         }
@@ -908,7 +820,6 @@
         .footer-content {
             max-width: var(--container);
             margin: auto;
-
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -923,18 +834,14 @@
         .social-links a {
             width: 43px;
             height: 43px;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             border: 1px solid var(--border-color);
             border-radius: 50%;
-
             color: var(--text-muted);
             font-size: 1.15rem;
             text-decoration: none;
-
             transition: .25s ease;
         }
 
@@ -947,10 +854,8 @@
         .footer-copy {
             width: 100%;
             padding-top: 20px;
-
             text-align: center;
             border-top: 1px solid var(--border-color);
-
             color: var(--text-subtle);
             font-size: .82rem;
         }
@@ -966,25 +871,19 @@
         .whatsapp-float {
             position: fixed;
             z-index: 999;
-
-            right: max(16px, env(safe-area-inset-right));
-            bottom: max(16px, env(safe-area-inset-bottom));
-
+            right: max(12px, env(safe-area-inset-right));
+            bottom: max(12px, env(safe-area-inset-bottom));
             width: 54px;
             height: 54px;
-
+            box-sizing: border-box;
             display: flex;
             align-items: center;
             justify-content: center;
-
             background: #25d366;
             color: #fff;
-
             border-radius: 50%;
             text-decoration: none;
-
             font-size: 1.7rem;
-
             box-shadow: 0 5px 25px rgba(0, 0, 0, .35);
             transition: .25s ease;
         }
@@ -992,12 +891,6 @@
         .whatsapp-float:hover {
             transform: scale(1.08);
             background: #20bd5a;
-        }
-
-        html,
-        body {
-            max-width: 100%;
-            overflow-x: clip;
         }
 
         /* RESPONSIVIDADE */
@@ -1113,7 +1006,7 @@
                 font-size: 1.12rem;
             }
 
-            .demo-panel>p {
+            .demo-panel > p {
                 font-size: .8rem;
             }
 
@@ -1146,13 +1039,12 @@
             .whatsapp-float {
                 width: 53px;
                 height: 53px;
-                right: 16px;
-                bottom: 16px;
+                right: max(12px, env(safe-area-inset-right));
+                bottom: max(12px, env(safe-area-inset-bottom));
             }
         }
 
         @media (prefers-reduced-motion: reduce) {
-
             *,
             *::before,
             *::after {
@@ -1187,7 +1079,6 @@
 
         </nav>
     </header>
-
 
     <main>
 
@@ -1233,7 +1124,6 @@
 
                 </div>
 
-
                 <!-- DEMONSTRAÇÃO INTERATIVA -->
 
                 <div class="demo-area" id="demonstracao">
@@ -1254,7 +1144,6 @@
 
                     </div>
 
-
                     <div class="demo-grid">
 
                         <!-- CARTÃO FÍSICO -->
@@ -1274,17 +1163,13 @@
                                 <div class="flip-card-inner">
 
                                     <div class="flip-card-front">
-
                                         <img id="card-frente-img" src="images/card1frente.jpg"
                                             alt="Frente do cartão Digital Card personalizado" width="340" height="215">
-
                                     </div>
 
                                     <div class="flip-card-back">
-
                                         <img id="card-verso-img" src="images/card1verso.jpg"
                                             alt="Verso do cartão Digital Card com QR Code" width="340" height="215">
-
                                     </div>
 
                                 </div>
@@ -1301,7 +1186,6 @@
                             </span>
 
                         </div>
-
 
                         <!-- PERFIL DIGITAL -->
 
@@ -1339,7 +1223,6 @@
 
         </section>
 
-
         <!-- BENEFÍCIOS RÁPIDOS -->
 
         <section class="benefit-strip">
@@ -1365,7 +1248,6 @@
 
         </section>
 
-
         <!-- COMO FUNCIONA -->
 
         <section class="how-section section-padding">
@@ -1374,9 +1256,7 @@
 
                 <div class="section-heading">
 
-                    <span class="section-label">
-                        Simples e prático
-                    </span>
+                    <span class="section-label">Simples e prático</span>
 
                     <h2>
                         Como funciona o
@@ -1389,7 +1269,6 @@
                     </p>
 
                 </div>
-
 
                 <div class="steps-grid">
 
@@ -1410,7 +1289,6 @@
 
                     </article>
 
-
                     <article class="step-card">
 
                         <div class="step-icon">
@@ -1427,7 +1305,6 @@
                         </p>
 
                     </article>
-
 
                     <article class="step-card">
 
@@ -1452,7 +1329,6 @@
 
         </section>
 
-
         <!-- O QUE VOCÊ RECEBE -->
 
         <section class="section-padding">
@@ -1461,9 +1337,7 @@
 
                 <div class="section-heading">
 
-                    <span class="section-label">
-                        Muito além de um cartão
-                    </span>
+                    <span class="section-label">Muito além de um cartão</span>
 
                     <h2>
                         O que você recebe com a
@@ -1477,48 +1351,33 @@
 
                 </div>
 
-
                 <div class="receive-grid">
 
                     <article class="receive-card">
-
                         <i class="fas fa-id-card"></i>
-
                         <h3>Cartão físico personalizado</h3>
-
                         <p>
                             Cartão em PVC com sua identidade visual,
                             impressão personalizada e tecnologia NFC integrada.
                         </p>
-
                     </article>
 
-
                     <article class="receive-card">
-
                         <i class="fas fa-laptop"></i>
-
                         <h3>Perfil digital exclusivo</h3>
-
                         <p>
                             Uma página dedicada à sua apresentação profissional,
                             com contatos, redes sociais e informações importantes.
                         </p>
-
                     </article>
 
-
                     <article class="receive-card">
-
                         <i class="fas fa-qrcode"></i>
-
                         <h3>Duas formas de acesso</h3>
-
                         <p>
                             Compartilhe seu perfil por aproximação NFC ou
                             leitura do QR Code impresso no cartão.
                         </p>
-
                     </article>
 
                 </div>
@@ -1526,7 +1385,6 @@
             </div>
 
         </section>
-
 
         <!-- RECURSOS E DIFERENCIAIS -->
 
@@ -1536,9 +1394,7 @@
 
                 <div class="section-heading">
 
-                    <span class="section-label">
-                        Diferenciais
-                    </span>
+                    <span class="section-label">Diferenciais</span>
 
                     <h2>
                         Tecnologia que trabalha
@@ -1552,71 +1408,51 @@
 
                 </div>
 
-
                 <div class="features-grid">
 
                     <article class="feature-card">
-
                         <div class="feature-icon">
                             <i class="fas fa-microchip"></i>
                         </div>
-
                         <h3>Chip NFC integrado</h3>
-
                         <p>
                             Tecnologia de aproximação compatível com celulares
                             que possuem suporte a NFC.
                         </p>
-
                     </article>
 
-
                     <article class="feature-card">
-
                         <div class="feature-icon">
                             <i class="fas fa-qrcode"></i>
                         </div>
-
                         <h3>QR Code de apoio</h3>
-
                         <p>
                             Outra maneira de acessar seu perfil, inclusive
                             em aparelhos sem suporte à leitura NFC.
                         </p>
-
                     </article>
 
-
                     <article class="feature-card">
-
                         <div class="feature-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
-
                         <h3>PVC durável</h3>
-
                         <p>
                             Material leve e resistente para acompanhar
                             você na rotina profissional.
                         </p>
-
                     </article>
 
-
                     <article class="feature-card">
-
                         <div class="feature-icon">
                             <i class="fas fa-edit"></i>
                         </div>
-
                         <h3>Perfil atualizável</h3>
-
                         <p>
                             Alterações nas informações do perfil digital
                             podem ser realizadas sem precisar reimprimir
                             o cartão, conforme as condições do serviço.
                         </p>
-
                     </article>
 
                 </div>
@@ -1624,7 +1460,6 @@
             </div>
 
         </section>
-
 
         <!-- PARA QUEM É -->
 
@@ -1634,9 +1469,7 @@
 
                 <div class="section-heading">
 
-                    <span class="section-label">
-                        Versatilidade
-                    </span>
+                    <span class="section-label">Versatilidade</span>
 
                     <h2>
                         Ideal para quem deseja
@@ -1650,78 +1483,46 @@
 
                 </div>
 
-
                 <div class="applications-grid">
 
                     <article class="application-card">
-
                         <i class="fas fa-home"></i>
-
                         <h3>Corretores de imóveis</h3>
-
                     </article>
 
-
                     <article class="application-card">
-
                         <i class="fas fa-briefcase"></i>
-
                         <h3>Empresários e consultores</h3>
-
                     </article>
 
-
                     <article class="application-card">
-
                         <i class="fas fa-cut"></i>
-
                         <h3>Profissionais autônomos</h3>
-
                     </article>
 
-
                     <article class="application-card">
-
                         <i class="fas fa-user-tie"></i>
-
                         <h3>Representantes comerciais</h3>
-
                     </article>
 
-
                     <article class="application-card">
-
                         <i class="fas fa-camera"></i>
-
                         <h3>Fotógrafos e criativos</h3>
-
                     </article>
 
-
                     <article class="application-card">
-
                         <i class="fas fa-heart"></i>
-
                         <h3>Profissionais da beleza</h3>
-
                     </article>
 
-
                     <article class="application-card">
-
                         <i class="fas fa-chart-line"></i>
-
                         <h3>Prestadores de serviços</h3>
-
                     </article>
 
-
                     <article class="application-card">
-
                         <i class="fas fa-store"></i>
-
                         <h3>Comerciantes e lojistas</h3>
-
                     </article>
 
                 </div>
@@ -1729,7 +1530,6 @@
             </div>
 
         </section>
-
 
         <!-- PERGUNTAS FREQUENTES -->
 
@@ -1739,9 +1539,7 @@
 
                 <div class="section-heading">
 
-                    <span class="section-label">
-                        Tire suas dúvidas
-                    </span>
+                    <span class="section-label">Tire suas dúvidas</span>
 
                     <h2>
                         Perguntas
@@ -1755,128 +1553,80 @@
 
                 </div>
 
-
                 <div class="faq-container">
 
                     <details class="faq-item">
-
-                        <summary>
-                            Preciso instalar algum aplicativo?
-                        </summary>
-
+                        <summary>Preciso instalar algum aplicativo?</summary>
                         <div class="faq-answer">
                             Não. O acesso ao perfil digital acontece pelo
                             navegador do celular. Não é necessário instalar
                             um aplicativo para visualizar suas informações.
                         </div>
-
                     </details>
 
-
                     <details class="faq-item">
-
-                        <summary>
-                            Funciona em iPhone e Android?
-                        </summary>
-
+                        <summary>Funciona em iPhone e Android?</summary>
                         <div class="faq-answer">
                             Sim, desde que o aparelho possua suporte à leitura
                             NFC. A disponibilidade e a forma de leitura podem
                             variar conforme o modelo e as configurações do celular.
                         </div>
-
                     </details>
 
-
                     <details class="faq-item">
-
-                        <summary>
-                            E se o celular não tiver NFC?
-                        </summary>
-
+                        <summary>E se o celular não tiver NFC?</summary>
                         <div class="faq-answer">
                             Não tem problema! O cartão também possui QR Code,
                             permitindo que o perfil digital seja acessado
                             utilizando a câmera do celular.
                         </div>
-
                     </details>
 
-
                     <details class="faq-item">
-
-                        <summary>
-                            Posso personalizar o cartão com minha marca?
-                        </summary>
-
+                        <summary>Posso personalizar o cartão com minha marca?</summary>
                         <div class="faq-answer">
                             Sim! A proposta é desenvolver um cartão com a
                             identidade visual da sua empresa ou atividade
                             profissional. Consulte as possibilidades de
                             personalização no atendimento.
                         </div>
-
                     </details>
 
-
                     <details class="faq-item">
-
-                        <summary>
-                            Posso alterar meus dados depois?
-                        </summary>
-
+                        <summary>Posso alterar meus dados depois?</summary>
                         <div class="faq-answer">
                             O perfil digital permite atualizações sem a
                             necessidade de produzir outro cartão físico.
                             Consulte as condições e os recursos disponíveis
                             para manutenção do perfil.
                         </div>
-
                     </details>
 
-
                     <details class="faq-item">
-
-                        <summary>
-                            O cartão precisa de bateria?
-                        </summary>
-
+                        <summary>O cartão precisa de bateria?</summary>
                         <div class="faq-answer">
                             Não. O chip NFC é passivo e não utiliza bateria
                             própria para transmitir o endereço do perfil.
                         </div>
-
                     </details>
 
-
                     <details class="faq-item">
-
-                        <summary>
-                            Como faço para comprar?
-                        </summary>
-
+                        <summary>Como faço para comprar?</summary>
                         <div class="faq-answer">
                             Basta entrar em contato pelo WhatsApp. Nossa equipe
                             poderá orientar sobre personalização, valores,
                             condições e prazo de produção.
                         </div>
-
                     </details>
 
-
                     <details class="faq-item">
-
-                        <summary>
-                            Existe mensalidade para utilizar o perfil?
-                        </summary>
-
+                        <summary>Existe mensalidade para utilizar o perfil?</summary>
                         <div class="faq-answer">
                             As condições de utilização e manutenção do perfil
                             digital devem ser confirmadas no momento da
                             contratação. Entre em contato para conhecer
                             os planos e condições disponíveis.
                         </div>
-
                     </details>
 
                 </div>
@@ -1884,7 +1634,6 @@
             </div>
 
         </section>
-
 
         <!-- CTA FINAL -->
 
@@ -1894,9 +1643,7 @@
 
                 <div class="cta-content">
 
-                    <span class="section-label">
-                        Digital Card
-                    </span>
+                    <span class="section-label">Digital Card</span>
 
                     <h2>
                         Seu próximo contato pode começar com um toque.
@@ -1922,7 +1669,6 @@
 
     </main>
 
-
     <!-- FOOTER -->
 
     <footer>
@@ -1939,11 +1685,10 @@
 
             </a>
 
-
             <div class="social-links">
 
-                <a href="https://wa.me/5542999001750" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
-                    title="WhatsApp">
+                <a href="https://wa.me/5542999001750" target="_blank" rel="noopener noreferrer"
+                    aria-label="WhatsApp" title="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
 
@@ -1957,7 +1702,6 @@
                 </a>
 
             </div>
-
 
             <div class="footer-copy">
 
@@ -1979,7 +1723,6 @@
 
     </footer>
 
-
     <!-- WHATSAPP FLUTUANTE -->
 
     <a href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20os%20cart%C3%B5es%20NFC%20da%20Digital%20Card."
@@ -1988,15 +1731,12 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-
     <!-- JAVASCRIPT -->
 
     <script>
-
         // CONFIGURAÇÃO DOS MODELOS
 
         const models = {
-
             1: {
                 frente: 'images/card1frente.jpg',
                 verso: 'images/card1verso.jpg',
@@ -2008,9 +1748,7 @@
                 verso: 'images/card2verso.jpg',
                 perfil: 'https://cartao-generico.aproximeaqui.com.br/'
             }
-
         };
-
 
         // TROCA DE MODELOS
 
@@ -2031,7 +1769,6 @@
             const iframe = document.getElementById('iframe-preview');
             const openDemo = document.getElementById('open-demo');
 
-
             // Atualiza os botões
 
             btn1.classList.toggle('active', modelNum === 1);
@@ -2040,12 +1777,10 @@
             btn1.setAttribute('aria-pressed', modelNum === 1);
             btn2.setAttribute('aria-pressed', modelNum === 2);
 
-
             // Volta o cartão para a frente
 
             flipCard.classList.remove('flipped');
             flipCard.setAttribute('aria-pressed', 'false');
-
 
             // Atualiza as imagens
 
@@ -2055,7 +1790,6 @@
             imgFrente.alt = `Frente do cartão modelo ${modelNum}`;
             imgVerso.alt = `Verso do cartão modelo ${modelNum}`;
 
-
             // Atualiza a demonstração digital
 
             if (iframe.src !== model.perfil) {
@@ -2063,9 +1797,7 @@
             }
 
             openDemo.href = model.perfil;
-
         }
-
 
         // GIRA O CARTÃO
 
@@ -2083,9 +1815,7 @@
                     ? 'Girar cartão para visualizar a frente'
                     : 'Girar cartão para visualizar o verso'
             );
-
         }
-
 
         // ANO AUTOMÁTICO NO RODAPÉ
 
