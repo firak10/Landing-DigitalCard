@@ -1,606 +1,2178 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Card - Cartões de Visita Premium PVC com NFC</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <style>
-    :root {
-      --bg-dark: #0f1217;
-      --bg-card: #171c24;
-      --bg-card-hover: #1e2430;
-      --border-color: #2a3240;
-      --accent-orange: #ff7b00;
-      --accent-orange-hover: #e06d00;
-      --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
-      --radius-lg: 16px;
-      --radius-md: 10px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <title>Digital Card | Cartão de Visita NFC Personalizado em PVC</title>
 
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+    <meta name="description" content="Compartilhe seus contatos com um toque. Cartões de visita personalizados em PVC com tecnologia NFC, QR Code e perfil digital exclusivo. Conheça a Digital Card.">
 
-    header {
-      background: rgba(15, 18, 23, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-color);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: 1rem 2rem;
-    }
+    <meta name="theme-color" content="#0f1217">
 
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Digital Card | Seu contato a um toque de distância">
+    <meta property="og:description" content="Cartões de visita premium em PVC com NFC e QR Code. Apresente sua marca de uma maneira moderna e profissional.">
+    <meta property="og:image" content="images/logo 2.jpg">
 
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: var(--text-main);
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    .logo-img {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    .logo-text {
-      font-weight: 800;
-      font-size: 1.25rem;
-      letter-spacing: -0.5px;
-    }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    .logo-text span {
-      color: var(--accent-orange);
-    }
+    <style>
+        :root {
+            --bg-dark: #0f1217;
+            --bg-section: #121720;
+            --bg-card: #171c24;
+            --bg-card-hover: #1e2632;
 
-    .nav-cta {
-      background-color: var(--accent-orange);
-      color: #fff;
-      padding: 0.6rem 1.4rem;
-      border-radius: 50px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
+            --border-color: #2a3240;
 
-    .nav-cta:hover {
-      background-color: var(--accent-orange-hover);
-      transform: translateY(-2px);
-    }
+            --accent-orange: #ff7b00;
+            --accent-orange-hover: #e06d00;
+            --accent-soft: rgba(255, 123, 0, 0.12);
 
-    .hero {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+            --text-main: #f3f4f6;
+            --text-muted: #a1aab8;
+            --text-subtle: #778292;
 
-    .hero-title-area {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 3rem auto;
-    }
+            --radius-lg: 18px;
+            --radius-md: 12px;
 
-    .badge {
-      display: inline-block;
-      background: rgba(255, 123, 0, 0.15);
-      color: var(--accent-orange);
-      border: 1px solid rgba(255, 123, 0, 0.3);
-      padding: 0.35rem 1rem;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+            --container: 1160px;
+        }
 
-    .hero-title-area h1 {
-      font-size: 2.75rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    .hero-title-area h1 span {
-      color: var(--accent-orange);
-    }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
 
-    .hero-title-area p {
-      color: var(--text-muted);
-      font-size: 1.15rem;
-    }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
 
-    .model-selector {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 2.5rem;
-    }
+        a {
+            color: inherit;
+        }
 
-    .selector-btn {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      color: var(--text-muted);
-      padding: 0.75rem 1.75rem;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+        button {
+            font: inherit;
+        }
 
-    .selector-btn.active {
-      background: var(--accent-orange);
-      color: #fff;
-      border-color: var(--accent-orange);
-      box-shadow: 0 4px 20px rgba(255, 123, 0, 0.3);
-    }
+        img {
+            max-width: 100%;
+        }
 
-    .demo-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
+        .container {
+            width: min(var(--container), calc(100% - 40px));
+            margin: 0 auto;
+        }
 
-    @media (max-width: 900px) {
-      .demo-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-      }
-    }
+        .text-orange {
+            color: var(--accent-orange);
+        }
 
-    .demo-card-container {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem 2rem;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+        .section-padding {
+            padding: 90px 0;
+        }
 
-    .demo-card-container h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
+        /* HEADER */
 
-    .demo-card-container p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 2rem;
-    }
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
 
-    .flip-card {
-      background-color: transparent;
-      width: 340px;
-      height: 215px;
-      perspective: 1000px;
-      margin: 0 auto;
-      cursor: pointer;
-    }
+            background: rgba(15, 18, 23, 0.92);
+            backdrop-filter: blur(14px);
 
-    @media (max-width: 400px) {
-      .flip-card {
-        width: 290px;
-        height: 183px;
-      }
-    }
+            border-bottom: 1px solid var(--border-color);
+        }
 
-    .flip-card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      transform-style: preserve-3d;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-      border-radius: 14px;
-    }
+        .nav-container {
+            max-width: var(--container);
+            width: calc(100% - 40px);
+            min-height: 76px;
+            margin: auto;
 
-    .flip-card:hover .flip-card-inner,
-    .flip-card.flipped .flip-card-inner {
-      transform: rotateY(180deg);
-    }
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
 
-    .flip-card-front, .flip-card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      border-radius: 14px;
-      overflow: hidden;
-    }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 11px;
 
-    .flip-card-front img, .flip-card-back img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+            text-decoration: none;
+        }
 
-    .flip-card-back {
-      transform: rotateY(180deg);
-    }
+        .logo-img {
+            width: 43px;
+            height: 43px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
 
-    .flip-hint {
-      margin-top: 1.5rem;
-      color: var(--accent-orange);
-      font-size: 0.85rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.7px;
+            color: #fff;
+        }
 
-    .smartphone-frame {
-      position: relative;
-      width: 320px;
-      height: 620px;
-      background: #000;
-      border-radius: 40px;
-      border: 8px solid #2a2e37;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-      margin: 0 auto;
-      overflow: hidden;
-    }
+        .logo-text span {
+            color: var(--accent-orange);
+        }
 
-    .phone-notch {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 130px;
-      height: 24px;
-      background: #2a2e37;
-      border-bottom-left-radius: 14px;
-      border-bottom-right-radius: 14px;
-      z-index: 10;
-    }
+        .nav-cta,
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
 
-    .smartphone-frame iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      background: #fff;
-    }
+            background: var(--accent-orange);
+            color: #fff;
 
-    .features {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      border-top: 1px solid var(--border-color);
-    }
+            text-decoration: none;
+            font-weight: 800;
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
+            border-radius: 50px;
+            transition: .25s ease;
+        }
 
-    .section-title h2 {
-      font-size: 2rem;
-      font-weight: 800;
-    }
+        .nav-cta {
+            padding: 11px 22px;
+            font-size: .9rem;
+        }
 
-    .section-title h2 span {
-      color: var(--accent-orange);
-    }
+        .nav-cta:hover,
+        .btn-primary:hover {
+            background: var(--accent-orange-hover);
+            transform: translateY(-2px);
+        }
 
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
+        /* HERO */
 
-    .feature-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      padding: 2rem;
-      border-radius: var(--radius-lg);
-      transition: transform 0.3s ease;
-    }
+        .hero {
+            padding: 85px 0 95px;
+            position: relative;
+        }
 
-    .feature-card:hover {
-      transform: translateY(-5px);
-    }
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 550px;
+            height: 550px;
 
-    .feature-icon {
-      width: 50px;
-      height: 50px;
-      background: rgba(255, 123, 0, 0.15);
-      color: var(--accent-orange);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 1.25rem;
-    }
+            top: -180px;
+            left: 50%;
+            transform: translateX(-50%);
 
-    .feature-card h4 {
-      font-size: 1.15rem;
-      margin-bottom: 0.5rem;
-    }
+            background: radial-gradient(
+                circle,
+                rgba(255, 123, 0, .09),
+                transparent 70%
+            );
 
-    .feature-card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
+            pointer-events: none;
+        }
 
-    .cta-banner {
-      background: linear-gradient(135deg, #1e2430 0%, #171c24 100%);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      max-width: 1200px;
-      margin: 4rem auto;
-      padding: 3.5rem 2rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 55px;
+        }
 
-    .cta-banner h2 {
-      font-size: 2.25rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-    }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
 
-    .cta-banner p {
-      color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto 2rem auto;
-      font-size: 1.1rem;
-    }
+            background: var(--accent-soft);
+            color: var(--accent-orange);
 
-    .btn-large {
-      background-color: var(--accent-orange);
-      color: #fff;
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      font-weight: 800;
-      font-size: 1.1rem;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 25px rgba(255, 123, 0, 0.4);
-    }
+            border: 1px solid rgba(255, 123, 0, .3);
+            border-radius: 50px;
 
-    .btn-large:hover {
-      background-color: var(--accent-orange-hover);
-      transform: translateY(-3px);
-      box-shadow: 0 15px 30px rgba(255, 123, 0, 0.5);
-    }
+            padding: 7px 15px;
 
-    footer {
-      background-color: #0b0d11;
-      border-top: 1px solid var(--border-color);
-      padding: 3rem 2rem;
-      text-align: center;
-    }
+            font-size: .78rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
 
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-    }
+            margin-bottom: 23px;
+        }
 
-    .social-links {
-      display: flex;
-      gap: 1.5rem;
-    }
+        .hero h1 {
+            font-size: clamp(2.3rem, 5vw, 3.8rem);
+            line-height: 1.13;
+            letter-spacing: -2px;
+            font-weight: 800;
 
-    .social-links a {
-      color: var(--text-muted);
-      font-size: 1.5rem;
-      transition: color 0.3s ease;
-    }
+            margin-bottom: 22px;
+        }
 
-    .social-links a:hover {
-      color: var(--accent-orange);
-    }
+        .hero h1 span {
+            color: var(--accent-orange);
+        }
 
-    .footer-copy {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
+        .hero-description {
+            max-width: 680px;
+            margin: 0 auto;
 
-    .footer-copy a {
-      color: var(--accent-orange);
-      text-decoration: none;
-    }
-  </style>
+            color: var(--text-muted);
+            font-size: 1.08rem;
+        }
+
+        .hero-actions {
+            margin-top: 30px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            padding: 15px 27px;
+            font-size: .98rem;
+            box-shadow: 0 8px 25px rgba(255, 123, 0, .2);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+
+            padding: 14px 25px;
+
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 700;
+
+            transition: .25s ease;
+        }
+
+        .btn-outline:hover {
+            background: var(--bg-card);
+            border-color: var(--accent-orange);
+        }
+
+        /* DEMONSTRAÇÃO */
+
+        .demo-area {
+            position: relative;
+            z-index: 1;
+        }
+
+        .demo-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .selector-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 12px 23px;
+
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+
+            background: var(--bg-card);
+            color: var(--text-muted);
+
+            font-size: .9rem;
+            font-weight: 700;
+
+            cursor: pointer;
+            transition: .25s ease;
+        }
+
+        .selector-btn:hover {
+            border-color: var(--accent-orange);
+            color: #fff;
+        }
+
+        .selector-btn.active {
+            background: var(--accent-orange);
+            border-color: var(--accent-orange);
+            color: #fff;
+
+            box-shadow: 0 5px 20px rgba(255, 123, 0, .2);
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .demo-panel {
+            min-width: 0;
+            min-height: 580px;
+
+            padding: 35px 25px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            background: linear-gradient(
+                145deg,
+                #1a202a,
+                #141922
+            );
+
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+        }
+
+        .demo-panel h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .demo-panel > p {
+            color: var(--text-muted);
+            font-size: .88rem;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        /* CARTÃO FÍSICO */
+
+        .flip-card {
+            display: block;
+            width: min(340px, 100%);
+            aspect-ratio: 340 / 215;
+
+            background: transparent;
+            border: none;
+            padding: 0;
+
+            perspective: 1200px;
+            cursor: pointer;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            transform-style: preserve-3d;
+            transition: transform .8s cubic-bezier(.2, .8, .2, 1);
+
+            border-radius: 14px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, .5);
+        }
+
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        @media (hover: hover) {
+            .flip-card:not(.flipped):hover .flip-card-inner {
+                transform: rotateY(180deg);
+            }
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            border-radius: 14px;
+            overflow: hidden;
+
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+
+        .flip-card-front img,
+        .flip-card-back img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+
+        .flip-hint {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            margin-top: 28px;
+
+            color: var(--accent-orange);
+            font-size: .87rem;
+            font-weight: 700;
+        }
+
+        .card-caption {
+            margin-top: 12px;
+            color: var(--text-subtle);
+            font-size: .78rem;
+        }
+
+        /* SMARTPHONE */
+
+        .smartphone-frame {
+            position: relative;
+
+            width: min(320px, 100%);
+            aspect-ratio: 320 / 620;
+            height: auto;
+
+            background: #000;
+            border: 8px solid #303641;
+            border-radius: 39px;
+
+            overflow: hidden;
+
+            box-shadow: 0 25px 55px rgba(0, 0, 0, .65);
+        }
+
+        .phone-notch {
+            position: absolute;
+            z-index: 5;
+
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: 125px;
+            height: 23px;
+
+            background: #303641;
+
+            border-radius: 0 0 15px 15px;
+            pointer-events: none;
+        }
+
+        .smartphone-frame iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+
+            border: none;
+            background: #fff;
+        }
+
+        .demo-open-link {
+            margin-top: 22px;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            color: var(--accent-orange);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: .88rem;
+        }
+
+        .demo-open-link:hover {
+            text-decoration: underline;
+        }
+
+        /* FAIXA DE BENEFÍCIOS */
+
+        .benefit-strip {
+            background: #171d26;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .benefit-strip-inner {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 28px 0;
+        }
+
+        .strip-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+
+            color: var(--text-muted);
+            font-size: .88rem;
+            font-weight: 700;
+        }
+
+        .strip-item i {
+            color: var(--accent-orange);
+            font-size: 1.3rem;
+        }
+
+        /* TÍTULOS DAS SEÇÕES */
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .section-label {
+            display: inline-block;
+
+            color: var(--accent-orange);
+            font-size: .78rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            line-height: 1.2;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .section-heading h2 span {
+            color: var(--accent-orange);
+        }
+
+        .section-heading p {
+            color: var(--text-muted);
+            margin-top: 14px;
+            font-size: .98rem;
+        }
+
+        /* COMO FUNCIONA */
+
+        .how-section {
+            background: var(--bg-section);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .step-card {
+            position: relative;
+
+            padding: 30px 25px;
+
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+
+            text-align: center;
+            transition: .3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 123, 0, .5);
+        }
+
+        .step-icon {
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto 20px;
+
+            background: var(--accent-soft);
+            color: var(--accent-orange);
+
+            border-radius: 17px;
+            font-size: 1.7rem;
+        }
+
+        .step-number {
+            display: block;
+            color: var(--accent-orange);
+            font-size: .75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 7px;
+        }
+
+        .step-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 9px;
+        }
+
+        .step-card p {
+            color: var(--text-muted);
+            font-size: .88rem;
+        }
+
+        /* O QUE RECEBE */
+
+        .receive-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .receive-card {
+            padding: 28px;
+
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+        }
+
+        .receive-card i {
+            color: var(--accent-orange);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .receive-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+        }
+
+        .receive-card p {
+            color: var(--text-muted);
+            font-size: .9rem;
+        }
+
+        /* RECURSOS */
+
+        .features-section {
+            background: var(--bg-section);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .feature-card {
+            padding: 25px;
+
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+
+            transition: .3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: var(--bg-card-hover);
+            border-color: rgba(255, 123, 0, .4);
+        }
+
+        .feature-icon {
+            width: 49px;
+            height: 49px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: var(--accent-soft);
+            color: var(--accent-orange);
+
+            border-radius: 13px;
+            font-size: 1.35rem;
+
+            margin-bottom: 18px;
+        }
+
+        .feature-card h3 {
+            font-size: 1rem;
+            margin-bottom: 9px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: .85rem;
+        }
+
+        /* APLICAÇÕES */
+
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 17px;
+        }
+
+        .application-card {
+            min-height: 180px;
+
+            padding: 25px 18px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+
+            transition: .3s ease;
+        }
+
+        .application-card:hover {
+            border-color: var(--accent-orange);
+            transform: translateY(-4px);
+        }
+
+        .application-card i {
+            font-size: 2rem;
+            color: var(--accent-orange);
+            margin-bottom: 16px;
+        }
+
+        .application-card h3 {
+            font-size: .95rem;
+        }
+
+        /* FAQ */
+
+        .faq-section {
+            background: var(--bg-section);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 13px;
+
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faq-item summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+
+            padding: 20px 23px;
+
+            cursor: pointer;
+            list-style: none;
+
+            font-weight: 700;
+            font-size: .95rem;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: "+";
+            color: var(--accent-orange);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            transition: .2s ease;
+        }
+
+        .faq-item[open] summary::after {
+            content: "−";
+        }
+
+        .faq-answer {
+            padding: 0 23px 20px;
+            color: var(--text-muted);
+            font-size: .9rem;
+        }
+
+        /* CTA */
+
+        .cta-section {
+            padding: 90px 20px;
+        }
+
+        .cta-banner {
+            max-width: var(--container);
+            margin: auto;
+
+            position: relative;
+            overflow: hidden;
+
+            padding: 65px 30px;
+
+            text-align: center;
+
+            background: linear-gradient(
+                135deg,
+                #252c37,
+                #171c24
+            );
+
+            border: 1px solid var(--border-color);
+            border-radius: 22px;
+        }
+
+        .cta-banner::before {
+            content: "";
+
+            position: absolute;
+            width: 350px;
+            height: 350px;
+
+            right: -100px;
+            top: -180px;
+
+            background: radial-gradient(
+                circle,
+                rgba(255, 123, 0, .18),
+                transparent 70%
+            );
+
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-banner h2 {
+            font-size: clamp(1.8rem, 4vw, 2.7rem);
+            line-height: 1.2;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .cta-banner p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #0b0e13;
+            border-top: 1px solid var(--border-color);
+            padding: 50px 20px 25px;
+        }
+
+        .footer-content {
+            max-width: var(--container);
+            margin: auto;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 23px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 18px;
+        }
+
+        .social-links a {
+            width: 43px;
+            height: 43px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            text-decoration: none;
+
+            transition: .25s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-orange);
+            border-color: var(--accent-orange);
+            transform: translateY(-3px);
+        }
+
+        .footer-copy {
+            width: 100%;
+            padding-top: 20px;
+
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+
+            color: var(--text-subtle);
+            font-size: .82rem;
+        }
+
+        .footer-copy a {
+            color: var(--accent-orange);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* WHATSAPP FLUTUANTE */
+
+        .whatsapp-float {
+            position: fixed;
+            z-index: 90;
+
+            right: 24px;
+            bottom: 24px;
+
+            width: 58px;
+            height: 58px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #25d366;
+            color: #fff;
+
+            border-radius: 50%;
+            text-decoration: none;
+
+            font-size: 1.8rem;
+
+            box-shadow: 0 5px 25px rgba(0, 0, 0, .35);
+            transition: .25s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            background: #20bd5a;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 1000px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .applications-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .demo-grid {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .section-padding {
+                padding: 70px 0;
+            }
+
+            .hero {
+                padding: 65px 0 70px;
+            }
+
+            .demo-grid {
+                grid-template-columns: 1fr;
+                max-width: 550px;
+                margin: auto;
+            }
+
+            .demo-panel {
+                min-height: auto;
+                padding: 35px 20px;
+            }
+
+            .steps-grid,
+            .receive-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefit-strip-inner {
+                grid-template-columns: 1fr;
+                gap: 17px;
+            }
+
+            .strip-item {
+                justify-content: flex-start;
+                max-width: 280px;
+                margin: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .container {
+                width: calc(100% - 30px);
+            }
+
+            .nav-container {
+                width: calc(100% - 30px);
+                min-height: 68px;
+            }
+
+            .logo-img {
+                width: 37px;
+                height: 37px;
+            }
+
+            .logo-text {
+                font-size: 1.05rem;
+            }
+
+            .nav-cta {
+                padding: 10px 14px;
+                font-size: .78rem;
+            }
+
+            .hero {
+                padding-top: 55px;
+            }
+
+            .hero h1 {
+                letter-spacing: -1.3px;
+            }
+
+            .hero-description {
+                font-size: .95rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .hero-actions a {
+                width: 100%;
+            }
+
+            .demo-selector {
+                flex-direction: column;
+                align-items: stretch;
+                max-width: 340px;
+                margin: 0 auto 25px;
+            }
+
+            .selector-btn {
+                justify-content: center;
+            }
+
+            .demo-panel h3 {
+                font-size: 1.12rem;
+            }
+
+            .demo-panel > p {
+                font-size: .8rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .applications-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .application-card {
+                min-height: 145px;
+                padding: 18px 10px;
+            }
+
+            .application-card i {
+                font-size: 1.7rem;
+            }
+
+            .application-card h3 {
+                font-size: .83rem;
+            }
+
+            .cta-banner {
+                padding: 45px 20px;
+            }
+
+            .whatsapp-float {
+                width: 53px;
+                height: 53px;
+                right: 16px;
+                bottom: 16px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+                animation-duration: .01ms !important;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <header>
-    <div class="nav-container">
-      <a href="#" class="logo-container">
-        <img src="logo redonda.jpg" alt="Digital Card Logo" class="logo-img">
-        <div class="logo-text">DIGITAL<span>CARD</span></div>
-      </a>
-      <a href="https://wa.me/5542999001750?text=Olá!%20Gostaria%20de%20pedir%20um%20cartão%20de%20visita%20em%20PVC%20com%20NFC." target="_blank" class="nav-cta">
-        <i class="fab fa-whatsapp"></i> Fazer Pedido
-      </a>
-    </div>
-  </header>
+    <!-- HEADER -->
 
-  <main>
-    <section class="hero">
-      <div class="hero-title-area">
-        <span class="badge"><i class="fas fa-wifi"></i> Tecnologia por Aproximação</span>
-        <h1>O Cartão de Visita Físico que abre o seu <span>Perfil Virtual</span></h1>
-        <p>Cartões em PVC fino premium com NFC integrado e QR Code. Encostou no telemóvel, abriu a sua apresentação interativa.</p>
-      </div>
+    <header>
+        <nav class="nav-container">
 
-      <!-- Seletor de Modelos -->
-      <div class="model-selector">
-        <button class="selector-btn active" onclick="switchModel(1)" id="btn-model-1">
-          <i class="fas fa-address-card"></i> Modelo 1 (Digital Card)
-        </button>
-        <button class="selector-btn" onclick="switchModel(2)" id="btn-model-2">
-          <i class="fas fa-user-tag"></i> Modelo 2 (Genérico)
-        </button>
-      </div>
+            <a href="#" class="logo-container" aria-label="Digital Card - Página inicial">
+                <img
+                    src="images/logo 2.jpg"
+                    alt="Logo Digital Card"
+                    class="logo-img"
+                    width="43"
+                    height="43"
+                >
 
-      <div class="demo-grid">
-        <!-- Cartão Físico 3D -->
-        <div class="demo-card-container">
-          <h3>Cartão Físico em PVC</h3>
-          <p>Passe o cursor ou toque para girar o cartão</p>
-          
-          <div class="flip-card" onclick="this.classList.toggle('flipped')">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img id="card-frente-img" src="images/card1frente.jpg" alt="Cartão Físico Frente" decoding="async">
-              </div>
-              <div class="flip-card-back">
-                <img id="card-verso-img" src="images/card1verso.jpg" alt="Cartão Físico Verso" decoding="async">
-              </div>
+                <div class="logo-text">
+                    DIGITAL<span>CARD</span>
+                </div>
+            </a>
+
+            <a
+                href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20os%20cart%C3%B5es%20NFC%20da%20Digital%20Card."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="nav-cta"
+            >
+                <i class="fab fa-whatsapp"></i>
+                Fazer pedido
+            </a>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- HERO + DEMONSTRAÇÃO -->
+
+        <section class="hero">
+
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <span class="badge">
+                        <i class="fas fa-wifi"></i>
+                        Tecnologia NFC
+                    </span>
+
+                    <h1>
+                        Seu contato profissional.
+                        <span>Um toque de distância.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Cartões de visita personalizados em PVC com tecnologia NFC
+                        e QR Code. Apresente seus contatos, redes sociais e
+                        informações profissionais de uma maneira moderna e
+                        profissional.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn-primary"
+                        >
+                            <i class="fab fa-whatsapp"></i>
+                            Solicitar orçamento
+                        </a>
+
+                        <a href="#demonstracao" class="btn-outline">
+                            <i class="fas fa-play-circle"></i>
+                            Ver demonstração
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DEMONSTRAÇÃO INTERATIVA -->
+
+                <div class="demo-area" id="demonstracao">
+
+                    <div class="demo-selector">
+
+                        <button
+                            class="selector-btn active"
+                            id="btn-model-1"
+                            type="button"
+                            aria-pressed="true"
+                            onclick="switchModel(1)"
+                        >
+                            <i class="fas fa-address-card"></i>
+                            Cartão personalizado
+                        </button>
+
+                        <button
+                            class="selector-btn"
+                            id="btn-model-2"
+                            type="button"
+                            aria-pressed="false"
+                            onclick="switchModel(2)"
+                        >
+                            <i class="fas fa-id-card"></i>
+                            Cartão demonstrativo
+                        </button>
+
+                    </div>
+
+
+                    <div class="demo-grid">
+
+                        <!-- CARTÃO FÍSICO -->
+
+                        <div class="demo-panel">
+
+                            <h3>Seu cartão físico</h3>
+
+                            <p>
+                                Conheça o acabamento e os dois lados do cartão.
+                            </p>
+
+                            <button
+                                class="flip-card"
+                                id="flip-card"
+                                type="button"
+                                aria-label="Girar cartão para visualizar o verso"
+                                aria-pressed="false"
+                                onclick="toggleCard()"
+                            >
+
+                                <div class="flip-card-inner">
+
+                                    <div class="flip-card-front">
+
+                                        <img
+                                            id="card-frente-img"
+                                            src="images/card1frente.jpg"
+                                            alt="Frente do cartão Digital Card personalizado"
+                                            width="340"
+                                            height="215"
+                                        >
+
+                                    </div>
+
+                                    <div class="flip-card-back">
+
+                                        <img
+                                            id="card-verso-img"
+                                            src="images/card1verso.jpg"
+                                            alt="Verso do cartão Digital Card com QR Code"
+                                            width="340"
+                                            height="215"
+                                        >
+
+                                    </div>
+
+                                </div>
+
+                            </button>
+
+                            <div class="flip-hint">
+                                <i class="fas fa-sync-alt"></i>
+                                Clique para visualizar o verso
+                            </div>
+
+                            <span class="card-caption">
+                                Imagens ilustrativas dos modelos disponíveis.
+                            </span>
+
+                        </div>
+
+
+                        <!-- PERFIL DIGITAL -->
+
+                        <div class="demo-panel">
+
+                            <h3>Seu perfil digital</h3>
+
+                            <p>
+                                Veja como seus contatos visualizarão sua apresentação.
+                            </p>
+
+                            <div class="smartphone-frame">
+
+                                <div class="phone-notch"></div>
+
+                                <iframe
+                                    id="iframe-preview"
+                                    src="https://digitalcard-cartao.aproximeaqui.com.br/"
+                                    title="Demonstração do perfil digital Digital Card"
+                                    referrerpolicy="strict-origin-when-cross-origin"
+                                    allowfullscreen
+                                ></iframe>
+
+                            </div>
+
+                            <a
+                                id="open-demo"
+                                href="https://digitalcard-cartao.aproximeaqui.com.br/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="demo-open-link"
+                            >
+                                <i class="fas fa-external-link-alt"></i>
+                                Experimentar perfil completo
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
-          </div>
 
-          <div class="flip-hint">
-            <i class="fas fa-sync-alt"></i> Clique para ver o verso (QR Code)
-          </div>
+        </section>
+
+
+        <!-- BENEFÍCIOS RÁPIDOS -->
+
+        <section class="benefit-strip">
+
+            <div class="container benefit-strip-inner">
+
+                <div class="strip-item">
+                    <i class="fas fa-microchip"></i>
+                    <span>Tecnologia NFC integrada</span>
+                </div>
+
+                <div class="strip-item">
+                    <i class="fas fa-qrcode"></i>
+                    <span>Acesso também por QR Code</span>
+                </div>
+
+                <div class="strip-item">
+                    <i class="fas fa-user-edit"></i>
+                    <span>Perfil digital personalizado</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMO FUNCIONA -->
+
+        <section class="how-section section-padding">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        Simples e prático
+                    </span>
+
+                    <h2>
+                        Como funciona o
+                        <span>cartão NFC?</span>
+                    </h2>
+
+                    <p>
+                        Compartilhar suas informações profissionais nunca foi
+                        tão simples. São apenas três etapas.
+                    </p>
+
+                </div>
+
+
+                <div class="steps-grid">
+
+                    <article class="step-card">
+
+                        <div class="step-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+
+                        <span class="step-number">PASSO 01</span>
+
+                        <h3>Aproxime o cartão</h3>
+
+                        <p>
+                            Encoste o cartão no celular de quem deseja conhecer
+                            seu trabalho. O NFC transmite o endereço do seu perfil.
+                        </p>
+
+                    </article>
+
+
+                    <article class="step-card">
+
+                        <div class="step-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+
+                        <span class="step-number">PASSO 02</span>
+
+                        <h3>Seu perfil é aberto</h3>
+
+                        <p>
+                            O navegador apresenta sua página digital com
+                            informações profissionais, contatos e redes sociais.
+                        </p>
+
+                    </article>
+
+
+                    <article class="step-card">
+
+                        <div class="step-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+
+                        <span class="step-number">PASSO 03</span>
+
+                        <h3>Conecte-se</h3>
+
+                        <p>
+                            Seus clientes podem acessar seus canais de contato,
+                            conhecer seu trabalho e salvar suas informações.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- O QUE VOCÊ RECEBE -->
+
+        <section class="section-padding">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        Muito além de um cartão
+                    </span>
+
+                    <h2>
+                        O que você recebe com a
+                        <span>Digital Card?</span>
+                    </h2>
+
+                    <p>
+                        Uma solução que une o cartão físico tradicional
+                        à praticidade de uma apresentação digital.
+                    </p>
+
+                </div>
+
+
+                <div class="receive-grid">
+
+                    <article class="receive-card">
+
+                        <i class="fas fa-id-card"></i>
+
+                        <h3>Cartão físico personalizado</h3>
+
+                        <p>
+                            Cartão em PVC com sua identidade visual,
+                            impressão personalizada e tecnologia NFC integrada.
+                        </p>
+
+                    </article>
+
+
+                    <article class="receive-card">
+
+                        <i class="fas fa-laptop"></i>
+
+                        <h3>Perfil digital exclusivo</h3>
+
+                        <p>
+                            Uma página dedicada à sua apresentação profissional,
+                            com contatos, redes sociais e informações importantes.
+                        </p>
+
+                    </article>
+
+
+                    <article class="receive-card">
+
+                        <i class="fas fa-qrcode"></i>
+
+                        <h3>Duas formas de acesso</h3>
+
+                        <p>
+                            Compartilhe seu perfil por aproximação NFC ou
+                            leitura do QR Code impresso no cartão.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RECURSOS E DIFERENCIAIS -->
+
+        <section class="features-section section-padding">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        Diferenciais
+                    </span>
+
+                    <h2>
+                        Tecnologia que trabalha
+                        <span>a seu favor.</span>
+                    </h2>
+
+                    <p>
+                        Mais praticidade para compartilhar informações
+                        e uma apresentação profissional mais completa.
+                    </p>
+
+                </div>
+
+
+                <div class="features-grid">
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+
+                        <h3>Chip NFC integrado</h3>
+
+                        <p>
+                            Tecnologia de aproximação compatível com celulares
+                            que possuem suporte a NFC.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+
+                        <h3>QR Code de apoio</h3>
+
+                        <p>
+                            Outra maneira de acessar seu perfil, inclusive
+                            em aparelhos sem suporte à leitura NFC.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+
+                        <h3>PVC durável</h3>
+
+                        <p>
+                            Material leve e resistente para acompanhar
+                            você na rotina profissional.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+
+                        <h3>Perfil atualizável</h3>
+
+                        <p>
+                            Alterações nas informações do perfil digital
+                            podem ser realizadas sem precisar reimprimir
+                            o cartão, conforme as condições do serviço.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PARA QUEM É -->
+
+        <section class="section-padding">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        Versatilidade
+                    </span>
+
+                    <h2>
+                        Ideal para quem deseja
+                        <span>se destacar.</span>
+                    </h2>
+
+                    <p>
+                        Uma maneira moderna de apresentar seu trabalho,
+                        fortalecer sua marca e facilitar novos contatos.
+                    </p>
+
+                </div>
+
+
+                <div class="applications-grid">
+
+                    <article class="application-card">
+
+                        <i class="fas fa-home"></i>
+
+                        <h3>Corretores de imóveis</h3>
+
+                    </article>
+
+
+                    <article class="application-card">
+
+                        <i class="fas fa-briefcase"></i>
+
+                        <h3>Empresários e consultores</h3>
+
+                    </article>
+
+
+                    <article class="application-card">
+
+                        <i class="fas fa-cut"></i>
+
+                        <h3>Profissionais autônomos</h3>
+
+                    </article>
+
+
+                    <article class="application-card">
+
+                        <i class="fas fa-user-tie"></i>
+
+                        <h3>Representantes comerciais</h3>
+
+                    </article>
+
+
+                    <article class="application-card">
+
+                        <i class="fas fa-camera"></i>
+
+                        <h3>Fotógrafos e criativos</h3>
+
+                    </article>
+
+
+                    <article class="application-card">
+
+                        <i class="fas fa-heart"></i>
+
+                        <h3>Profissionais da beleza</h3>
+
+                    </article>
+
+
+                    <article class="application-card">
+
+                        <i class="fas fa-chart-line"></i>
+
+                        <h3>Prestadores de serviços</h3>
+
+                    </article>
+
+
+                    <article class="application-card">
+
+                        <i class="fas fa-store"></i>
+
+                        <h3>Comerciantes e lojistas</h3>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PERGUNTAS FREQUENTES -->
+
+        <section class="faq-section section-padding">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        Tire suas dúvidas
+                    </span>
+
+                    <h2>
+                        Perguntas
+                        <span>frequentes.</span>
+                    </h2>
+
+                    <p>
+                        Algumas informações importantes antes de solicitar
+                        seu cartão.
+                    </p>
+
+                </div>
+
+
+                <div class="faq-container">
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Preciso instalar algum aplicativo?
+                        </summary>
+
+                        <div class="faq-answer">
+                            Não. O acesso ao perfil digital acontece pelo
+                            navegador do celular. Não é necessário instalar
+                            um aplicativo para visualizar suas informações.
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Funciona em iPhone e Android?
+                        </summary>
+
+                        <div class="faq-answer">
+                            Sim, desde que o aparelho possua suporte à leitura
+                            NFC. A disponibilidade e a forma de leitura podem
+                            variar conforme o modelo e as configurações do celular.
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            E se o celular não tiver NFC?
+                        </summary>
+
+                        <div class="faq-answer">
+                            Não tem problema! O cartão também possui QR Code,
+                            permitindo que o perfil digital seja acessado
+                            utilizando a câmera do celular.
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Posso personalizar o cartão com minha marca?
+                        </summary>
+
+                        <div class="faq-answer">
+                            Sim! A proposta é desenvolver um cartão com a
+                            identidade visual da sua empresa ou atividade
+                            profissional. Consulte as possibilidades de
+                            personalização no atendimento.
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Posso alterar meus dados depois?
+                        </summary>
+
+                        <div class="faq-answer">
+                            O perfil digital permite atualizações sem a
+                            necessidade de produzir outro cartão físico.
+                            Consulte as condições e os recursos disponíveis
+                            para manutenção do perfil.
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            O cartão precisa de bateria?
+                        </summary>
+
+                        <div class="faq-answer">
+                            Não. O chip NFC é passivo e não utiliza bateria
+                            própria para transmitir o endereço do perfil.
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Como faço para comprar?
+                        </summary>
+
+                        <div class="faq-answer">
+                            Basta entrar em contato pelo WhatsApp. Nossa equipe
+                            poderá orientar sobre personalização, valores,
+                            condições e prazo de produção.
+                        </div>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Existe mensalidade para utilizar o perfil?
+                        </summary>
+
+                        <div class="faq-answer">
+                            As condições de utilização e manutenção do perfil
+                            digital devem ser confirmadas no momento da
+                            contratação. Entre em contato para conhecer
+                            os planos e condições disponíveis.
+                        </div>
+
+                    </details>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA FINAL -->
+
+        <section class="cta-section">
+
+            <div class="cta-banner">
+
+                <div class="cta-content">
+
+                    <span class="section-label">
+                        Digital Card
+                    </span>
+
+                    <h2>
+                        Seu próximo contato pode começar com um toque.
+                    </h2>
+
+                    <p>
+                        Modernize sua apresentação profissional com um
+                        cartão personalizado em PVC, tecnologia NFC
+                        e perfil digital exclusivo.
+                    </p>
+
+                    <a
+                        href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Digital%20Card%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20do%20cart%C3%A3o%20NFC."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-primary"
+                    >
+                        <i class="fab fa-whatsapp"></i>
+                        Solicitar meu orçamento
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <a href="#" class="logo-container">
+
+                <img
+                    src="images/logo 2.jpg"
+                    alt="Digital Card"
+                    class="logo-img"
+                    width="43"
+                    height="43"
+                >
+
+                <div class="logo-text">
+                    DIGITAL<span>CARD</span>
+                </div>
+
+            </a>
+
+
+            <div class="social-links">
+
+                <a
+                    href="https://wa.me/5542999001750"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="WhatsApp"
+                    title="WhatsApp"
+                >
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+                <a
+                    href="https://instagram.com/digitalcardpg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    title="Instagram"
+                >
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a
+                    href="mailto:contato@digitalcardpg.com"
+                    aria-label="E-mail"
+                    title="E-mail"
+                >
+                    <i class="fas fa-envelope"></i>
+                </a>
+
+            </div>
+
+
+            <div class="footer-copy">
+
+                <p>
+                    Desenvolvido por
+                    <a
+                        href="https://instagram.com/digitalcardpg"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Digital Card
+                    </a>
+                </p>
+
+                <p style="margin-top: 7px;">
+                    © <span id="current-year"></span> Digital Card.
+                    Todos os direitos reservados.
+                </p>
+
+            </div>
+
         </div>
 
-        <!-- Smartphone Preview -->
-        <div class="demo-card-container">
-          <h3>Página Virtual Carregada</h3>
-          <p>É assim que o seu cliente visualizará ao aproximar o telemóvel</p>
-          
-          <div class="smartphone-frame">
-            <div class="phone-notch"></div>
-            <iframe id="iframe-preview" src="https://digitalcard-cartao.aproximeaqui.com.br/" title="Cartão Virtual Demo"></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
+    </footer>
 
-    <!-- Recursos -->
-    <section class="features">
-      <div class="section-title">
-        <h2>Porquê escolher o <span>Digital Card</span>?</h2>
-      </div>
 
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-microchip"></i></div>
-          <h4>Chip NFC Embutido</h4>
-          <p>Tecnologia de aproximação compatível com a grande maioria dos telemóveis Android e iPhones modernos.</p>
-        </div>
+    <!-- WHATSAPP FLUTUANTE -->
 
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-qrcode"></i></div>
-          <h4>QR Code de Apoio</h4>
-          <p>No verso do cartão impresso em PVC, um QR Code garante acesso imediato mesmo em telemóveis mais antigos.</p>
-        </div>
+    <a
+        href="https://wa.me/5542999001750?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20os%20cart%C3%B5es%20NFC%20da%20Digital%20Card."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="whatsapp-float"
+        aria-label="Falar com a Digital Card pelo WhatsApp"
+        title="Fale conosco"
+    >
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-          <h4>PVC Fino & Durável</h4>
-          <p>Acabamento premium, resistente à água e ao desgaste do dia a dia. Leve sempre na sua carteira sem rasgar ou amassar.</p>
-        </div>
 
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-edit"></i></div>
-          <h4>Atualização Ilimitada</h4>
-          <p>Mudou de contacto ou endereço? Atualize as informações do seu perfil virtual sem precisar de reimprimir o cartão físico.</p>
-        </div>
-      </div>
-    </section>
+    <!-- JAVASCRIPT -->
 
-    <!-- Banner CTA Final -->
-    <section class="cta-banner">
-      <h2>Pronto para impressionar os seus clientes?</h2>
-      <p>Peça o seu cartão premium em PVC personalizado com a sua marca e com perfil virtual dedicado.</p>
-      <a href="https://wa.me/5542999001750?text=Olá!%20Vim%20pelo%20site%20e%20quero%20solicitar%20um%20orçamento%20do%20cartão%20NFC." target="_blank" class="btn-large">
-        <i class="fab fa-whatsapp"></i> Falar pelo WhatsApp
-      </a>
-    </section>
-  </main>
+    <script>
 
-  <footer>
-    <div class="footer-content">
-      <a href="#" class="logo-container">
-        <img src="logo redonda.jpg" alt="Digital Card Logo" class="logo-img">
-        <div class="logo-text">DIGITAL<span>CARD</span></div>
-      </a>
-      
-      <div class="social-links">
-        <a href="https://wa.me/5542999001750" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://instagram.com/digitalcardpg" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="mailto:contato@digitalcardpg.com" title="E-mail"><i class="fas fa-envelope"></i></a>
-      </div>
+        // CONFIGURAÇÃO DOS MODELOS
 
-      <div class="footer-copy">
-        Desenvolvido por <a href="https://instagram.com/digitalcardpg" target="_blank">Digital Card</a>
-      </div>
-    </div>
-  </footer>
+        const models = {
 
-  <script>
-    function switchModel(modelNum) {
-      const btn1 = document.getElementById('btn-model-1');
-      const btn2 = document.getElementById('btn-model-2');
-      const imgFrente = document.getElementById('card-frente-img');
-      const imgVerso = document.getElementById('card-verso-img');
-      const iframe = document.getElementById('iframe-preview');
+            1: {
+                frente: 'images/card1frente.jpg',
+                verso: 'images/card1verso.jpg',
+                perfil: 'https://digitalcard-cartao.aproximeaqui.com.br/'
+            },
 
-      if (modelNum === 1) {
-        btn1.classList.add('active');
-        btn2.classList.remove('active');
-        imgFrente.src = 'images/card1frente.jpg';
-        imgVerso.src = 'images/card1verso.jpg';
-        iframe.src = 'https://digitalcard-cartao.aproximeaqui.com.br/';
-      } else {
-        btn2.classList.add('active');
-        btn1.classList.remove('active');
-        imgFrente.src = 'images/card2frente.jpg';
-        imgVerso.src = 'images/card2verso.jpg';
-        iframe.src = 'https://cartao-generico.aproximeaqui.com.br/';
-      }
-    }
-  </script>
+            2: {
+                frente: 'images/card2frente.jpg',
+                verso: 'images/card2verso.jpg',
+                perfil: 'https://cartao-generico.aproximeaqui.com.br/'
+            }
+
+        };
+
+
+        // TROCA DE MODELOS
+
+        function switchModel(modelNum) {
+
+            const model = models[modelNum];
+
+            if (!model) return;
+
+            const btn1 = document.getElementById('btn-model-1');
+            const btn2 = document.getElementById('btn-model-2');
+
+            const imgFrente = document.getElementById('card-frente-img');
+            const imgVerso = document.getElementById('card-verso-img');
+
+            const flipCard = document.getElementById('flip-card');
+
+            const iframe = document.getElementById('iframe-preview');
+            const openDemo = document.getElementById('open-demo');
+
+
+            // Atualiza os botões
+
+            btn1.classList.toggle('active', modelNum === 1);
+            btn2.classList.toggle('active', modelNum === 2);
+
+            btn1.setAttribute('aria-pressed', modelNum === 1);
+            btn2.setAttribute('aria-pressed', modelNum === 2);
+
+
+            // Volta o cartão para a frente
+
+            flipCard.classList.remove('flipped');
+            flipCard.setAttribute('aria-pressed', 'false');
+
+
+            // Atualiza as imagens
+
+            imgFrente.src = model.frente;
+            imgVerso.src = model.verso;
+
+            imgFrente.alt = `Frente do cartão modelo ${modelNum}`;
+            imgVerso.alt = `Verso do cartão modelo ${modelNum}`;
+
+
+            // Atualiza a demonstração digital
+
+            if (iframe.src !== model.perfil) {
+                iframe.src = model.perfil;
+            }
+
+            openDemo.href = model.perfil;
+
+        }
+
+
+        // GIRA O CARTÃO
+
+        function toggleCard() {
+
+            const card = document.getElementById('flip-card');
+
+            const flipped = card.classList.toggle('flipped');
+
+            card.setAttribute('aria-pressed', String(flipped));
+
+            card.setAttribute(
+                'aria-label',
+                flipped
+                    ? 'Girar cartão para visualizar a frente'
+                    : 'Girar cartão para visualizar o verso'
+            );
+
+        }
+
+
+        // ANO AUTOMÁTICO NO RODAPÉ
+
+        document.getElementById('current-year').textContent =
+            new Date().getFullYear();
+
+    </script>
+
 </body>
 </html>
