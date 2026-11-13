@@ -1,1043 +1,824 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Avalia Card | Cartão Inteligente Personalizado NFC + QR Code (54x86mm)</title>
-    <meta name="description" content="Cartão PVC 54x86mm 100% personalizado frente e verso com sua logo e cores. Tecnologia NFC + QR Code, filtro inteligente de avaliações Google, Pix, Wi-Fi e Cardápio sem mensalidade.">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Super Avalia Card | Cartão personalizado NFC + QR Code</title>
+<meta name="description" content="Cartão inteligente personalizado em PVC com NFC e QR Code. Reúna avaliações do Google, Pix, Wi-Fi, menu e WhatsApp em uma única página. Kits a partir de R$ 79,90, pagamento único.">
+<meta name="theme-color" content="#101827">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Plus Jakarta Sans', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+<style>
+:root{--bg:#0c1422;--panel:#121e30;--panel2:#17253a;--line:#26364c;--text:#f5f7fb;--muted:#aab7c9;--amber:#ffc45c;--green:#32d49a;--blue:#70aaff;--max:1160px;--radius:22px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button{cursor:pointer}
+.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+.topline{background:#18283c;color:#dce6f3;text-align:center;padding:9px 16px;font-size:12px;font-weight:700}
+.topline span{margin:0 12px}
+.topline i{color:var(--amber);margin-right:5px}
+.header{height:76px;position:sticky;top:0;z-index:30;background:rgba(12,20,34,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.headinner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px}
+.brandmark{width:40px;height:40px;border-radius:13px;background:linear-gradient(135deg,#ffd36e,#ff9c43);display:grid;place-items:center;color:#182235;font-size:17px}
+.brandname{font:800 18px Manrope,sans-serif;letter-spacing:-.7px;line-height:1.1}
+.brandname b{color:var(--amber)}
+.brand small{display:block;color:#91a1b6;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;margin-top:4px}
+.nav{display:flex;gap:25px;color:#c1ccda;font-size:12px;font-weight:700}
+.nav a:hover{color:var(--amber)}
+.btn{border:0;border-radius:13px;padding:14px 20px;font-weight:800;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:9px;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(110deg,#36d69a,#22b889);color:#06271d;box-shadow:0 10px 28px #20bd8730}
+.btn-secondary{background:#1b2a40;border:1px solid #34465f;color:white}
+.btn-amber{background:linear-gradient(110deg,#ffd16d,#ffad48);color:#292012}
+.hero{position:relative;overflow:hidden;padding:76px 0 84px}
+.hero:before{content:'';position:absolute;width:650px;height:500px;left:35%;top:-220px;background:#2856a4;filter:blur(150px);opacity:.22;border-radius:50%;pointer-events:none}
+.hero:after{content:'';position:absolute;width:360px;height:320px;right:-130px;bottom:-200px;background:#d88c32;filter:blur(130px);opacity:.12;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center;position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--amber);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;font-weight:800}
+.eyebrow:before{content:'';width:22px;height:2px;background:var(--amber)}
+h1,h2,h3,p{margin-top:0}
+h1,h2,h3{font-family:Manrope,sans-serif;letter-spacing:-1.1px}
+h1{font-size:clamp(36px,4.6vw,58px);line-height:1.08;margin:16px 0 20px;max-width:670px}
+h1 em{font-style:normal;color:var(--amber)}
+.lead{font-size:16px;color:#bdc9d8;max-width:620px;line-height:1.75}
+.hero-points{display:flex;flex-wrap:wrap;gap:10px;margin:25px 0}
+.point{font-size:12px;color:#dce5ef;background:#142238;border:1px solid #2b3d55;padding:9px 12px;border-radius:11px}
+.point i{color:var(--green);margin-right:6px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.micro{font-size:11px;color:#8fa0b5;margin-top:17px}
+.micro i{color:var(--green);margin-right:5px}
+.showcase{min-height:420px;position:relative;display:grid;place-items:center}
+.halo{position:absolute;width:360px;height:360px;border-radius:50%;border:1px solid #ffffff13;box-shadow:0 0 0 38px #ffffff05,0 0 0 76px #ffffff03}
+.phone{position:absolute;right:0;top:25px;width:205px;height:360px;border:6px solid #35445a;border-radius:31px;background:#0b1422;padding:12px;z-index:1;box-shadow:0 30px 65px #0008}
+.phone-notch{height:5px;width:58px;background:#3c4c62;border-radius:8px;margin:0 auto 13px}
+.phone-head{background:linear-gradient(135deg,#e99a39,#b85a2b);padding:13px 8px;border-radius:15px;text-align:center}
+.phone-logo{width:33px;height:33px;border-radius:10px;background:white;color:#c46b2c;display:grid;place-items:center;margin:0 auto 5px}
+.phone-head strong{font-size:11px;display:block}
+.phone-head small{font-size:9px;opacity:.85}
+.phone-rating{background:#1b2a40;border:1px solid #33445a;border-radius:12px;text-align:center;padding:9px;margin-top:9px;font-size:9px;color:#c7d2e0}
+.phone-rating div{color:var(--amber);font-size:13px;letter-spacing:2px}
+.phone-links{display:grid;gap:7px;margin-top:9px}
+.phone-links span{font-size:9px;font-weight:700;padding:8px;border-radius:8px;background:#183c3a;color:#7be5bd}
+.phone-links span:nth-child(2){background:#193b48;color:#8bdcf5}
+.phone-links span:nth-child(3){background:#263451;color:#b9ccff}
+.phone-foot{text-align:center;color:#718197;font-size:8px;margin-top:14px}
+.card-scene{position:absolute;left:0;bottom:70px;width:310px;height:205px;perspective:1000px;z-index:3;cursor:pointer;animation:float 5s ease-in-out infinite}
+.card-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .7s}
+.card-scene.flipped .card-inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border-radius:19px;backface-visibility:hidden;overflow:hidden;padding:20px;box-shadow:0 25px 55px #0009;border:1px solid #ffffff45}
+.front{background:linear-gradient(135deg,#e98732,#a64c25 55%,#152338);display:flex;flex-direction:column;justify-content:space-between}
+.back{transform:rotateY(180deg);background:linear-gradient(135deg,#14243a,#0b1320);display:flex;align-items:center;gap:16px}
+.shine{position:absolute;inset:0;background:linear-gradient(125deg,#ffffff30,transparent 43%,#ffffff10);pointer-events:none}
+.card-top,.card-bottom{position:relative;display:flex;align-items:center;justify-content:space-between}
+.card-brand{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800}
+.card-brand i{background:white;color:#bc652d;padding:9px;border-radius:9px}
+.nfc{font-size:10px;border:1px solid #ffffff70;border-radius:20px;padding:4px 8px}
+.card-main{position:relative}
+.card-main small{font-size:9px;letter-spacing:1.2px;text-transform:uppercase}
+.card-main strong{display:block;font:800 18px Manrope;line-height:1.25;margin:5px 0}
+.card-bottom{border-top:1px solid #ffffff50;padding-top:9px;font-size:9px}
+.back-copy{position:relative;flex:1}
+.back-copy strong{font-size:13px}
+.back-copy p{font-size:10px;color:#c0cbd8;margin:6px 0}
+.fakeqr{width:92px;height:92px;background:white;border-radius:9px;padding:7px;display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.fakeqr i{background:#142238}
+.fakeqr i:nth-child(3n),.fakeqr i:nth-child(5n){background:white}
+.turnhint{position:absolute;bottom:22px;left:0;color:#9aabc0;font-size:11px}
+.brand-picker{position:absolute;top:0;left:0;z-index:5;display:flex;gap:5px;flex-wrap:wrap}
+.brand-picker button{border:1px solid #40516a;background:#142238;color:#d7e1ed;border-radius:20px;padding:6px 9px;font-size:10px;font-weight:700}
+.brand-picker button:hover,.brand-picker button:focus{border-color:var(--amber);color:var(--amber)}
+.section{padding:86px 0}
+.section.alt{background:#111d2e;border-block:1px solid #25364b}
+.section-head{text-align:center;max-width:700px;margin:0 auto 42px}
+.section-head h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;margin:12px 0}
+.section-head p{color:var(--muted);font-size:14px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.feature-list{display:grid;gap:13px}
+.feature{display:flex;gap:14px;padding:17px;border:1px solid var(--line);background:#101c2d;border-radius:16px}
+.feature-icon{width:42px;height:42px;flex:0 0 42px;display:grid;place-items:center;background:#29364a;color:var(--amber);border-radius:12px}
+.feature h3{font-size:14px;margin:1px 0 5px;letter-spacing:-.3px}
+.feature p{font-size:12px;color:var(--muted);margin:0;line-height:1.6}
+.steps{background:#0d1828;border:1px solid var(--line);border-radius:22px;padding:28px}
+.steps h3{font-size:19px;margin-bottom:22px}
+.step{display:flex;gap:14px;margin:18px 0}
+.step-num{width:30px;height:30px;border-radius:50%;background:var(--amber);color:#172235;display:grid;place-items:center;font-weight:900;font-size:12px;flex:0 0 30px}
+.step strong{font-size:13px}
+.step p{font-size:11px;color:var(--muted);margin:4px 0 0}
+.tech-grid,.resource-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.tech-card,.resource-card{background:var(--panel);border:1px solid var(--line);border-radius:19px;padding:25px}
+.tech-card i,.resource-card i{font-size:23px;color:var(--amber);margin-bottom:16px}
+.tech-card h3,.resource-card h3{font-size:16px;margin-bottom:7px}
+.tech-card p,.resource-card p{font-size:12px;color:var(--muted);margin:0}
+.resource-grid{grid-template-columns:repeat(3,1fr)}
 
-    <style>
-        /* Efeitos 3D para o Cartão Padrão Bancário (54x86mm) */
-        .perspective-1000 {
-            perspective: 1200px;
-        }
-        .card-3d-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
-            transform-style: preserve-3d;
-        }
-        .card-flipped .card-3d-inner {
-            transform: rotateY(180deg);
-        }
-        .card-face {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-        }
-        .card-back {
-            transform: rotateY(180deg);
-        }
-        /* Brilho metálico / verniz sutil no cartão PVC */
-        .pvc-shine {
-            background: linear-gradient(125deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.04) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.12) 100%);
-        }
-        @keyframes floatSlow {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-7px); }
-        }
-        .animate-float {
-            animation: floatSlow 4s ease-in-out infinite;
-        }
-    </style>
+/* Demonstração das avaliações */
+.demo{background:#fff;color:#1c2939;border-radius:22px;padding:24px;max-width:480px;margin:auto;box-shadow:0 22px 55px #0004}
+.demo-label{font-size:11px;font-weight:800;color:#617084}
+.stars{display:flex;justify-content:center;gap:8px;padding:15px;background:#f3f6fa;border:1px solid #e1e7ef;border-radius:14px;margin:12px 0;transition:background .2s,border-color .2s}
+.stars button{border:0;background:transparent;color:#cbd3dd;font-size:29px;padding:3px;transition:color .2s,transform .2s}
+.stars button:hover{transform:scale(1.12)}
+.stars.tone-low{background:#fff4e8;border-color:#f4c18f}
+.stars.tone-high{background:#eafaf2;border-color:#9cdbba}
+.stars.tone-low button.active{color:#e88b32}
+.stars.tone-high button.active{color:#20a66a}
+.demo-result{background:#f0f5fa;border:1px solid #e2e8f0;padding:14px;border-radius:13px;font-size:12px;color:#34445a;min-height:65px;transition:background .2s,border-color .2s}
+.demo-result.tone-low{background:#fff4e8;border-color:#f4c18f;color:#754318}
+.demo-result.tone-high{background:#eafaf2;border-color:#9cdbba;color:#155b3c}
+.demo-result strong{display:block;margin-bottom:4px}
+.demo-note{font-size:10px;color:#66778c;margin-top:12px;line-height:1.5}
+
+.kits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.kit{background:#121f31;border:1px solid #2a3b51;border-radius:22px;padding:25px;display:flex;flex-direction:column;position:relative}
+.kit.featured{border:2px solid var(--amber);background:linear-gradient(160deg,#1b2b40,#111d2d);transform:translateY(-7px)}
+.kit-tag{font-size:10px;text-transform:uppercase;letter-spacing:1.3px;color:var(--amber);font-weight:800}
+.kit h3{font-size:22px;margin:9px 0 5px}
+.kit-desc{font-size:12px;color:var(--muted);min-height:42px}
+.price{border-block:1px solid #2a3b51;padding:20px 0;margin:18px 0}
+.old{font-size:11px;color:#8392a6;text-decoration:line-through}
+.price-main{font:800 35px Manrope;letter-spacing:-1px}
+.price-main small{font:700 13px 'DM Sans';color:#c2ccda}
+.price-note{font-size:10px;color:var(--green)}
+.kit ul{padding:0;list-style:none;display:grid;gap:11px;margin:0 0 24px;flex:1}
+.kit li{font-size:11px;color:#d2dce8;display:flex;gap:9px}
+.kit li i{color:var(--green);margin-top:3px}
+.kit .btn{width:100%;margin-top:auto}
+.shipping-note{text-align:center;font-size:11px;color:#8fa0b5;margin-top:20px}
+.faq{max-width:800px;margin:auto;display:grid;gap:10px}
+.faq details{background:#121f31;border:1px solid #293a50;border-radius:15px;padding:17px 20px}
+.faq summary{cursor:pointer;list-style:none;font-size:13px;font-weight:800;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:'+';color:var(--amber);font-size:18px}
+.faq details[open] summary:after{content:'−'}
+.faq p{font-size:12px;color:var(--muted);margin:12px 0 0}
+.closing{padding:70px 0;background:linear-gradient(120deg,#172b43,#152033);text-align:center}
+.closing h2{font-size:clamp(27px,3.6vw,40px);margin:10px auto;max-width:700px}
+.closing p{color:#b6c5d6;font-size:14px}
+.footer{padding:35px 0;text-align:center;color:#8292a8;font-size:11px}
+.footer .brand{justify-content:center;margin-bottom:12px}
+.float-wa{position:fixed;right:18px;bottom:18px;z-index:25;width:58px;height:58px;border-radius:50%;background:#25d366;color:#063b25;display:grid;place-items:center;font-size:27px;box-shadow:0 10px 30px #0008;border:2px solid #ffffff40}
+.modal{position:fixed;inset:0;background:#050b14d9;backdrop-filter:blur(7px);z-index:60;display:none;align-items:center;justify-content:center;padding:18px}
+.modal.open{display:flex}
+.modal-box{background:#142238;border:1px solid #354860;border-radius:22px;padding:27px;width:min(100%,470px);position:relative;box-shadow:0 30px 90px #0009}
+.modal-close{position:absolute;right:15px;top:13px;border:0;background:#263850;color:white;border-radius:50%;width:34px;height:34px}
+.modal h3{font-size:22px;margin:8px 0 4px}
+.modal p{font-size:12px;color:#aebdd0}
+.selected{color:var(--amber)!important;font-weight:800}
+.field{display:grid;gap:6px;margin:13px 0}
+.field label{font-size:11px;color:#d5dfeb;font-weight:700}
+.field input{width:100%;background:#0b1524;border:1px solid #35475f;color:white;border-radius:11px;padding:12px;font-size:13px;outline:none}
+.field input:focus{border-color:var(--amber)}
+.modal .btn{width:100%;margin-top:9px}
+.mobile-nav-cta{display:none}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+@media(max-width:900px){
+.nav{display:none}
+.hero-grid{grid-template-columns:1fr;gap:25px}
+.hero-copy{text-align:center}
+.hero-copy .lead{margin:auto}
+.hero-points,.hero-actions{justify-content:center}
+.showcase{max-width:520px;width:100%;margin:auto}
+.two-col{grid-template-columns:1fr;gap:30px}
+.resource-grid{grid-template-columns:repeat(2,1fr)}
+.kits{grid-template-columns:1fr;max-width:520px;margin:auto}
+.kit.featured{transform:none;order:-1}
+.kit-desc{min-height:0}
+.tech-grid{max-width:700px;margin:auto}
+}
+@media(max-width:560px){
+.wrap{width:min(100% - 30px,var(--max))}
+.topline{font-size:10px}
+.topline span{margin:0 5px}
+.header{height:66px}
+.brandname{font-size:16px}
+.headinner>.btn{padding:11px 12px;font-size:11px}
+.hero{padding:50px 0 55px}
+h1{font-size:36px}
+.lead{font-size:14px}
+.hero-points{display:grid;grid-template-columns:1fr 1fr;text-align:left}
+.point{font-size:10px;padding:8px}
+.hero-actions{display:grid}
+.hero-actions .btn{width:100%}
+.showcase{min-height:350px;transform:scale(.92);transform-origin:top center;margin-bottom:-20px}
+.phone{right:0;top:0;transform:scale(.88);transform-origin:top right}
+.card-scene{left:0;bottom:45px;transform:scale(.88);transform-origin:left bottom;width:300px}
+.turnhint{bottom:7px}
+.section{padding:65px 0}
+.section-head{margin-bottom:30px}
+.tech-grid,.resource-grid{grid-template-columns:1fr}
+.tech-card,.resource-card{padding:21px}
+.steps{padding:22px}
+.kit{padding:22px}
+.float-wa{width:54px;height:54px;right:14px;bottom:14px}
+.modal-box{padding:24px 19px}
+.mobile-nav-cta{display:block}
+}
+@media(prefers-reduced-motion:reduce){
+*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+}
+</style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-amber-400 selection:text-slate-950 overflow-x-hidden">
-
-    <!-- ===================================================================== -->
-    <!-- BARRA DE AVISO SUPERIOR (PERSONALIZAÇÃO + ENVIO NACIONAL)             -->
-    <!-- ===================================================================== -->
-    <div class="bg-gradient-to-r from-blue-600 via-indigo-600 to-emerald-600 text-white text-[11px] sm:text-xs font-semibold py-2 px-4 text-center">
-        <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
-            <span><i class="fa-solid fa-palette mr-1"></i> <strong>100% Personalizado</strong> com sua Logo e Cores (Frente e Verso)</span>
-            <span class="hidden sm:inline opacity-50">|</span>
-            <span><i class="fa-solid fa-ban mr-1"></i> <strong>Zero Mensalidade</strong></span>
-            <span class="hidden md:inline opacity-50">|</span>
-            <span class="hidden md:inline"><i class="fa-solid fa-truck-fast mr-1"></i> Envio rápido para todo o Brasil</span>
-        </div>
-    </div>
-
-    <!-- ===================================================================== -->
-    <!-- HEADER / NAVEGAÇÃO                                                    -->
-    <!-- ===================================================================== -->
-    <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-lg border-b border-slate-800/80">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <!-- Logo -->
-            <a href="#" class="flex items-center gap-2.5 group">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 text-slate-950 flex items-center justify-center font-extrabold text-base shadow-lg shadow-amber-500/20 group-hover:scale-105 transition">
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <div>
-                    <span class="font-display font-extrabold text-base sm:text-lg tracking-tight text-white block leading-none">
-                        Super<span class="text-amber-400">Avalia</span>Card
-                    </span>
-                    <span class="text-[10px] text-slate-400 font-medium tracking-wider uppercase">PVC Personalizado • NFC + QR</span>
-                </div>
-            </a>
-
-            <!-- Links Desktop -->
-            <nav class="hidden md:flex items-center gap-7 text-xs font-semibold text-slate-300">
-                <a href="#personalizacao" class="hover:text-white transition">Personalização</a>
-                <a href="#tecnologia" class="hover:text-white transition">NFC + QR Code</a>
-                <a href="#simulador" class="hover:text-white transition">Filtro de Notas</a>
-                <a href="#recursos" class="hover:text-white transition">Hub Completo</a>
-                <a href="#planos" class="hover:text-white transition">Kits & Preços</a>
-            </nav>
-
-            <!-- CTA Header -->
-            <div class="flex items-center gap-2">
-                <a href="#planos" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-500/20 transition active:scale-95 flex items-center gap-1.5">
-                    <span>Pedir Meu Cartão</span>
-                    <i class="fa-solid fa-arrow-right text-[11px]"></i>
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- ===================================================================== -->
-    <!-- HERO SECTION: HEADLINE + MOCKUP 3D PERSONALIZADO + CELULAR            -->
-    <!-- ===================================================================== -->
-    <section class="relative pt-10 pb-16 sm:pt-16 sm:pb-24 overflow-hidden">
-        <!-- Luzes de fundo -->
-        <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[650px] h-[350px] bg-blue-600/20 blur-[120px] rounded-full pointer-events-none"></div>
-        <div class="absolute bottom-0 right-10 w-[400px] h-[300px] bg-amber-500/10 blur-[100px] rounded-full pointer-events-none"></div>
-
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Coluna Esquerda: Copywriting de Alta Conversão -->
-                <div class="lg:col-span-7 text-center lg:text-left">
-                    <!-- Badge -->
-                    <div class="inline-flex items-center gap-2 bg-slate-900 border border-slate-700/80 px-3.5 py-1.5 rounded-full text-xs font-semibold text-amber-400 mb-5 shadow-inner">
-                        <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
-                        <span>Impressão Colorida Frente e Verso • PVC 54×86mm</span>
-                    </div>
-
-                    <!-- Headline -->
-                    <h1 class="font-display text-3xl sm:text-5xl lg:text-[50px] font-extrabold text-white leading-[1.12] tracking-tight">
-                        O cartão inteligente com a <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-orange-400">marca da sua empresa</span> que multiplica avaliações 5 estrelas e vendas.
-                    </h1>
-
-                    <!-- Subheadline -->
-                    <p class="text-slate-300 text-sm sm:text-lg mt-5 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                        Nada de cartões genéricos sem identidade. Produzimos seu <strong>Super Avalia Card em PVC rígido (tamanho cartão de banco 54×86mm)</strong>, colorido frente e verso com sua logo, equipado com <strong>NFC + QR Code</strong> para avaliações no Google, Pix, Wi-Fi, Cardápio e WhatsApp.
-                    </p>
-
-                    <!-- Bullets Rápidos (4 pilares) -->
-                    <div class="grid grid-cols-2 gap-3 mt-6 text-left max-w-xl mx-auto lg:mx-0">
-                        <div class="flex items-center gap-2.5 text-xs text-slate-200 bg-slate-900/90 border border-slate-800 px-3.5 py-2.5 rounded-xl">
-                            <i class="fa-solid fa-paintbrush text-amber-400 text-sm"></i>
-                            <span><strong>100% Personalizado</strong> (Frente e Verso)</span>
-                        </div>
-                        <div class="flex items-center gap-2.5 text-xs text-slate-200 bg-slate-900/90 border border-slate-800 px-3.5 py-2.5 rounded-xl">
-                            <i class="fa-solid fa-wifi rotate-90 text-blue-400 text-sm"></i>
-                            <span><strong>NFC + QR Code</strong> (100% Celulares)</span>
-                        </div>
-                        <div class="flex items-center gap-2.5 text-xs text-slate-200 bg-slate-900/90 border border-slate-800 px-3.5 py-2.5 rounded-xl">
-                            <i class="fa-solid fa-shield-halved text-emerald-400 text-sm"></i>
-                            <span><strong>Filtro Inteligente</strong> de Notas 1-3★</span>
-                        </div>
-                        <div class="flex items-center gap-2.5 text-xs text-slate-200 bg-slate-900/90 border border-slate-800 px-3.5 py-2.5 rounded-xl">
-                            <i class="fa-solid fa-infinity text-purple-400 text-sm"></i>
-                            <span><strong>Zero Mensalidade</strong> (Pagamento Único)</span>
-                        </div>
-                    </div>
-
-                    <!-- Botões CTA -->
-                    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
-                        <a href="#planos" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-extrabold text-sm shadow-xl shadow-emerald-500/25 flex items-center justify-center gap-2.5 transition transform hover:-translate-y-0.5 active:scale-98">
-                            <span>Personalizar Meu Kit Agora</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                        <a href="#simulador" class="w-full sm:w-auto px-6 py-4 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 font-bold text-sm flex items-center justify-center gap-2 transition">
-                            <i class="fa-solid fa-play text-amber-400 text-xs"></i>
-                            <span>Testar Filtro de Notas</span>
-                        </a>
-                    </div>
-
-                    <!-- Prova Social / Garantia -->
-                    <div class="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs text-slate-400">
-                        <div class="flex items-center gap-1 text-amber-400">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <span class="text-slate-300 font-semibold ml-1">4.9/5</span>
-                        </div>
-                        <span>•</span>
-                        <span>+1.400 empresas personalizadas no Brasil</span>
-                        <span>•</span>
-                        <span>Arte aprovada antes da produção</span>
-                    </div>
-                </div>
-
-                <!-- Coluna Direita: Mockup Interativo Cartão PVC Personalizado (Frente/Verso) + Celular -->
-                <div class="lg:col-span-5 flex flex-col items-center justify-center relative">
-                    
-                    <!-- Seletor de Estilo de Marca no Mockup -->
-                    <div class="flex items-center gap-2 mb-3 bg-slate-900/90 border border-slate-800 px-3 py-1.5 rounded-full text-[11px]">
-                        <span class="text-slate-400 font-medium">Simular sua marca:</span>
-                        <button onclick="setCardBrand('burger')" id="btnBrandBurger" class="px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950 font-bold transition">Hamburgueria</button>
-                        <button onclick="setCardBrand('barber')" id="btnBrandBarber" class="px-2.5 py-0.5 rounded-full text-slate-300 hover:text-white font-semibold transition">Barbearia</button>
-                        <button onclick="setCardBrand('clinic')" id="btnBrandClinic" class="px-2.5 py-0.5 rounded-full text-slate-300 hover:text-white font-semibold transition">Clínica</button>
-                    </div>
-
-                    <div class="relative w-full max-w-[380px] h-[385px] flex items-center justify-center">
-                        
-                        <!-- Mini Celular ao Fundo (Mostrando o Hub aberto com a identidade da marca) -->
-                        <div class="w-[210px] h-[360px] bg-slate-900 rounded-[32px] border-[5px] border-slate-700 shadow-2xl overflow-hidden flex flex-col justify-between p-3 translate-x-14 -translate-y-2 relative z-10">
-                            <div>
-                                <div class="w-14 h-1.5 bg-slate-700 rounded-full mx-auto mb-3"></div>
-                                <!-- Header App Dinâmico -->
-                                <div id="phoneHeaderBg" class="bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl p-2.5 text-center text-white transition-all">
-                                    <div id="phoneLogoIcon" class="w-8 h-8 bg-white rounded-xl mx-auto flex items-center justify-center text-orange-600 text-sm font-bold shadow-xs mb-1">
-                                        <i class="fa-solid fa-burger"></i>
-                                    </div>
-                                    <div id="phoneBrandName" class="text-[11px] font-extrabold leading-tight">Brava Burger</div>
-                                    <div class="text-[9px] font-medium opacity-90">Hub Digital Oficial</div>
-                                </div>
-                                <!-- Estrelas Mini -->
-                                <div class="bg-slate-800/90 rounded-xl p-2 mt-2 text-center border border-slate-700">
-                                    <div class="text-[9px] text-slate-300 font-semibold mb-1">Avalie nossa experiência</div>
-                                    <div class="flex justify-center gap-1 text-amber-400 text-xs">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                </div>
-                                <!-- Botões Mini -->
-                                <div class="space-y-1.5 mt-2">
-                                    <div class="bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[9px] font-bold px-2.5 py-1.5 rounded-lg flex items-center justify-between">
-                                        <span><i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp</span>
-                                        <i class="fa-solid fa-chevron-right text-[8px]"></i>
-                                    </div>
-                                    <div class="bg-teal-500/20 border border-teal-500/40 text-teal-300 text-[9px] font-bold px-2.5 py-1.5 rounded-lg flex items-center justify-between">
-                                        <span><i class="fa-brands fa-pix mr-1"></i> Pagar com Pix</span>
-                                        <i class="fa-solid fa-chevron-right text-[8px]"></i>
-                                    </div>
-                                    <div class="bg-sky-500/20 border border-sky-500/40 text-sky-300 text-[9px] font-bold px-2.5 py-1.5 rounded-lg flex items-center justify-between">
-                                        <span><i class="fa-solid fa-wifi mr-1"></i> Wi-Fi Clientes</span>
-                                        <i class="fa-solid fa-chevron-right text-[8px]"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-[8px] text-center text-slate-500">superavaliacard.com.br</div>
-                        </div>
-
-                        <!-- Cartão Físico PVC 54x86mm Interativo (Frente Personalizada NFC / Verso Personalizado QR Code) -->
-                        <div id="pvcCard3D" onclick="flipPvcCard()" class="perspective-1000 w-[268px] h-[170px] absolute left-1 sm:left-2 bottom-8 z-20 cursor-pointer animate-float group" title="Clique para girar o cartão (Frente NFC / Verso QR Code)">
-                            <div class="card-3d-inner">
-                                
-                                <!-- FRENTE DO CARTÃO (100% PERSONALIZADA COM A MARCA DO CLIENTE + NFC) -->
-                                <div id="cardFrontFace" class="card-face rounded-2xl bg-gradient-to-br from-orange-600 via-amber-600 to-slate-950 border border-amber-400/50 shadow-[0_20px_50px_rgba(0,0,0,0.85)] p-4 flex flex-col justify-between overflow-hidden transition-all">
-                                    <div class="pvc-shine absolute inset-0 pointer-events-none"></div>
-                                    
-                                    <!-- Topo Cartão: Logo do Cliente + NFC -->
-                                    <div class="flex items-center justify-between relative z-10">
-                                        <div class="flex items-center gap-2">
-                                            <div id="cardFrontLogoBox" class="w-7 h-7 rounded-lg bg-white text-orange-600 flex items-center justify-center text-xs font-extrabold shadow-md">
-                                                <i class="fa-solid fa-burger"></i>
-                                            </div>
-                                            <div>
-                                                <span id="cardFrontTitle" class="text-xs font-extrabold text-white tracking-tight block leading-none">Brava Burger</span>
-                                                <span class="text-[8px] text-white/80 uppercase tracking-wider font-semibold">Sua Logo Aqui</span>
-                                            </div>
-                                        </div>
-                                        <!-- Símbolo NFC -->
-                                        <div class="flex items-center gap-1 text-white bg-black/30 backdrop-blur-xs border border-white/25 px-2 py-0.5 rounded-full">
-                                            <i class="fa-solid fa-wifi rotate-90 text-xs"></i>
-                                            <span class="text-[9px] font-bold">NFC</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Centro Cartão -->
-                                    <div class="relative z-10 my-auto">
-                                        <div class="text-[9px] text-white/80 uppercase tracking-wider font-bold">Aproxime o celular</div>
-                                        <div class="text-sm font-extrabold text-white leading-tight mt-0.5 drop-shadow-xs">
-                                            Avalie, Pague no Pix & Acesse o Cardápio
-                                        </div>
-                                        <div class="flex items-center gap-1 text-amber-300 text-xs mt-1.5 drop-shadow-xs">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </div>
-
-                                    <!-- Rodapé Cartão -->
-                                    <div class="flex items-center justify-between text-[9px] text-white/85 relative z-10 pt-1 border-t border-white/20">
-                                        <span>PVC 54×86mm Colorido</span>
-                                        <span class="font-bold flex items-center gap-1 bg-black/25 px-2 py-0.5 rounded-full">
-                                            <i class="fa-solid fa-rotate"></i> Verso (QR)
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <!-- VERSO DO CARTÃO (PERSONALIZADO COM CORES DA MARCA + QR CODE) -->
-                                <div id="cardBackFace" class="card-face card-back rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900 to-orange-950 text-white border border-amber-400/50 shadow-[0_20px_50px_rgba(0,0,0,0.85)] p-4 flex items-center justify-between gap-3 overflow-hidden transition-all">
-                                    <div class="pvc-shine absolute inset-0 pointer-events-none"></div>
-                                    <div class="flex-1 relative z-10">
-                                        <span class="inline-block bg-white/15 text-amber-300 border border-white/20 text-[8px] font-extrabold px-2 py-0.5 rounded-md uppercase mb-1.5">
-                                            Verso Personalizado • QR
-                                        </span>
-                                        <div id="cardBackTitle" class="text-xs font-extrabold text-white leading-tight">
-                                            Brava Burger
-                                        </div>
-                                        <p class="text-[10px] text-slate-300 mt-1 leading-snug">
-                                            Celular sem NFC? Aponte a câmera para o QR Code e acesse na hora!
-                                        </p>
-                                        <div class="text-[9px] font-bold text-amber-400 mt-2 flex items-center gap-1">
-                                            <i class="fa-solid fa-rotate"></i> Girar para frente
-                                        </div>
-                                    </div>
-                                    <!-- QR Code Visual -->
-                                    <div class="w-24 h-24 shrink-0 bg-white p-2 rounded-xl border border-slate-200 shadow-md flex items-center justify-center relative z-10">
-                                        <svg class="w-full h-full text-slate-900" viewBox="0 0 100 100" fill="currentColor">
-                                            <path d="M10,10 h25 v25 h-25 z M15,15 v15 h15 v-15 z M20,20 h5 v5 h-5 z"/>
-                                            <path d="M65,10 h25 v25 h-25 z M70,15 v15 h15 v-15 z M75,20 h5 v5 h-5 z"/>
-                                            <path d="M10,65 h25 v25 h-25 z M15,70 v15 h15 v-15 z M20,75 h5 v5 h-5 z"/>
-                                            <rect x="42" y="10" width="6" height="6"/><rect x="52" y="10" width="6" height="12"/>
-                                            <rect x="42" y="22" width="6" height="12"/><rect x="10" y="42" width="12" height="6"/>
-                                            <rect x="28" y="42" width="14" height="6"/><rect x="48" y="42" width="12" height="12"/>
-                                            <rect x="66" y="42" width="8" height="6"/><rect x="80" y="42" width="10" height="12"/>
-                                            <rect x="42" y="60" width="6" height="14"/><rect x="54" y="65" width="12" height="6"/>
-                                            <rect x="72" y="60" width="18" height="6"/><rect x="65" y="74" width="10" height="16"/>
-                                            <rect x="80" y="78" width="10" height="12"/><rect x="42" y="82" width="16" height="8"/>
-                                        </svg>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Botão auxiliar para girar cartão -->
-                    <button onclick="flipPvcCard()" class="mt-2 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold px-4 py-2 rounded-full flex items-center gap-2 transition shadow-md">
-                        <i class="fa-solid fa-arrows-rotate text-amber-400"></i>
-                        <span>Toque para girar Frente (NFC) e Verso (QR Code)</span>
-                    </button>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================================================================== -->
-    <!-- SEÇÃO: PERSONALIZAÇÃO FRENTE E VERSO + PADRÃO BANCÁRIO 54x86mm        -->
-    <!-- ===================================================================== -->
-    <section id="personalizacao" class="py-16 bg-slate-900/70 border-y border-slate-800/80">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="grid lg:grid-cols-12 gap-10 items-center">
-                
-                <div class="lg:col-span-6">
-                    <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Identidade Visual Exclusiva</span>
-                    <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-white mt-2 leading-tight">
-                        Impressão colorida frente e verso 100% com a sua marca
-                    </h2>
-                    <p class="text-slate-300 text-sm mt-4 leading-relaxed">
-                        Diferente de plaquinhas genéricas brancas que parecem brinde barato, o <strong>Super Avalia Card</strong> é fabricado sob medida para valorizar o balcão ou a mesa da sua empresa.
-                    </p>
-
-                    <div class="mt-6 space-y-4">
-                        <div class="flex items-start gap-3.5 bg-slate-950/60 border border-slate-800 p-4 rounded-2xl">
-                            <div class="w-10 h-10 rounded-xl bg-amber-400/15 text-amber-400 flex items-center justify-center shrink-0 text-base">
-                                <i class="fa-solid fa-palette"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-sm font-extrabold text-white">Sua Logo, Suas Cores, Seu Estilo</h3>
-                                <p class="text-xs text-slate-400 mt-1 leading-relaxed">
-                                    Você nos envia sua logomarca e nossa equipe monta o layout personalizado frente e verso seguindo a paleta de cores da sua empresa. Você aprova a arte antes de produzirmos.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-3.5 bg-slate-950/60 border border-slate-800 p-4 rounded-2xl">
-                            <div class="w-10 h-10 rounded-xl bg-blue-400/15 text-blue-400 flex items-center justify-center shrink-0 text-base">
-                                <i class="fa-regular fa-credit-card"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-sm font-extrabold text-white">PVC Rígido Padrão Bancário (54×86 mm)</h3>
-                                <p class="text-xs text-slate-400 mt-1 leading-relaxed">
-                                    Mesma espessura, resistência e medida exata de um cartão de crédito (54×86mm). Não amassa, não rasga, é resistente à água e cabe no bolso dos atendentes ou na carteira.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Como Funciona a Personalização (3 Passos Simples) -->
-                <div class="lg:col-span-6">
-                    <div class="bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl">
-                        <h3 class="text-base font-extrabold text-white mb-5 flex items-center gap-2">
-                            <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
-                            <span>Como funciona a criação do seu cartão:</span>
-                        </h3>
-
-                        <div class="space-y-5 relative before:absolute before:left-4 before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-800">
-                            <div class="relative pl-11">
-                                <div class="w-8 h-8 rounded-full bg-amber-400 text-slate-950 font-extrabold text-xs flex items-center justify-center absolute left-0 top-0 shadow-md">1</div>
-                                <h4 class="text-sm font-bold text-white">Escolha seu Kit e envie sua Logo</h4>
-                                <p class="text-xs text-slate-400 mt-1">Após escolher a quantidade de cartões, você envia sua logo e os links (Google, Pix, Wi-Fi, Instagram, Cardápio) direto pelo WhatsApp.</p>
-                            </div>
-
-                            <div class="relative pl-11">
-                                <div class="w-8 h-8 rounded-full bg-blue-500 text-white font-extrabold text-xs flex items-center justify-center absolute left-0 top-0 shadow-md">2</div>
-                                <h4 class="text-sm font-bold text-white">Aprovação da Arte Frente e Verso</h4>
-                                <p class="text-xs text-slate-400 mt-1">Criamos a arte colorida frente e verso com sua marca, gravamos o chip NFC e imprimimos o QR Code exclusivo do seu Hub.</p>
-                            </div>
-
-                            <div class="relative pl-11">
-                                <div class="w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-extrabold text-xs flex items-center justify-center absolute left-0 top-0 shadow-md">3</div>
-                                <h4 class="text-sm font-bold text-white">Uso Imediato + Envio para todo o Brasil</h4>
-                                <p class="text-xs text-slate-400 mt-1">Seu link digital é liberado na hora para você já usar nas redes sociais enquanto enviamos seus cartões físicos com rastreio.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================================================================== -->
-    <!-- SEÇÃO: COMPATIBILIDADE TOTAL (NFC + QR CODE)                          -->
-    <!-- ===================================================================== -->
-    <section id="tecnologia" class="py-16">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-xs font-bold uppercase tracking-widest text-blue-400">Tecnologia Dupla Inteligente</span>
-                <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-white mt-2">
-                    Funciona em <span class="text-emerald-400">100% dos celulares</span> do Brasil. Sem exceção.
-                </h2>
-                <p class="text-slate-400 text-sm mt-3 leading-relaxed">
-                    Muitos cartões do mercado dependem apenas de NFC e deixam clientes com aparelhos mais antigos ou sem NFC ativo na mão. O <strong>Super Avalia Card</strong> resolve isso unindo os dois sistemas.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <!-- Card 1: NFC -->
-                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-7 hover:border-blue-500/50 transition">
-                    <div class="w-12 h-12 rounded-2xl bg-blue-500/15 text-blue-400 flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-wifi rotate-90"></i>
-                    </div>
-                    <h3 class="text-lg font-extrabold text-white">Frente: Aproximação NFC Instantânea</h3>
-                    <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                        Igual ao pagamento por aproximação do cartão de crédito. O cliente encosta o iPhone ou Android e a página personalizada abre na hora, <strong>sem precisar baixar aplicativo</strong>.
-                    </p>
-                </div>
-
-                <!-- Card 2: QR Code -->
-                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-7 hover:border-emerald-500/50 transition">
-                    <div class="w-12 h-12 rounded-2xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-qrcode"></i>
-                    </div>
-                    <h3 class="text-lg font-extrabold text-white">Verso: QR Code de Alta Definição</h3>
-                    <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                        O celular do cliente não tem NFC ou está desativado? Basta apontar a câmera para o <strong>QR Code impresso no verso colorido</strong> do cartão para acessar o mesmo painel imediatamente.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================================================================== -->
-    <!-- SEÇÃO: SIMULADOR INTERATIVO DO FILTRO DE AVALIAÇÕES (1-3 vs 4-5★)     -->
-    <!-- ===================================================================== -->
-    <section id="simulador" class="py-16 bg-slate-900/50 border-y border-slate-800/80 relative">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6">
-            <div class="bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-[32px] p-6 sm:p-10 shadow-2xl">
-                <div class="grid lg:grid-cols-12 gap-8 items-center">
-                    
-                    <div class="lg:col-span-6">
-                        <span class="inline-flex items-center gap-1.5 bg-amber-400/10 text-amber-400 border border-amber-400/20 px-3 py-1 rounded-full text-xs font-bold mb-3">
-                            <i class="fa-solid fa-shield-halved"></i> Proteção de Reputação
-                        </span>
-                        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white leading-tight">
-                            Blindagem inteligente contra avaliações negativas públicas
-                        </h2>
-                        <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
-                            Teste ao lado clicando nas estrelas como se fosse o seu cliente:
-                        </p>
-                        <ul class="mt-4 space-y-3 text-xs text-slate-300">
-                            <li class="flex items-start gap-2.5">
-                                <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</span>
-                                <span><strong>4 ou 5 Estrelas:</strong> O cliente é direcionado automaticamente para publicar a nota máxima no seu perfil oficial do <strong>Google Meu Negócio</strong>.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <span class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 mt-0.5 font-bold">!</span>
-                                <span><strong>1 a 3 Estrelas:</strong> Abre um canal privado direto com a gerência para resolver o problema internamente antes que vire uma crítica pública.</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Caixa Interativa de Teste -->
-                    <div class="lg:col-span-6">
-                        <div class="bg-white text-slate-900 rounded-3xl p-6 shadow-xl max-w-md mx-auto">
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="text-xs font-extrabold text-slate-800">Faça o teste agora:</span>
-                                <span class="text-[11px] font-semibold bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded-full">Simulação Real</span>
-                            </div>
-
-                            <p class="text-xs text-slate-500 mb-3">Como foi seu atendimento hoje?</p>
-
-                            <!-- Estrelas clicáveis -->
-                            <div class="flex items-center justify-center gap-2 bg-slate-50 py-3 rounded-2xl border border-slate-200/80" id="lpStars">
-                                <button onclick="testStarFilter(1)" class="p-1.5 hover:scale-125 transition"><i class="fa-solid fa-star text-2xl text-slate-300" data-lp-star="1"></i></button>
-                                <button onclick="testStarFilter(2)" class="p-1.5 hover:scale-125 transition"><i class="fa-solid fa-star text-2xl text-slate-300" data-lp-star="2"></i></button>
-                                <button onclick="testStarFilter(3)" class="p-1.5 hover:scale-125 transition"><i class="fa-solid fa-star text-2xl text-slate-300" data-lp-star="3"></i></button>
-                                <button onclick="testStarFilter(4)" class="p-1.5 hover:scale-125 transition"><i class="fa-solid fa-star text-2xl text-slate-300" data-lp-star="4"></i></button>
-                                <button onclick="testStarFilter(5)" class="p-1.5 hover:scale-125 transition"><i class="fa-solid fa-star text-2xl text-slate-300" data-lp-star="5"></i></button>
-                            </div>
-
-                            <!-- Resposta Dinâmica do Simulador -->
-                            <div id="simResultBox" class="mt-4 p-3.5 rounded-2xl bg-slate-100 text-center text-xs text-slate-600">
-                                <i class="fa-solid fa-hand-pointer text-amber-500 mr-1"></i> Clique em qualquer estrela acima para ver a mágica acontecer.
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================================================================== -->
-    <!-- SEÇÃO: HUB COMPLETO DE RECURSOS (MUITO ALÉM DA AVALIAÇÃO)             -->
-    <!-- ===================================================================== -->
-    <section id="recursos" class="py-16">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Tudo em um único toque</span>
-                <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-white mt-2">
-                    Por que ele se chama <span class="text-amber-400">Super</span> Avalia Card?
-                </h2>
-                <p class="text-slate-400 text-sm mt-3">
-                    Enquanto cartões comuns só abrem um link do Google, o seu Super Avalia Card funciona como uma central completa de atendimento e vendas no balcão.
-                </p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                <!-- Recurso 1 -->
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-3xl">
-                    <div class="w-11 h-11 rounded-2xl bg-amber-500/15 text-amber-400 flex items-center justify-center text-lg mb-4">
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <h3 class="text-base font-extrabold text-white">Avaliações 5★ no Google</h3>
-                    <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                        Aumente sua nota e apareça no topo das buscas do Google Maps na sua cidade, atraindo clientes orgânicos todos os dias.
-                    </p>
-                </div>
-
-                <!-- Recurso 2 -->
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-3xl">
-                    <div class="w-11 h-11 rounded-2xl bg-teal-500/15 text-teal-400 flex items-center justify-center text-lg mb-4">
-                        <i class="fa-brands fa-pix"></i>
-                    </div>
-                    <h3 class="text-base font-extrabold text-white">Pix Copia e Cola + QR</h3>
-                    <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                        Acabe com erros de digitação na hora de cobrar. O cliente toca no cartão, copia sua chave Pix com 1 clique e paga na hora.
-                    </p>
-                </div>
-
-                <!-- Recurso 3 -->
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-3xl">
-                    <div class="w-11 h-11 rounded-2xl bg-sky-500/15 text-sky-400 flex items-center justify-center text-lg mb-4">
-                        <i class="fa-solid fa-wifi"></i>
-                    </div>
-                    <h3 class="text-base font-extrabold text-white">Wi-Fi Clientes com 1 Clique</h3>
-                    <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                        Não precisa mais ficar repetindo a senha do Wi-Fi no balcão. O cliente acessa a rede e copia a senha direto na tela.
-                    </p>
-                </div>
-
-                <!-- Recurso 4 -->
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-3xl">
-                    <div class="w-11 h-11 rounded-2xl bg-orange-500/15 text-orange-400 flex items-center justify-center text-lg mb-4">
-                        <i class="fa-solid fa-utensils"></i>
-                    </div>
-                    <h3 class="text-base font-extrabold text-white">Cardápio Digital & Agenda</h3>
-                    <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                        Integre seu link do iFood, cardápio próprio, catálogo de serviços ou sistema de agendamento online para barbearias e clínicas.
-                    </p>
-                </div>
-
-                <!-- Recurso 5 -->
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-3xl">
-                    <div class="w-11 h-11 rounded-2xl bg-pink-500/15 text-pink-400 flex items-center justify-center text-lg mb-4">
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                    <h3 class="text-base font-extrabold text-white">WhatsApp & Redes Sociais</h3>
-                    <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                        Botão direto para iniciar conversa no WhatsApp comercial, seguir no Instagram, TikTok e abrir rota no Google Maps.
-                    </p>
-                </div>
-
-                <!-- Recurso 6 -->
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-3xl">
-                    <div class="w-11 h-11 rounded-2xl bg-indigo-500/15 text-indigo-400 flex items-center justify-center text-lg mb-4">
-                        <i class="fa-solid fa-sliders"></i>
-                    </div>
-                    <h3 class="text-base font-extrabold text-white">Painel Editável em Nuvem</h3>
-                    <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                        Mudou a senha do Wi-Fi, a chave Pix ou o link do cardápio? Atualize tudo pelo celular em segundos sem precisar comprar outro cartão.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================================================================== -->
-    <!-- SEÇÃO: PLANOS E KITS PARA TODO O BRASIL (PAGAMENTO ÚNICO)             -->
-    <!-- ===================================================================== -->
-    <section id="planos" class="py-16 sm:py-24 bg-slate-900/40 border-t border-slate-800/80 relative">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="inline-flex items-center gap-1.5 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded-full text-xs font-bold mb-3">
-                    <i class="fa-solid fa-palette"></i> Arte Personalizada + Envio para todo o Brasil
-                </span>
-                <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-white">
-                    Escolha o Kit ideal para o seu negócio
-                </h2>
-                <p class="text-slate-400 text-sm mt-3">
-                    Pagamento único. Cartões PVC 54×86mm coloridos frente e verso com sua marca, zero mensalidade e configuração incluída.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-6 items-stretch">
-                
-                <!-- KIT 1: BALCÃO -->
-                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-7 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Kit Balcão</span>
-                            <span class="bg-slate-800 text-slate-300 text-[11px] font-bold px-2.5 py-0.5 rounded-full">1 Unidade</span>
-                        </div>
-                        <h3 class="text-xl font-extrabold text-white">1 Super Avalia Card</h3>
-                        <p class="text-xs text-slate-400 mt-1">Ideal para profissionais autônomos, consultórios e caixa único.</p>
-
-                        <div class="my-6 pb-6 border-b border-slate-800">
-                            <div class="text-xs text-slate-400 line-through">De R$ 119,90</div>
-                            <div class="flex items-baseline gap-1 mt-0.5">
-                                <span class="text-sm font-bold text-slate-300">R$</span>
-                                <span class="text-4xl font-display font-extrabold text-white">79,90</span>
-                                <span class="text-xs text-emerald-400 font-semibold ml-1">pagamento único</span>
-                            </div>
-                        </div>
-
-                        <ul class="space-y-3 text-xs text-slate-300 mb-8">
-                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> <span><strong>100% Personalizado com sua Logo</strong> (Frente e Verso Colorido)</span></li>
-                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> <span>1 Cartão PVC 54×86mm (NFC + QR Code)</span></li>
-                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> <span>Filtro de Avaliações + Pix + Wi-Fi + Links</span></li>
-                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> <span>Zero mensalidade</span></li>
-                        </ul>
-                    </div>
-
-                    <button onclick="orderKit('Kit Balcão (1 Cartão Personalizado) - R$ 79,90')" class="w-full py-3.5 px-4 rounded-2xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs border border-slate-700 transition flex items-center justify-center gap-2 active:scale-98">
-                        <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
-                        <span>Encomendar Kit Balcão</span>
-                    </button>
-                </div>
-
-                <!-- KIT 2: MAIS VENDIDO (EQUIPE / MESAS) -->
-                <div class="bg-gradient-to-b from-slate-900 to-slate-900/90 border-2 border-amber-400 rounded-3xl p-7 flex flex-col justify-between relative shadow-2xl shadow-amber-500/10">
-                    <!-- Selo Mais Vendido -->
-                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 text-[11px] font-extrabold uppercase tracking-wider px-4 py-1 rounded-full shadow-lg">
-                        <i class="fa-solid fa-fire mr-1"></i> Mais Vendido no Brasil
-                    </div>
-
-                    <div>
-                        <div class="flex items-center justify-between mb-3 mt-1">
-                            <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Kit Equipe & Mesas</span>
-                            <span class="bg-amber-400/15 text-amber-300 text-[11px] font-bold px-2.5 py-0.5 rounded-full">3 Unidades</span>
-                        </div>
-                        <h3 class="text-xl font-extrabold text-white">3 Super Avalia Cards</h3>
-                        <p class="text-xs text-slate-300 mt-1">Perfeito para deixar no caixa, nas mesas ou com os atendentes.</p>
-
-                        <div class="my-6 pb-6 border-b border-slate-800">
-                            <div class="text-xs text-slate-400 line-through">De R$ 239,70</div>
-                            <div class="flex items-baseline gap-1 mt-0.5">
-                                <span class="text-sm font-bold text-amber-400">R$</span>
-                                <span class="text-4xl font-display font-extrabold text-white">169,90</span>
-                                <span class="text-xs text-emerald-400 font-semibold ml-1">(R$ 56,63 / cada)</span>
-                            </div>
-                        </div>
-
-                        <ul class="space-y-3 text-xs text-slate-200 mb-8">
-                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-amber-400 mt-0.5"></i> <span><strong>100% Personalizados com sua Marca</strong> (Frente e Verso Colorido)</span></li>
-                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-amber-400 mt-0.5"></i> <span><strong>3 Cartões PVC 54×86mm</strong> (NFC + QR Code)</span></li>
-                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-amber-400 mt-0.5"></i> <span>Hub Completo (Google, Pix, Wi-Fi, Cardápio)</span></li>
-                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-amber-400 mt-0.5"></i> <span>Painel online para editar links quando quiser</span></li>
-                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-amber-400 mt-0.5"></i> <span><strong>Frete fixo reduzido para todo Brasil</strong></span></li>
-                        </ul>
-                    </div>
-
-                    <button onclick="orderKit('Kit Equipe/Mesas (3 Cartões Personalizados) - R$ 169,90')" class="w-full py-4 px-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-extrabold text-xs shadow-lg shadow-emerald-500/25 transition flex items-center justify-center gap-2 active:scale-98">
-                        <i class="fa-brands fa-whatsapp text-base"></i>
-                        <span>Pedir Kit 3 Cartões Agora</span>
-                    </button>
-                </div>
-
-                <!-- KIT 3: EMPRESA / FRANQUIA -->
-                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-7 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-bold uppercase tracking-wider text-blue-400">Kit Empresa</span>
-                            <span class="bg-blue-500/15 text-blue-300 text-[11px] font-bold px-2.5 py-0.5 rounded-full">5 Unidades</span>
-                        </div>
-                        <h3 class="text-xl font-extrabold text-white">5 Super Avalia Cards</h3>
-                        <p class="text-xs text-slate-400 mt-1">Para restaurantes, lojas movimentadas, clínicas e equipes de vendas.</p>
-
-                        <div class="my-6 pb-6 border-b border-slate-800">
-                            <div class="text-xs text-slate-400 line-through">De R$ 399,50</div>
-                            <div class="flex items-baseline gap-1 mt-0.5">
-                                <span class="text-sm font-bold text-slate-300">R$</span>
-                                <span class="text-4xl font-display font-extrabold text-white">249,90</span>
-                                <span class="text-xs text-emerald-400 font-semibold ml-1">(R$ 49,98 / cada)</span>
-                            </div>
-                        </div>
-
-                        <ul class="space-y-3 text-xs text-slate-300 mb-8">
-                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-blue-400 mt-0.5"></i> <span><strong>100% Personalizados com sua Marca</strong> (Frente e Verso Colorido)</span></li>
-                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-blue-400 mt-0.5"></i> <span><strong>5 Cartões PVC 54×86mm</strong> (NFC + QR Code)</span></li>
-                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-blue-400 mt-0.5"></i> <span>Pode configurar perfis individuais ou único</span></li>
-                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-blue-400 mt-0.5"></i> <span>Suporte prioritário na criação da arte</span></li>
-                        </ul>
-                    </div>
-
-                    <button onclick="orderKit('Kit Empresa (5 Cartões Personalizados) - R$ 249,90')" class="w-full py-3.5 px-4 rounded-2xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs border border-slate-700 transition flex items-center justify-center gap-2 active:scale-98">
-                        <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
-                        <span>Encomendar Kit Empresa</span>
-                    </button>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================================================================== -->
-    <!-- SEÇÃO: FAQ (PERGUNTAS FREQUENTES)                                     -->
-    <!-- ===================================================================== -->
-    <section id="faq" class="py-16 bg-slate-950 border-t border-slate-800/80">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-10">
-                <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">Dúvidas Frequentes</h2>
-                <p class="text-slate-400 text-xs sm:text-sm mt-2">Tudo o que você precisa saber antes de encomendar seu Super Avalia Card</p>
-            </div>
-
-            <div class="space-y-3">
-                <!-- FAQ 1 -->
-                <details class="group bg-slate-900 border border-slate-800 rounded-2xl p-5 open:border-slate-700" open>
-                    <summary class="flex items-center justify-between cursor-pointer list-none font-bold text-sm text-white">
-                        <span>O cartão vem mesmo personalizado com a minha logo e cores?</span>
-                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform"></i>
-                    </summary>
-                    <p class="text-xs text-slate-400 mt-3 leading-relaxed">
-                        <strong>Sim! 100% personalizado frente e verso.</strong> Após o pedido, você envia a logomarca da sua empresa pelo WhatsApp, nossa equipe monta o layout colorido no padrão da sua identidade visual e só enviamos para impressão após a sua aprovação.
-                    </p>
-                </details>
-
-                <!-- FAQ 2 -->
-                <details class="group bg-slate-900 border border-slate-800 rounded-2xl p-5 open:border-slate-700">
-                    <summary class="flex items-center justify-between cursor-pointer list-none font-bold text-sm text-white">
-                        <span>Precisa pagar alguma mensalidade para o cartão funcionar?</span>
-                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform"></i>
-                    </summary>
-                    <p class="text-xs text-slate-400 mt-3 leading-relaxed">
-                        <strong>Não! Zero mensalidade.</strong> Você paga apenas uma única vez pelo seu kit de cartões personalizados e tem acesso ao seu Hub Digital completo sem cobranças recorrentes.
-                    </p>
-                </details>
-
-                <!-- FAQ 3 -->
-                <details class="group bg-slate-900 border border-slate-800 rounded-2xl p-5 open:border-slate-700">
-                    <summary class="flex items-center justify-between cursor-pointer list-none font-bold text-sm text-white">
-                        <span>E se o celular do meu cliente não tiver NFC?</span>
-                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform"></i>
-                    </summary>
-                    <p class="text-xs text-slate-400 mt-3 leading-relaxed">
-                        Todos os nossos cartões possuem <strong>Tecnologia Dupla</strong>: chip NFC interno para aproximação e um <strong>QR Code de alta definição impresso no verso colorido</strong>. Se o aparelho não tiver NFC, basta apontar a câmera para o QR Code que abre a mesma página na hora.
-                    </p>
-                </details>
-
-                <!-- FAQ 4 -->
-                <details class="group bg-slate-900 border border-slate-800 rounded-2xl p-5 open:border-slate-700">
-                    <summary class="flex items-center justify-between cursor-pointer list-none font-bold text-sm text-white">
-                        <span>Qual o tamanho e material do cartão físico?</span>
-                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform"></i>
-                    </summary>
-                    <p class="text-xs text-slate-400 mt-3 leading-relaxed">
-                        O cartão tem exatamente o <strong>tamanho padrão bancário (54×86 mm)</strong>, fabricado em PVC rígido de alta durabilidade, resistente à água, sem baterias e com acabamento profissional colorido frente e verso.
-                    </p>
-                </details>
-
-                <!-- FAQ 5 -->
-                <details class="group bg-slate-900 border border-slate-800 rounded-2xl p-5 open:border-slate-700">
-                    <summary class="flex items-center justify-between cursor-pointer list-none font-bold text-sm text-white">
-                        <span>Posso mudar minha chave Pix, senha do Wi-Fi ou links depois?</span>
-                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform"></i>
-                    </summary>
-                    <p class="text-xs text-slate-400 mt-3 leading-relaxed">
-                        Sim! Como o sistema funciona em nuvem, você pode atualizar seus links, telefone, cardápio, Pix ou senha do Wi-Fi a qualquer momento sem precisar trocar ou reimprimir seus cartões físicos.
-                    </p>
-                </details>
-
-                <!-- FAQ 6 -->
-                <details class="group bg-slate-900 border border-slate-800 rounded-2xl p-5 open:border-slate-700">
-                    <summary class="flex items-center justify-between cursor-pointer list-none font-bold text-sm text-white">
-                        <span>Vocês enviam para qualquer cidade do Brasil?</span>
-                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform"></i>
-                    </summary>
-                    <p class="text-xs text-slate-400 mt-3 leading-relaxed">
-                        Sim! Enviamos via Correios e transportadoras com código de rastreamento para todos os estados do Brasil. Assim que o pedido é confirmado, já ativamos o seu link digital para você começar a usar online enquanto o cartão físico chega.
-                    </p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================================================================== -->
-    <!-- FOOTER                                                                -->
-    <!-- ===================================================================== -->
-    <footer class="bg-slate-950 border-t border-slate-900 py-10 px-4 sm:px-6 text-center">
-        <div class="max-w-6xl mx-auto flex flex-col items-center">
-            <div class="flex items-center gap-2 mb-3">
-                <div class="w-7 h-7 rounded-lg bg-amber-400 text-slate-950 flex items-center justify-center font-extrabold text-xs">
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <span class="font-display font-extrabold text-base text-white">
-                    Super<span class="text-amber-400">Avalia</span>Card
-                </span>
-            </div>
-            <p class="text-xs text-slate-500 max-w-md">
-                Cartões inteligentes em PVC 54×86mm personalizados frente e verso com NFC + QR Code. A solução definitiva para reputação no Google e conversão no balcão em todo o Brasil.
-            </p>
-            <div class="text-[11px] text-slate-600 mt-6">
-                &copy; 2026 Super Avalia Card (superavaliacard.com.br). Todos os direitos reservados.
-            </div>
-        </div>
-    </footer>
-
-    <!-- ===================================================================== -->
-    <!-- BOTÃO FLUTUANTE WHATSAPP COMERCIAL                                    -->
-    <!-- ===================================================================== -->
-    <button onclick="orderKit('Atendimento Comercial - Dúvida sobre Super Avalia Card Personalizado')" aria-label="Falar no WhatsApp" class="fixed bottom-5 right-5 z-50 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs px-4 py-3.5 rounded-full shadow-2xl shadow-emerald-500/30 flex items-center gap-2 transition transform hover:scale-105 active:scale-95">
-        <i class="fa-brands fa-whatsapp text-xl"></i>
-        <span class="hidden sm:inline">Falar com Consultor</span>
-    </button>
-
-    <!-- ===================================================================== -->
-    <!-- MODAL DE CHECKOUT RÁPIDO / CONFIRMAÇÃO DE PEDIDO                      -->
-    <!-- ===================================================================== -->
-    <div id="checkoutModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
-        <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-md w-full p-6 shadow-2xl relative">
-            <button onclick="closeCheckout()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-400 flex items-center justify-center transition">
-                <i class="fa-solid fa-xmark text-sm"></i>
-            </button>
-
-            <div class="inline-flex items-center gap-1.5 bg-emerald-500/15 text-emerald-400 px-3 py-1 rounded-full text-xs font-bold mb-3">
-                <i class="fa-solid fa-palette"></i>
-                <span>Personalização + Envio Nacional</span>
-            </div>
-
-            <h3 class="text-lg font-extrabold text-white">Finalizar Encomenda</h3>
-            <p id="selectedKitLabel" class="text-xs text-amber-400 font-semibold mt-0.5">Kit Equipe/Mesas (3 Cartões Personalizados)</p>
-
-            <form onsubmit="redirectWhatsApp(event)" class="mt-4 space-y-3">
-                <div>
-                    <label class="block text-[11px] font-bold text-slate-300 mb-1">Nome da sua Empresa / Negócio</label>
-                    <input type="text" id="companyInput" required placeholder="Ex: Barbearia Dom Pedro" class="w-full rounded-xl bg-slate-950 border border-slate-700 px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400">
-                </div>
-                <div class="grid grid-cols-2 gap-2.5">
-                    <div>
-                        <label class="block text-[11px] font-bold text-slate-300 mb-1">Seu Nome</label>
-                        <input type="text" id="clientNameInput" required placeholder="Seu nome" class="w-full rounded-xl bg-slate-950 border border-slate-700 px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400">
-                    </div>
-                    <div>
-                        <label class="block text-[11px] font-bold text-slate-300 mb-1">Cidade / Estado</label>
-                        <input type="text" id="cityInput" required placeholder="Ex: Curitiba - PR" class="w-full rounded-xl bg-slate-950 border border-slate-700 px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400">
-                    </div>
-                </div>
-
-                <button type="submit" class="w-full py-3.5 mt-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs shadow-lg flex items-center justify-center gap-2 transition active:scale-98">
-                    <i class="fa-brands fa-whatsapp text-base"></i>
-                    <span>Enviar Logo e Fechar no WhatsApp</span>
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- ===================================================================== -->
-    <!-- SCRIPTS INTERATIVOS                                                   -->
-    <!-- ===================================================================== -->
-    <script>
-        // Girar cartão 3D (Frente NFC <-> Verso QR Code)
-        function flipPvcCard() {
-            const card = document.getElementById('pvcCard3D');
-            card.classList.toggle('card-flipped');
-        }
-
-        // Alternar simulação de marca no cartão PVC e no celular (Frente e Verso Personalizados)
-        const brandThemes = {
-            burger: {
-                name: "Brava Burger",
-                icon: '<i class="fa-solid fa-burger"></i>',
-                iconColor: "text-orange-600",
-                cardFront: "card-face rounded-2xl bg-gradient-to-br from-orange-600 via-amber-600 to-slate-950 border border-amber-400/50 shadow-[0_20px_50px_rgba(0,0,0,0.85)] p-4 flex flex-col justify-between overflow-hidden transition-all",
-                cardBack: "card-face card-back rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900 to-orange-950 text-white border border-amber-400/50 shadow-[0_20px_50px_rgba(0,0,0,0.85)] p-4 flex items-center justify-between gap-3 overflow-hidden transition-all",
-                phoneHeader: "bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl p-2.5 text-center text-white transition-all",
-                activeBtn: "btnBrandBurger"
-            },
-            barber: {
-                name: "Barbearia Imperial",
-                icon: '<i class="fa-solid fa-scissors"></i>',
-                iconColor: "text-slate-900",
-                cardFront: "card-face rounded-2xl bg-gradient-to-br from-slate-900 via-zinc-800 to-amber-950 border border-amber-500/60 shadow-[0_20px_50px_rgba(0,0,0,0.85)] p-4 flex flex-col justify-between overflow-hidden transition-all",
-                cardBack: "card-face card-back rounded-2xl bg-gradient-to-br from-zinc-950 via-slate-900 to-amber-950 text-white border border-amber-500/60 shadow-[0_20px_50px_rgba(0,0,0,0.85)] p-4 flex items-center justify-between gap-3 overflow-hidden transition-all",
-                phoneHeader: "bg-gradient-to-r from-slate-800 to-amber-700 rounded-2xl p-2.5 text-center text-white transition-all",
-                activeBtn: "btnBrandBarber"
-            },
-            clinic: {
-                name: "Clínica OdontoPrime",
-                icon: '<i class="fa-solid fa-tooth"></i>',
-                iconColor: "text-sky-600",
-                cardFront: "card-face rounded-2xl bg-gradient-to-br from-sky-600 via-blue-700 to-slate-950 border border-sky-400/50 shadow-[0_20px_50px_rgba(0,0,0,0.85)] p-4 flex flex-col justify-between overflow-hidden transition-all",
-                cardBack: "card-face card-back rounded-2xl bg-gradient-to-br from-slate-900 via-blue-950 to-sky-950 text-white border border-sky-400/50 shadow-[0_20px_50px_rgba(0,0,0,0.85)] p-4 flex items-center justify-between gap-3 overflow-hidden transition-all",
-                phoneHeader: "bg-gradient-to-r from-sky-500 to-blue-700 rounded-2xl p-2.5 text-center text-white transition-all",
-                activeBtn: "btnBrandClinic"
-            }
-        };
-
-        function setCardBrand(brandKey) {
-            const theme = brandThemes[brandKey];
-            if (!theme) return;
-
-            // Atualiza botões do seletor
-            ['btnBrandBurger', 'btnBrandBarber', 'btnBrandClinic'].forEach(id => {
-                const btn = document.getElementById(id);
-                if (id === theme.activeBtn) {
-                    btn.className = "px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950 font-bold transition";
-                } else {
-                    btn.className = "px-2.5 py-0.5 rounded-full text-slate-300 hover:text-white font-semibold transition";
-                }
-            });
-
-            // Atualiza Cartão Frente e Verso
-            document.getElementById('cardFrontFace').className = theme.cardFront;
-            document.getElementById('cardBackFace').className = theme.cardBack;
-            document.getElementById('cardFrontTitle').innerText = theme.name;
-            document.getElementById('cardBackTitle').innerText = theme.name;
-            
-            const cardLogo = document.getElementById('cardFrontLogoBox');
-            cardLogo.className = `w-7 h-7 rounded-lg bg-white ${theme.iconColor} flex items-center justify-center text-xs font-extrabold shadow-md`;
-            cardLogo.innerHTML = theme.icon;
-
-            // Atualiza Celular ao lado
-            document.getElementById('phoneHeaderBg').className = theme.phoneHeader;
-            document.getElementById('phoneBrandName').innerText = theme.name;
-            const phoneLogo = document.getElementById('phoneLogoIcon');
-            phoneLogo.className = `w-8 h-8 bg-white rounded-xl mx-auto flex items-center justify-center ${theme.iconColor} text-sm font-bold shadow-xs mb-1`;
-            phoneLogo.innerHTML = theme.icon;
-        }
-
-        // Simulador do Filtro de Estrelas na Landing Page
-        function testStarFilter(rating) {
-            const stars = document.querySelectorAll('[data-lp-star]');
-            stars.forEach((star, idx) => {
-                if (idx < rating) {
-                    star.classList.remove('text-slate-300');
-                    star.classList.add('text-amber-400');
-                } else {
-                    star.classList.remove('text-amber-400');
-                    star.classList.add('text-slate-300');
-                }
-            });
-
-            const resultBox = document.getElementById('simResultBox');
-            if (rating <= 3) {
-                resultBox.className = "mt-4 p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-left text-xs text-amber-900 transition-all";
-                resultBox.innerHTML = `
-                    <div class="font-extrabold flex items-center gap-1.5 text-amber-800 mb-1">
-                        <i class="fa-solid fa-shield-halved"></i> Nota ${rating}★ Interceptada!
-                    </div>
-                    <p class="text-[11px] leading-relaxed">
-                        O sistema <strong>NÃO</strong> envia para o Google público. Abre um formulário privado direto para o seu WhatsApp/Gerência resolver com o cliente.
-                    </p>
-                `;
-            } else {
-                resultBox.className = "mt-4 p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-left text-xs text-emerald-900 transition-all";
-                resultBox.innerHTML = `
-                    <div class="font-extrabold flex items-center gap-1.5 text-emerald-800 mb-1">
-                        <i class="fa-solid fa-circle-check"></i> Nota ${rating}★ Liberada para o Google!
-                    </div>
-                    <p class="text-[11px] leading-relaxed">
-                        Cliente satisfeito! Ele é levado direto para a tela de avaliação 5 estrelas do seu perfil no <strong>Google Meu Negócio</strong>.
-                    </p>
-                `;
-            }
-        }
-
-        // Abrir modal de encomenda de kit
-        let currentKit = "";
-        function orderKit(kitName) {
-            currentKit = kitName;
-            document.getElementById('selectedKitLabel').innerText = kitName;
-            const modal = document.getElementById('checkoutModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        }
-
-        function closeCheckout() {
-            const modal = document.getElementById('checkoutModal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-
-        // Gerar mensagem pré-preenchida para o WhatsApp Comercial
-        function redirectWhatsApp(e) {
-            e.preventDefault();
-            const company = document.getElementById('companyInput').value.trim();
-            const name = document.getElementById('clientNameInput').value.trim();
-            const city = document.getElementById('cityInput').value.trim();
-
-            const message = `Olá! Vim pelo site *superavaliacard.com.br* e quero encomendar meu cartão personalizado:\n\n` +
-                            `📦 *Opção:* ${currentKit}\n` +
-                            `🏢 *Empresa:* ${company}\n` +
-                            `👤 *Responsável:* ${name}\n` +
-                            `📍 *Cidade/UF:* ${city}\n\n` +
-                            `Já vou enviar minha logo para montarmos a arte frente e verso!`;
-
-            const whatsappNumber = "5542999001750";
-            const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-            
-            closeCheckout();
-            window.open(url, '_blank', 'noopener,noreferrer');
-        }
-    </script>
+
+<body>
+<div class="topline">
+<i class="fa-solid fa-palette"></i> Cartão personalizado com sua marca
+<span>•</span>
+<i class="fa-solid fa-ban"></i> Pagamento único, sem mensalidade
+<span>•</span>
+<i class="fa-solid fa-truck-fast"></i> Envio nacional
+</div>
+
+<header class="header">
+<div class="wrap headinner">
+<a class="brand" href="#inicio" aria-label="Super Avalia Card - início">
+<div class="brandmark"><i class="fa-solid fa-star"></i></div>
+<div>
+<div class="brandname">Super<b>Avalia</b>Card</div>
+<small>PVC personalizado · NFC + QR</small>
+</div>
+</a>
+<nav class="nav">
+<a href="#como-funciona">Como funciona</a>
+<a href="#recursos">Recursos</a>
+<a href="#kits">Kits e preços</a>
+<a href="#duvidas">Dúvidas</a>
+</nav>
+<a class="btn btn-primary" href="#kits">Escolher meu kit <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+<div class="wrap hero-grid">
+<div class="hero-copy">
+<div class="eyebrow">Seu negócio, conectado</div>
+<h1>Um cartão. Vários caminhos para o seu <em>cliente chegar até você.</em></h1>
+<p class="lead">Apresente sua empresa com um cartão de PVC personalizado. Com NFC e QR Code, seu cliente acessa avaliações no Google, WhatsApp, Pix, Wi-Fi, cardápio e outros links em uma única página.</p>
+<div class="hero-points">
+<div class="point"><i class="fa-solid fa-check"></i> Sua marca frente e verso</div>
+<div class="point"><i class="fa-solid fa-wifi"></i> NFC + QR Code</div>
+<div class="point"><i class="fa-solid fa-mobile-screen"></i> Sem aplicativo</div>
+<div class="point"><i class="fa-solid fa-infinity"></i> Sem mensalidade</div>
+</div>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#kits">Ver kits e escolher quantidade <i class="fa-solid fa-arrow-right"></i></a>
+<a class="btn btn-secondary" href="#como-funciona">Entender como funciona</a>
+</div>
+<div class="micro"><i class="fa-solid fa-circle-check"></i> Você aprova a arte antes da produção.</div>
+</div>
+
+<div class="showcase" aria-label="Demonstração visual do cartão personalizado e da página digital">
+<div class="halo"></div>
+<div class="brand-picker" aria-label="Exemplos de personalização">
+<button type="button" onclick="setCardBrand('burger')">Hamburgueria</button>
+<button type="button" onclick="setCardBrand('barber')">Barbearia</button>
+<button type="button" onclick="setCardBrand('clinic')">Clínica</button>
+</div>
+
+<div class="phone">
+<div class="phone-notch"></div>
+<div class="phone-head" id="phoneHead">
+<div class="phone-logo" id="phoneLogo"><i class="fa-solid fa-burger"></i></div>
+<strong id="phoneName">Brava Burger</strong>
+<small>Página digital da empresa</small>
+</div>
+<div class="phone-rating">Avalie sua experiência<div>★★★★★</div></div>
+<div class="phone-links">
+<span><i class="fa-brands fa-whatsapp"></i> WhatsApp</span>
+<span><i class="fa-brands fa-pix"></i> Pix</span>
+<span><i class="fa-solid fa-wifi"></i> Wi-Fi e cardápio</span>
+</div>
+<div class="phone-foot">Sua empresa em um só lugar</div>
+</div>
+
+<div class="card-scene" id="pvcCard" onclick="flipCard()" role="button" tabindex="0" aria-label="Girar cartão para ver o verso">
+<div class="card-inner">
+<div class="face front" id="cardFront">
+<div class="shine"></div>
+<div class="card-top">
+<div class="card-brand">
+<i id="cardIcon" class="fa-solid fa-burger"></i>
+<span id="cardName">Brava Burger</span>
+</div>
+<span class="nfc"><i class="fa-solid fa-wifi"></i> NFC</span>
+</div>
+<div class="card-main">
+<small>Aproxime o celular</small>
+<strong>Acesse. Avalie.<br>Conecte-se.</strong>
+</div>
+<div class="card-bottom">
+<span>PVC personalizado</span>
+<span><i class="fa-solid fa-rotate"></i> Verso com QR</span>
+</div>
+</div>
+<div class="face back">
+<div class="shine"></div>
+<div class="back-copy">
+<strong id="backName">Brava Burger</strong>
+<p>Sem NFC? Aponte a câmera para o QR Code e acesse a página.</p>
+<small style="color:var(--amber)">QR Code no verso</small>
+</div>
+<div class="fakeqr" aria-hidden="true"></div>
+</div>
+</div>
+</div>
+<div class="turnhint"><i class="fa-solid fa-rotate"></i> Toque no cartão para ver o verso</div>
+</div>
+</div>
+</section>
+
+<section class="section alt" id="como-funciona">
+<div class="wrap two-col">
+<div>
+<div class="eyebrow">Do pedido ao primeiro toque</div>
+<h2 style="font-size:clamp(28px,3.4vw,40px);line-height:1.15;margin:12px 0 15px">Personalizado para sua empresa. Simples para o seu cliente.</h2>
+<p style="color:var(--muted);font-size:14px;line-height:1.8">O cartão físico leva o cliente até sua página digital. Nela, você reúne os principais canais do seu negócio sem precisar entregar vários links diferentes.</p>
+<div class="feature-list" style="margin-top:24px">
+<div class="feature">
+<div class="feature-icon"><i class="fa-solid fa-palette"></i></div>
+<div>
+<h3>Identidade visual da sua marca</h3>
+<p>Você envia sua logo e as referências de cores. A arte é preparada para você aprovar antes da impressão.</p>
+</div>
+</div>
+<div class="feature">
+<div class="feature-icon"><i class="fa-solid fa-credit-card"></i></div>
+<div>
+<h3>PVC rígido no tamanho padrão bancário</h3>
+<p>Cartão de 54 × 86 mm, colorido frente e verso, com chip NFC e QR Code impresso.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="steps">
+<h3>Como funciona a encomenda</h3>
+<div class="step">
+<div class="step-num">1</div>
+<div>
+<strong>Escolha seu kit</strong>
+<p>Selecione a quantidade de cartões e envie seus dados pelo WhatsApp.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div>
+<strong>Envie sua logo e seus links</strong>
+<p>Compartilhe a identidade visual e os destinos que deseja incluir na página.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div>
+<strong>Aprove a arte e receba</strong>
+<p>Após sua aprovação, os cartões seguem para produção e envio. O link digital pode ser utilizado online conforme a configuração do pedido.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="tecnologia">
+<div class="wrap">
+<div class="section-head">
+<div class="eyebrow">Duas formas de acessar</div>
+<h2>Mais praticidade com <span style="color:var(--amber)">NFC + QR Code</span></h2>
+<p>O cliente escolhe a maneira mais conveniente de abrir sua página digital.</p>
+</div>
+<div class="tech-grid">
+<div class="tech-card">
+<i class="fa-solid fa-wifi"></i>
+<h3>Frente: aproximação NFC</h3>
+<p>Em celulares compatíveis, basta aproximar o aparelho da área do chip para abrir o link. Não é necessário instalar aplicativo.</p>
+</div>
+<div class="tech-card">
+<i class="fa-solid fa-qrcode"></i>
+<h3>Verso: leitura do QR Code</h3>
+<p>Se o aparelho não tiver NFC ou a função estiver desativada, o cliente pode apontar a câmera para o QR Code impresso.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section alt" id="avaliacoes">
+<div class="wrap two-col">
+<div>
+<div class="eyebrow">Experiência transparente</div>
+<h2 style="font-size:clamp(28px,3.4vw,40px);line-height:1.15;margin:12px 0 15px">Facilite o acesso à avaliação do seu negócio.</h2>
+<p style="color:var(--muted);font-size:14px;line-height:1.8">O cartão pode incluir um atalho para o perfil de avaliações da sua empresa no Google. O cliente decide se deseja publicar uma avaliação, com liberdade para expressar sua experiência real.</p>
+<div class="feature-list" style="margin-top:22px">
+<div class="feature">
+<div class="feature-icon"><i class="fa-brands fa-google"></i></div>
+<div>
+<h3>Acesso direto ao seu perfil</h3>
+<p>Facilite para o cliente encontrar o local correto para deixar sua opinião.</p>
+</div>
+</div>
+<div class="feature">
+<div class="feature-icon"><i class="fa-solid fa-comments"></i></div>
+<div>
+<h3>Feedback também é oportunidade</h3>
+<p>Você pode disponibilizar um canal de contato para dúvidas, sugestões e atendimento.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="demo">
+<div class="demo-label">SIMULAÇÃO DE EXPERIÊNCIA</div>
+<p style="font-size:15px;font-weight:800;margin:7px 0 2px">Como foi sua experiência?</p>
+<p style="font-size:11px;color:#718096;margin-bottom:8px">Escolha uma nota para ver as opções disponíveis.</p>
+
+<div class="stars" id="stars">
+<button type="button" aria-label="1 estrela" aria-pressed="false" onclick="rate(1)">★</button>
+<button type="button" aria-label="2 estrelas" aria-pressed="false" onclick="rate(2)">★</button>
+<button type="button" aria-label="3 estrelas" aria-pressed="false" onclick="rate(3)">★</button>
+<button type="button" aria-label="4 estrelas" aria-pressed="false" onclick="rate(4)">★</button>
+<button type="button" aria-label="5 estrelas" aria-pressed="false" onclick="rate(5)">★</button>
+</div>
+
+<div class="demo-result" id="rateResult" aria-live="polite">
+<strong>Sua opinião é importante.</strong>
+Selecione uma nota para visualizar a demonstração.
+</div>
+
+<div class="demo-note">
+Demonstração ilustrativa. Todas as notas têm acesso à opção de avaliação pública; o contato privado é uma alternativa adicional, nunca uma barreira.
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="recursos">
+<div class="wrap">
+<div class="section-head">
+<div class="eyebrow">Sua empresa em uma página</div>
+<h2>Mais do que um cartão de avaliação</h2>
+<p>Reúna atalhos úteis para o dia a dia do seu negócio em um único lugar.</p>
+</div>
+<div class="resource-grid">
+<div class="resource-card">
+<i class="fa-brands fa-google"></i>
+<h3>Avaliações no Google</h3>
+<p>Atalho para o perfil da sua empresa, facilitando o acesso dos clientes.</p>
+</div>
+<div class="resource-card">
+<i class="fa-brands fa-whatsapp"></i>
+<h3>WhatsApp e redes sociais</h3>
+<p>Direcione o cliente para conversar com sua equipe e acessar seus canais.</p>
+</div>
+<div class="resource-card">
+<i class="fa-brands fa-pix"></i>
+<h3>Pix</h3>
+<p>Disponibilize sua chave ou instruções de pagamento na página digital.</p>
+</div>
+<div class="resource-card">
+<i class="fa-solid fa-wifi"></i>
+<h3>Wi-Fi para clientes</h3>
+<p>Compartilhe as informações de acesso à rede de forma prática.</p>
+</div>
+<div class="resource-card">
+<i class="fa-solid fa-utensils"></i>
+<h3>Cardápio, catálogo ou agenda</h3>
+<p>Inclua links para cardápio digital, catálogo de serviços ou agendamento.</p>
+</div>
+<div class="resource-card">
+<i class="fa-solid fa-sliders"></i>
+<h3>Página editável</h3>
+<p>Atualize links e informações sem precisar substituir o cartão físico, conforme os recursos contratados.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section alt" id="kits">
+<div class="wrap">
+<div class="section-head">
+<div class="eyebrow">Escolha sua quantidade</div>
+<h2>Qual kit combina com seu negócio?</h2>
+<p>Todos os kits incluem cartões personalizados em PVC, NFC + QR Code e pagamento único.</p>
+</div>
+
+<div class="kits">
+<div class="kit">
+<div class="kit-tag">Para começar</div>
+<h3>Kit Balcão</h3>
+<p class="kit-desc">Uma unidade para profissionais autônomos, consultórios e caixa único.</p>
+<div class="price">
+<div class="old">De R$ 119,90</div>
+<div class="price-main"><small>R$</small> 79,90</div>
+<div class="price-note">Pagamento único</div>
+</div>
+<ul>
+<li><i class="fa-solid fa-check"></i> 1 cartão PVC 54 × 86 mm</li>
+<li><i class="fa-solid fa-check"></i> Personalização frente e verso</li>
+<li><i class="fa-solid fa-check"></i> NFC + QR Code</li>
+<li><i class="fa-solid fa-check"></i> Página com links do negócio</li>
+<li><i class="fa-solid fa-check"></i> Sem mensalidade</li>
+</ul>
+<button class="btn btn-secondary" onclick="orderKit('Kit Balcão - 1 cartão - R$ 79,90')">
+Quero 1 cartão <i class="fa-brands fa-whatsapp"></i>
+</button>
+</div>
+
+<div class="kit featured">
+<div class="kit-tag">Mais unidades por cartão</div>
+<h3>Kit Equipe & Mesas</h3>
+<p class="kit-desc">Três unidades para distribuir no caixa, nas mesas ou com os atendentes.</p>
+<div class="price">
+<div class="old">De R$ 239,70</div>
+<div class="price-main"><small>R$</small> 169,90</div>
+<div class="price-note">R$ 56,63 por cartão · pagamento único</div>
+</div>
+<ul>
+<li><i class="fa-solid fa-check"></i> 3 cartões PVC 54 × 86 mm</li>
+<li><i class="fa-solid fa-check"></i> Personalização com sua marca</li>
+<li><i class="fa-solid fa-check"></i> NFC + QR Code</li>
+<li><i class="fa-solid fa-check"></i> Hub digital com links</li>
+<li><i class="fa-solid fa-check"></i> Painel online para editar links</li>
+</ul>
+<button class="btn btn-primary" onclick="orderKit('Kit Equipe & Mesas - 3 cartões - R$ 169,90')">
+Escolher kit com 3 <i class="fa-brands fa-whatsapp"></i>
+</button>
+</div>
+
+<div class="kit">
+<div class="kit-tag">Para equipes maiores</div>
+<h3>Kit Empresa</h3>
+<p class="kit-desc">Cinco unidades para lojas, restaurantes, clínicas e equipes de atendimento.</p>
+<div class="price">
+<div class="old">De R$ 399,50</div>
+<div class="price-main"><small>R$</small> 249,90</div>
+<div class="price-note">R$ 49,98 por cartão · pagamento único</div>
+</div>
+<ul>
+<li><i class="fa-solid fa-check"></i> 5 cartões PVC 54 × 86 mm</li>
+<li><i class="fa-solid fa-check"></i> Personalização com sua marca</li>
+<li><i class="fa-solid fa-check"></i> NFC + QR Code</li>
+<li><i class="fa-solid fa-check"></i> Perfis individuais ou página única</li>
+<li><i class="fa-solid fa-check"></i> Suporte na criação da arte</li>
+</ul>
+<button class="btn btn-secondary" onclick="orderKit('Kit Empresa - 5 cartões - R$ 249,90')">
+Quero 5 cartões <i class="fa-brands fa-whatsapp"></i>
+</button>
+</div>
+</div>
+
+<p class="shipping-note">Condições de frete, prazo de produção e entrega são confirmadas no atendimento conforme o CEP e o kit escolhido.</p>
+</div>
+</section>
+
+<section class="section" id="duvidas">
+<div class="wrap">
+<div class="section-head">
+<div class="eyebrow">Antes de pedir</div>
+<h2>Dúvidas frequentes</h2>
+<p>Informações para escolher seu kit com tranquilidade.</p>
+</div>
+
+<div class="faq">
+<details>
+<summary>O cartão é personalizado com minha logo?</summary>
+<p>Sim. Você envia sua logomarca e as referências da sua identidade visual. A arte é preparada para aprovação antes de seguir para produção.</p>
+</details>
+
+<details>
+<summary>Precisa pagar mensalidade?</summary>
+<p>Os kits apresentados são de pagamento único e não têm mensalidade, conforme a oferta informada nesta página.</p>
+</details>
+
+<details>
+<summary>E se o celular não tiver NFC?</summary>
+<p>O cartão também possui QR Code impresso no verso. O cliente pode apontar a câmera do celular para abrir a mesma página digital.</p>
+</details>
+
+<details>
+<summary>Qual é o tamanho e o material?</summary>
+<p>O cartão mede 54 × 86 mm, no padrão de cartão bancário, e é produzido em PVC rígido, com impressão colorida frente e verso.</p>
+</details>
+
+<details>
+<summary>Posso alterar meus links depois?</summary>
+<p>O cartão direciona para uma página digital. Os links e informações podem ser atualizados conforme os recursos e o acesso disponibilizados no kit contratado. Confirme os detalhes no atendimento.</p>
+</details>
+
+<details>
+<summary>Vocês enviam para todo o Brasil?</summary>
+<p>O atendimento confirma as opções de envio, o valor do frete e o prazo conforme o CEP e o kit escolhido.</p>
+</details>
+
+<details>
+<summary>Como faço para encomendar?</summary>
+<p>Escolha um kit, preencha seus dados no formulário e continue a conversa pelo WhatsApp. Por lá você poderá enviar sua logo e alinhar os links e a personalização.</p>
+</details>
+</div>
+</div>
+</section>
+
+<section class="closing">
+<div class="wrap">
+<div class="eyebrow" style="justify-content:center">Seu próximo passo</div>
+<h2>Leve sua marca para cada atendimento.</h2>
+<p>Escolha a quantidade de cartões e solicite sua personalização pelo WhatsApp.</p>
+<a class="btn btn-primary" href="#kits">Ver kits e preços <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</section>
+</main>
+
+<footer class="footer">
+<div class="wrap">
+<a class="brand" href="#inicio">
+<div class="brandmark"><i class="fa-solid fa-star"></i></div>
+<div class="brandname">Super<b>Avalia</b>Card</div>
+</a>
+<p>Cartão inteligente personalizado em PVC com NFC + QR Code.</p>
+<div>© 2026 Super Avalia Card. Todos os direitos reservados.</div>
+</div>
+</footer>
+
+<button class="float-wa" onclick="orderKit('Atendimento comercial - Dúvidas sobre o Super Avalia Card')" aria-label="Falar com atendimento pelo WhatsApp">
+<i class="fa-brands fa-whatsapp"></i>
+</button>
+
+<div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+<div class="modal-box">
+<button class="modal-close" onclick="closeCheckout()" aria-label="Fechar">×</button>
+<div class="eyebrow">Vamos personalizar?</div>
+<h3 id="modalTitle">Solicitar meu Super Avalia Card</h3>
+<p>Preencha os dados para continuar o pedido pelo WhatsApp.</p>
+<p class="selected" id="selectedKit"></p>
+
+<form id="orderForm" onsubmit="sendWhatsApp(event)">
+<div class="field">
+<label for="company">Nome da empresa</label>
+<input id="company" required maxlength="100" placeholder="Ex.: Barbearia Central">
+</div>
+<div class="field">
+<label for="customer">Seu nome</label>
+<input id="customer" required maxlength="80" placeholder="Como podemos chamar você?">
+</div>
+<div class="field">
+<label for="city">Cidade / UF</label>
+<input id="city" required maxlength="80" placeholder="Ex.: Curitiba - PR">
+</div>
+<button class="btn btn-primary" type="submit">
+Continuar no WhatsApp <i class="fa-brands fa-whatsapp"></i>
+</button>
+</form>
+</div>
+</div>
+
+<script>
+const WHATSAPP_NUMBER = '5542999001750';
+let selectedKit = '';
+
+function flipCard(){
+  document.getElementById('pvcCard').classList.toggle('flipped');
+}
+
+document.getElementById('pvcCard').addEventListener('keydown',e=>{
+  if(e.key==='Enter'||e.key===' '){
+    e.preventDefault();
+    flipCard();
+  }
+});
+
+const themes={
+  burger:{
+    name:'Brava Burger',
+    icon:'fa-burger',
+    front:'linear-gradient(135deg,#e98732,#a64c25 55%,#152338)',
+    head:'linear-gradient(135deg,#e99a39,#b85a2b)',
+    iconColor:'#bd652d'
+  },
+  barber:{
+    name:'Barbearia Imperial',
+    icon:'fa-scissors',
+    front:'linear-gradient(135deg,#30343b,#151b25 60%,#76552b)',
+    head:'linear-gradient(135deg,#313a49,#9b7338)',
+    iconColor:'#30343b'
+  },
+  clinic:{
+    name:'Clínica OdontoPrime',
+    icon:'fa-tooth',
+    front:'linear-gradient(135deg,#399bc7,#24518b 60%,#152338)',
+    head:'linear-gradient(135deg,#48b4d5,#24518b)',
+    iconColor:'#2879a5'
+  }
+};
+
+function setCardBrand(key){
+  const t=themes[key];
+  if(!t)return;
+
+  document.getElementById('cardName').textContent=t.name;
+  document.getElementById('backName').textContent=t.name;
+  document.getElementById('phoneName').textContent=t.name;
+  document.getElementById('cardIcon').className='fa-solid '+t.icon;
+  document.getElementById('cardIcon').style.background='#fff';
+  document.getElementById('cardIcon').style.color=t.iconColor;
+  document.getElementById('cardFront').style.background=t.front;
+  document.getElementById('phoneHead').style.background=t.head;
+  document.getElementById('phoneLogo').innerHTML='<i class="fa-solid '+t.icon+'"></i>';
+  document.getElementById('phoneLogo').style.color=t.iconColor;
+}
+
+/*
+  Demonstração das avaliações:
+
+  1 a 3 estrelas:
+  - Destaque laranja.
+  - Incentiva uma avaliação sincera no Google.
+  - Oferece contato privado como alternativa adicional.
+
+  4 e 5 estrelas:
+  - Destaque verde.
+  - Mensagem mais positiva e animada.
+  - Incentiva a publicação no Google.
+
+  Todas as notas continuam tendo acesso à avaliação pública.
+*/
+function rate(n){
+  const stars = document.getElementById('stars');
+  const box = document.getElementById('rateResult');
+  const isPositive = n >= 4;
+
+  stars.classList.toggle('tone-low', !isPositive);
+  stars.classList.toggle('tone-high', isPositive);
+
+  stars.querySelectorAll('button').forEach((button, index) => {
+    button.classList.toggle('active', index < n);
+    button.setAttribute('aria-pressed', index < n ? 'true' : 'false');
+  });
+
+  box.classList.toggle('tone-low', !isPositive);
+  box.classList.toggle('tone-high', isPositive);
+
+  if(isPositive){
+    box.innerHTML =
+      '<strong>Que bom saber que sua experiência foi positiva! ★</strong>' +
+      'Ficaremos felizes se você compartilhar sua experiência. ' +
+      '<b>Publique sua avaliação no Google</b> e ajude outras pessoas a conhecer nosso trabalho.';
+  }else{
+    box.innerHTML =
+      '<strong>Obrigado por compartilhar sua opinião.</strong>' +
+      'Sua experiência é importante para nós. ' +
+      '<b>Envie uma avaliação sincera no Google</b> ou, se preferir, entre em contato e ajude-nos a melhorar.';
+  }
+}
+
+function orderKit(name){
+  selectedKit=name;
+  document.getElementById('selectedKit').textContent=name;
+  document.getElementById('checkoutModal').classList.add('open');
+  document.body.style.overflow='hidden';
+
+  setTimeout(()=>{
+    document.getElementById('company').focus();
+  },50);
+}
+
+function closeCheckout(){
+  document.getElementById('checkoutModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+document.getElementById('checkoutModal').addEventListener('click',e=>{
+  if(e.target.id==='checkoutModal')closeCheckout();
+});
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape')closeCheckout();
+});
+
+function sendWhatsApp(e){
+  e.preventDefault();
+
+  const company=document.getElementById('company').value.trim();
+  const customer=document.getElementById('customer').value.trim();
+  const city=document.getElementById('city').value.trim();
+
+  const message=`Olá! Vim pelo site superavaliacard.com.br e quero solicitar meu cartão personalizado.
+
+*Kit:* ${selectedKit}
+*Empresa:* ${company}
+*Responsável:* ${customer}
+*Cidade/UF:* ${city}
+
+Vou enviar minha logo para personalização. Poderia me informar as próximas etapas, frete e prazo?`;
+
+  const url='https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(message);
+
+  window.open(url,'_blank','noopener,noreferrer');
+  closeCheckout();
+}
+</script>
 </body>
 </html>
